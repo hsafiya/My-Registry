@@ -1,0 +1,26 @@
+{
+  "name": "My-Registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsafiya/My-Registry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsafiya/My-Registry/issues"
+  },
+  "homepage": "https://github.com/hsafiya/My-Registry#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "sequelize": "^6.6.5"
+  }
+}
