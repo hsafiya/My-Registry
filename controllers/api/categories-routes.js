@@ -14,6 +14,20 @@ router.get('/', (req, res) => {
         });
 });
 
+// get one category by id
+router.get('/:id', (req, res) => {
+    Category.findOne({       
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(data => res.json(data))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 // add new category
 router.post('/', (req, res) => {
     // expects { category_name: 'wedding', user_id: '1'}

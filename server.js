@@ -14,6 +14,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require('./controllers/'));
 
 // sync sequelize with the server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
