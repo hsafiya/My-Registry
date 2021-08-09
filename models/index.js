@@ -2,6 +2,7 @@ const User = require('./User');
 const Category = require('./Category');
 const Registry = require('./Registry');
 const UserRegistry =require('./UserRegistry');
+const Item = require('./Item');
 
 // create relations beetwen models
 
@@ -20,6 +21,9 @@ Registry.belongsToMany(User, {
 UserRegistry.belongsTo(User);
 UserRegistry.belongsTo(Registry);
 User.hasMany(UserRegistry);
-Registry.hasMany(UserRegistry)
+Registry.hasMany(UserRegistry);
 
-module.exports = { User, Category, Registry, UserRegistry };
+Registry.hasMany(Item);
+Item.belongsTo(Registry);
+
+module.exports = { User, Category, Registry, UserRegistry, Item };
