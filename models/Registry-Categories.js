@@ -32,7 +32,7 @@ RegistryCategories.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category',
+        modelName: 'registry_categories',
     }
 );
 
