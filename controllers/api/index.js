@@ -7,6 +7,6 @@ const registryRoutes = require('./registry-routes');
 
 router.use('/users', userRoutes);
 router.use('/categories', categoryRoutes);
-router.use('/registry', registryRoutes);
+router.use('/registries', registryRoutes);
 
 module.exports = router;

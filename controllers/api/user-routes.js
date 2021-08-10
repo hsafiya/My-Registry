@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// find one user by id
+// find one user by id and its registries
 router.get('/:id', (req, res) => {
     User.findOne({
         // attributes: { exclude: ['password'] },
@@ -27,9 +27,13 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Registry,
+                attributes: ['title'],
                 include: [{
                     model: Category,
-                    attributes: ['category_name']
+                    attributes: ['category_name'],
+                    through: {
+                        attributes:[]
+                    }
                 }]
             }
         ]

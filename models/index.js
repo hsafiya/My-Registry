@@ -19,11 +19,12 @@ Registry.belongsToMany(Category, {
     through: RegistryCategories,
     foreignKey: 'registry_id'
 });
+
 // Just in case, idk if is needed, lol
-Category.belongsToMany(Registry, {
-    through: RegistryCategories,
-    foreignKey: 'category_id'
-});
+// Category.belongsToMany(Registry, {
+//     through: RegistryCategories,
+//     foreignKey: 'category_id'
+// });
 
 // registry has many items, and items belong to registry user is in
 Registry.hasMany(Item, {

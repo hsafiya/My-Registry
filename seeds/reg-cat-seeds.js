@@ -16,7 +16,7 @@ const regcatdata = [
     },
     {
         category_id: 3,
-        registry_id: 2
+        registry_id: 4
     }
 ];
 
