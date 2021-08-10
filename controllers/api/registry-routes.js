@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
     })
         .then(dbRegistryData => {
             if (!dbRegistryData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No registry found with this id' });
                 return;
             }
             res.json(dbRegistryData);
@@ -82,6 +82,26 @@ router.post('/', (req, res) => {
         user_id: req.body.user_id,
     })
         .then(dbRegistryData => res.json(dbRegistryData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// delete a registry
+router.delete('/:id', (req, res) => {
+    Registry.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbRegistryData => {
+            if (!dbRegistryData) {
+                res.status(404).json({ message: 'No registry found with this id' });
+                return;
+            }
+            res.json(dbRegistryData);
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
