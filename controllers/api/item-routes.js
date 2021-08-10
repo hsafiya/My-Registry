@@ -7,11 +7,11 @@ const { Registry, Category, Item, User, RegistryCategories } = require('../../mo
 router.get('/', (req, res) => {
     // find all tags
     Item.findAll({
-        attributes: ['id', 'title', 'item_url'],
+        attributes: ['id', 'item_name', 'item_url'],
         include: [
             {
                 model: Registry,
-                attributes: ['registry_id']
+                attributes: ['id', 'title']
             },
            
         ]
