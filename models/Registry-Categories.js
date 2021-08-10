@@ -2,10 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class UserRegistry extends Model { }
+class RegistryCategories extends Model { }
 
-// create fields/columns for Registry model
-UserRegistry.init(
+RegistryCategories.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,10 +12,10 @@ UserRegistry.init(
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
+        category_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'category',
                 key: 'id'
             }
         },
@@ -30,11 +29,11 @@ UserRegistry.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'userregistry'
+        modelName: 'category',
     }
 );
 
-
-module.exports = UserRegistry;
+module.exports = RegistryCategories;
