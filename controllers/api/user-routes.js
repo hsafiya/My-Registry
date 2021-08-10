@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Registry, Category, RegistryCategories } = require('../../models');
+
+
+// the endpoint: `/api/users`
 
 // get all users
 router.get('/', (req, res) => {
@@ -14,14 +17,26 @@ router.get('/', (req, res) => {
         });
 });
 
-// find one user by id
+// find one user by id and its registries
 router.get('/:id', (req, res) => {
     User.findOne({
         // attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
         },
-        include: []
+        include: [
+            {
+                model: Registry,
+                attributes: ['title'],
+                include: [{
+                    model: Category,
+                    attributes: ['category_name'],
+                    through: {
+                        attributes:[]
+                    }
+                }]
+            }
+        ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
