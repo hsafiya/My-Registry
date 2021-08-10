@@ -26,6 +26,13 @@ Item.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
+        },
+        registry_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'registry',
+                key: 'id'
+            }
         }
     },
     {

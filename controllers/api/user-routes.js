@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Registry, Category, RegistryCategories } = require('../../models');
 
 
 // the endpoint: `/api/users`
@@ -24,7 +24,15 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: []
+        include: [
+            {
+                model: Registry,
+                include: [{
+                    model: Category,
+                    attributes: ['category_name']
+                }]
+            }
+        ]
     })
         .then(dbUserData => {
             if (!dbUserData) {

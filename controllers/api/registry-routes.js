@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Registry, Category, Item, User, UserRegistry } = require('../../models');
+const { Registry, Category, Item, User, RegistryCategories } = require('../../models');
 
 // The `/api/registry` endpoint
 
@@ -9,10 +9,11 @@ router.get('/', (req, res) => {
     Registry.findAll({
         include: [
             {
-                model: User,
-                include: {
-                    model: Category
-                }
+                model: User
+                
+            },
+            {
+                model: Category
             },
             {
                 model: Item
