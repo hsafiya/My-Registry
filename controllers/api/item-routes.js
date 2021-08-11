@@ -66,7 +66,31 @@ router.post('/', (req, res) => {
 });
 
 
- 
+ // update an item
+router.put('/:id', (req, res) => {
+    Item.update(
+        {
+            item_name: req.body.item_name,
+            item_url: req.body.item_url,
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbData => {
+            if (!dbData) {
+                res.status(404).json({ message: 'No category found with this id' });
+                return;
+            }
+            res.json(dbData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 module.exports = router;
