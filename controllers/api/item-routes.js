@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 
-// find one registry by id, owner, category and ite items
+// find one  item
 router.get('/:id', (req, res) => {
     Item.findOne({
         where: {
@@ -49,10 +49,24 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+}); 
+
+// add a item
+router.post('/', (req, res) => {
+
+    Item.create({
+        item_name: req.body.item_name,
+        item_url: req.body.item_url,
+    })
+        .then(dbItemData => res.json(dbItemData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 
-
+ 
 
 
 module.exports = router;

@@ -32,42 +32,10 @@ router.get('/', (req, res) => {
         });
 });
 
-// find one registry by id, owner, category and ite items
-router.get('/:id', (req, res) => {
-    Registry.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: ['id', 'title'],
-        include: [
-            {
-                model: User,
-                attributes: { exclude: ['password'] }
-            },
-            {
-                model: Category,
-                attributes: ['id', 'category_name'],
-                through: {
-                    attributes: []
-                }
-            },
-            {
-                model: Item
-            }
-        ]
-    })
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+
+
+
+
 
 // add a registry
 router.post('/', (req, res) => {
