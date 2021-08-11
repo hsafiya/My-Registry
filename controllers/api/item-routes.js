@@ -93,4 +93,26 @@ router.put('/:id', (req, res) => {
 });
 
 
+// delete a item
+router.delete('/:id', (req, res) => {
+    Item.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbItemData => {
+            if (!dbItemData) {
+                res.status(404).json({ message: 'No registry found with this id' });
+                return;
+            }
+            res.json(dbItemData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+
 module.exports = router;
