@@ -21,6 +21,18 @@ nav {
   background-color: rgb(188, 143, 143, 0.5);
 }
 
+.navbar {
+  background-color: rgb(188, 143, 143, 0.9);
+}
+
+.form {
+  padding: 5rem 35rem;
+  }
+
+  #form-text {
+    padding: 1rem;
+}
+  
 .logo{
     width: 20%;
     float: left;
