@@ -3,8 +3,6 @@ async function loginFormHandler(event) {
 
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-console.log(username);
-console.log(password);
     if (username && password) {
         const response = await fetch('/api/users/login', {
             method: 'post',
@@ -28,7 +26,7 @@ console.log(password);
 // changed the querySelector and event
 document.querySelector('#login').addEventListener('click', loginFormHandler);
 
-// we should have a signup.js for this
-// document.getElementById('signup').onclick = function () {
-//     location.href = ''
-//   };
+// redirect to signup page
+document.getElementById('signup').onclick = function () {
+    document.location.replace('/signup/')
+};
