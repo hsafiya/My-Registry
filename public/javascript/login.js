@@ -28,6 +28,7 @@ async function loginFormHandler(event) {
 // changed the querySelector and event
 document.querySelector('#login').addEventListener('click', loginFormHandler);
 
-document.getElementById("signup").onclick = function () {
-    location.href = " "
-  };
+// we should have a signup.js for this
+// document.getElementById("signup").onclick = function () {
+//     location.href = " "
+//   };
