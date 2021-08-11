@@ -17,6 +17,10 @@ Registry.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        address: {
+            type: DataTypes.STRING,
+            allowNull:false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
