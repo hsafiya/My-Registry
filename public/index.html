@@ -1,106 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Registry</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
-</head>
-<body>
-    <!--Navbar-->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <div class="navbar-item is-size-3">
-            <span class="icon-text">
-                <span class="icon">
-                    <i class="fa-solid fa-gifts"></i>
-                </span>
-                <span class="has-text-black-bis strong">MyRegistry</span>
-              </span>
-          </div>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                See all
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  Wedding
-                </a>
-                <a class="navbar-item">
-                  Baby Shower
-                </a>
-                <a class="navbar-item">
-                  Birthday
-                </a>
-                <a class="navbar-item">
-                  Secret Santa
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-black">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-<!--hero-->
-<!--<section class="hero is-large is-info">
-    <div class="hero-body">
-      <p class="title">
-        Pictures array(clickable)  
-      </p>
-      <p class="subtitle">
-        wedding, birthday, babyshower, secret santa
-      </p>>
-    -->
-      <div class="w3-content w3-section" style="max-width:500px">
-        <img class="mySlides" src="./images/wedding 1.jpeg" style="width:100%">
-        <img class="mySlides" src="./images/birthday 1.jpg" style="width:100%">
-        <img class="mySlides" src="./images/babyshower 1.jpg" style="width:100%">
-        <img class="mySlides" src="./images/christmas 1.png" style="width:100%">
-        <img class="mySlides" src="./images/wedding 2.jpeg" style="width:100%">
-        <img class="mySlides" src="./images/birthday 2.jpg" style="width:100%">
-        <img class="mySlides" src="./images/babyshower 2.jpg" style="width:100%">
-        <img class="mySlides" src="./images/christmas 2.jpg" style="width:100%">
-      </div>
-    <!--</div>
-  </section> -->
 
-  <!--footer-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Registry</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Style+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../utils/slick.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav>
+    <div class="logo">
+        <h2>MyRegistry</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="banner-btn"><a href="#">Log In</a> </li>
+            <li class="banner-btn"><a href="#">Sign Up</a> </li>
+        </ul>
+    </div>
+</nav>
+  <!--hero-->
+  <header>
+    <div class="banner-area">
+        <div class="single-banner">
+            <div class="banner-img">
+                <img src="./images/wedding.jpg" alt="wedding">
+            </div>
+            <div class="banner-text">
+                <h2>Wedding Registry</h2>
+                <p>Start planing your big day today</p>
+                <p class="banner-btn"><a href="#">Create Registry</a> <a href="#">View Registry</a></p>
+            </div>
+        </div>
+        <div class="single-banner">
+            <div class="banner-img">
+                <img src="./images/babyshower.jpg" alt="babyshower">
+            </div>
+            <div class="banner-text">
+                <h2>Baby Shower Registry</h2>
+                <p>Get one step closer to meet your baby</p>
+                <p class="banner-btn"><a href="#">Create Registry</a> <a href="#">View Registry</a></p>
+            </div>
+        </div>
+        <div class="single-banner">
+            <div class="banner-img">
+                <img src="./images/birthday.jpg" alt="birthday">
+            </div>
+            <div class="banner-text">
+                <h2>Birthday Wishlist</h2>
+                <p>Let your wishes become true with birthday wishlist</p>
+                <p class="banner-btn"><a href="#">Create Registry</a> <a href="#">View Registry</a></p>
+            </div>
+        </div>
+        <div class="single-banner">
+            <div class="banner-img">
+                <img src="./images/christmas.png" alt="christmas">
+            </div>
+            <div class="banner-text">
+                <h2>Secret Santa</h2>
+                <p>Share the holliday spirit with your friends or coworkers</p>
+                <p class="banner-btn"><a href="#">Create Registry</a> <a href="#">View Registry</a></p>
+            </div>
+        </div>
+    </div>
+</header>
+  <!--footer
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>MyRegistry</strong> 
+        <strong>MyRegistry</strong>
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
       </p>
     </div>
-  </footer>
-      <script src="https://kit.fontawesome.com/542d56e2f0.js" crossorigin="anonymous"></script>
-      <script src="./javascript/script.js"></script>
+  </footer> -->
+  <script src="https://kit.fontawesome.com/542d56e2f0.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../utils/slick.js"></script>
+  <script src="./javascript/script.js"></script>
 </body>
+
 </html>
