@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyRegistry</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+ 
+<body>
+<nav>
+    <div class="logo navbar-start">
+        <h2>MyRegistry</h2>
+    </div>
+ <div class="navbar-end">
+        <div class="navbar-item">
+            {{#if loggedIn}}
+  <button id="logout" class="btn-no-style">Logout</button>
+  {{else}}
+      <a href="/login">Login</a>
+       {{/if}}
+ </nav>
+      <main>
+           {{#if loggedIn}}
+          <a href="/categories">Categories</a>
+           {{/if}}
+      {{{ body }}}
+    </main>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>MyRegistry</strong>
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer> 
+  {{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+</html>

@@ -11,21 +11,33 @@ header {
 }
 
 nav {
-  width: 1170px;
   margin: auto;
-  height: 60px;
+  padding: 0.7rem;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
+  background-color: rgb(188, 143, 143, 0.5);
 }
 
+.navbar {
+  background-color: rgb(188, 143, 143, 0.9);
+}
+
+.form {
+  padding: 5rem 35rem;
+  }
+
+  #form-text {
+    padding: 1rem;
+}
+  
 .logo{
     width: 20%;
     float: left;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: 'Style Script', cursive;
 }
 
@@ -50,6 +62,16 @@ color: #fff;
 padding: 15px;
 }
 
+#login,
+#signup,
+#logout {
+  display: inline-block;
+  color: #fff;
+  background-color: crimson;
+  padding: 5px 15px;
+  border: none;
+  font-size: 1rem;
+}
 .banner-area,
 .single-banner {
     height: 100vh;
