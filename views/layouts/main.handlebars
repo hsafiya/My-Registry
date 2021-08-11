@@ -10,7 +10,7 @@
 </head>
  
 <body>
-<nav>
+<nav class="navbar">
     <div class="logo navbar-start">
         <h2>MyRegistry</h2>
     </div>
@@ -28,8 +28,15 @@
            {{/if}} --}}
       {{{ body }}}
     </main>
-
-  {{#if logged}}
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>MyRegistry</strong>
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. 
+      </p>
+    </div>
+  </footer> 
+  {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>

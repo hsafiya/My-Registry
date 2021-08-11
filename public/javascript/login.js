@@ -20,6 +20,15 @@ console.log(password);
             alert(response.statusText);
         }
     }
-};
+}
 
+
+
+
+// changed the querySelector and event
 document.querySelector('#login').addEventListener('click', loginFormHandler);
+
+// we should have a signup.js for this
+// document.getElementById('signup').onclick = function () {
+//     location.href = ''
+//   };
