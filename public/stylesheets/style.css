@@ -10,4 +10,43 @@ header {
     overflow: hidden;
 }
 
+nav {
+  width: 1170px;
+  margin: auto;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo{
+    width: 20%;
+    float: left;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Style Script', cursive;
+}
+
+.menu{
+    width: 80%;
+    float: right;
+}
+
+.menu ul {
+    float: right;
+    list-style: none;
+}
+
+.menu ul li {
+    display: inline-block;
+}
+
+.menu ul li a {
+display: inline-block;
+text-decoration: none;
+color: #fff;
+padding: 15px;
+}
   
