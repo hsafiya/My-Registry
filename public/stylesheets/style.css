@@ -13,6 +13,7 @@ header {
 nav {
   width: 1170px;
   margin: auto;
+  padding-top: 1rem;
   height: 60px;
   position: fixed;
   z-index: 100;
@@ -25,7 +26,7 @@ nav {
     width: 20%;
     float: left;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: 'Style Script', cursive;
 }
 
@@ -50,6 +51,15 @@ color: #fff;
 padding: 15px;
 }
 
+#login,
+#signup {
+  display: inline-block;
+  color: #fff;
+  background-color: crimson;
+  padding: 5px 15px;
+  border: none;
+  font-size: 1rem;
+}
 .banner-area,
 .single-banner {
     height: 100vh;
