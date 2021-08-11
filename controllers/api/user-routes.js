@@ -79,36 +79,6 @@ router.post('/', (req, res) => {
         });
 });
 
-// edit user info
-router.put('/:id', (req, res) => {
-    // expects {username: 'sinajeen', email: 'sinajeen@gmail.com', password: 'password1234'}
-    // dummy data to use in insomnia
-    // {
-    //     "username": "victor",
-    //     "email": "victor@gmail.com",
-    //     "password": "password4321"
-    // }
-    // pass in req.body instead to only update what's passed through
-    User.update(req.body, {
-        individualHooks: true,
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbUserData => {
-            if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
-                return;
-            }
-            res.json(dbUserData);
-            console.log('You have updated your information');
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
 // login route
 router.post('/login', (req, res) => {
     // expects {username: 'sinajeen', password: 'password1234'}
@@ -149,6 +119,36 @@ router.post('/logout', (req, res) => {
     else {
         res.status(404).end();
     }
+});
+
+// edit user info
+router.put('/:id', (req, res) => {
+    // expects {username: 'sinajeen', email: 'sinajeen@gmail.com', password: 'password1234'}
+    // dummy data to use in insomnia
+    // {
+    //     "username": "victor",
+    //     "email": "victor@gmail.com",
+    //     "password": "password4321"
+    // }
+    // pass in req.body instead to only update what's passed through
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+            res.json(dbUserData);
+            console.log('You have updated your information');
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // delete an user
