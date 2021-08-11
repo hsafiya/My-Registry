@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
         });
 });
 
+
 // find one registry by id, owner, category and ite items
 router.get('/:id', (req, res) => {
     Registry.findOne({
