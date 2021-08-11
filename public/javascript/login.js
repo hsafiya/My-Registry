@@ -18,15 +18,12 @@ async function loginFormHandler(event) {
             alert(response.statusText);
         }
     }
-}
+};
 
-
-
-
-// changed the querySelector and event
 document.querySelector('#login').addEventListener('click', loginFormHandler);
 
 // redirect to signup page
-document.getElementById('signup').onclick = function () {
+document.getElementById('signup').onclick = function (event) {
+    event.preventDefault();
     document.location.replace('/signup/')
 };
