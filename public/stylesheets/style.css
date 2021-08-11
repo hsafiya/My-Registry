@@ -1,7 +1,13 @@
-  
-* {
-    padding:0;
-    margin:0;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Prata', serif;
+}
+
+header {
+    width: 100vw;
+    background: black;
+    overflow: hidden;
+}
 
   
