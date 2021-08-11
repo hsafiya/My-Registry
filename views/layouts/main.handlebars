@@ -10,6 +10,7 @@
 </head>
  
 <body>
+{{log "info logging" level="info"}}
 <nav class="navbar">
     <div class="logo navbar-start">
         <h2>MyRegistry</h2>
@@ -36,7 +37,7 @@
       </p>
     </div>
   </footer> 
-  {{#if loggedIn}}
+  {{#if logged}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>

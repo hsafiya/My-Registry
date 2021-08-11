@@ -2,16 +2,22 @@ const router = require('express').Router();
 
 // render homepage
 router.get('/', (req,res) => {
-    console.log(req.session);
+    if (req.session.logged) {
+        res.render('homepage', {
+            logged: req.session.logged
+        })
+        return;
+    };
     res.render('homepage')
-})
+});
 
+// render login
 router.get('/login', (req, res) => {
-    // if (req.session.loggedIn) {
-    //     res.redirect('/');
-    //     return;
-    // }
-
+    if (req.session.logged) {
+        res.redirect('/');
+        return;
+    };
     res.render('login');
 });
+
 module.exports = router;
