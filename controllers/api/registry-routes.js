@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Registry, Category, Item, User, RegistryCategories } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/registries` endpoint
 
@@ -71,7 +72,7 @@ router.get('/:id', (req, res) => {
 });
 
 // add a registry
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // expects {title: 'user's registry', user_id: '1'}
     // dummy data to use in insomnia
     // {
@@ -92,7 +93,7 @@ router.post('/', (req, res) => {
 });
 
     // update a category by its `id` value
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Registry.update(
         {
             title: req.body.title,
@@ -118,7 +119,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete a registry
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth, (req, res) => {
     Registry.destroy({
         where: {
             id: req.params.id

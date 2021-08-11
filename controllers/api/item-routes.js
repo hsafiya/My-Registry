@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Registry, Category, Item, User, RegistryCategories } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // The `/api/items` endpoint
 
-router.get('/', (req, res) => {
+router.get('/',  (req, res) => {
     // find all tags
     Item.findAll({
         attributes: ['id', 'item_name', 'item_url', 'bought', 'registry_id'],
@@ -52,7 +53,7 @@ router.get('/:id', (req, res) => {
 }); 
 
 // add a item
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
 
     Item.create({
         item_name: req.body.item_name,
@@ -67,7 +68,7 @@ router.post('/', (req, res) => {
 
 
  // update an item
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Item.update(
         {
             item_name: req.body.item_name,
@@ -94,7 +95,7 @@ router.put('/:id', (req, res) => {
 
 
 // delete a item
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Item.destroy({
         where: {
             id: req.params.id

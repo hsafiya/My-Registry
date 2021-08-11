@@ -16,16 +16,16 @@
     </div>
  <div class="navbar-end">
         <div class="navbar-item">
-            {{#if loggedIn}}
+            {{#if logged}}
   <button id="logout" class="btn-no-style">Logout</button>
   {{else}}
       <a href="/login">Login</a>
        {{/if}}
  </nav>
       <main>
-           {{#if loggedIn}}
+           {{!-- {{#if loggedIn}}
           <a href="/categories">Categories</a>
-           {{/if}}
+           {{/if}} --}}
       {{{ body }}}
     </main>
   <footer class="footer">

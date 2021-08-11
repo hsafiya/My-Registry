@@ -3,6 +3,8 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const sequelize = require("./config/connection");
+const exphbs = require('express-handlebars');
+
 
 // assign variables to start express and set the port
 const app = express();
@@ -21,7 +23,10 @@ const sess = {
 };
 app.use(session(sess));
 
-
+// set up handlebars as template engine
+const hbs = exphbs.create({  });
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // add midlleware
 app.use(express.json());
