@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 // render homepage
 router.get('/', (req,res) => {
+    console.log(req.session);
     res.render('homepage')
 })
 

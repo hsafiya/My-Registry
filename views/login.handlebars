@@ -2,7 +2,8 @@
      <p id="form-text">Welcome back! Please log in into your account.</p>
  <div class="field">
     <p class="control has-icons-left has-icons-right">
-        <input class="input" type="text" placeholder="Username">
+        <input class="input" type="text" placeholder="Username"
+        id="username-login">
         <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -12,7 +13,7 @@
     </p>
       </div>
 
- <div class="field">
+ {{!-- <div class="field">
     <p class="control has-icons-left has-icons-right">
       <input class="input" type="email" placeholder="Email">
       <span class="icon is-small is-left">
@@ -22,10 +23,10 @@
         <i class="fas fa-check"></i>
       </span>
     </p>
-  </div>
+  </div> --}}
   <div class="field">
     <p class="control has-icons-left">
-      <input class="input" type="password" placeholder="Password">
+      <input class="input" type="password" placeholder="Password" id="password-login">
       <span class="icon is-small is-left">
         <i class="fas fa-lock"></i>
       </span>
@@ -39,3 +40,5 @@
     <button class="button" id="signup">Sign Up</button>
   </div>
 </form>
+
+<script src="/javascript/login.js"></script>

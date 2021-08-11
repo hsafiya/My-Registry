@@ -16,28 +16,20 @@
     </div>
  <div class="navbar-end">
         <div class="navbar-item">
-            {{#if loggedIn}}
+            {{#if logged}}
   <button id="logout" class="btn-no-style">Logout</button>
   {{else}}
       <a href="/login">Login</a>
        {{/if}}
  </nav>
       <main>
-           {{#if loggedIn}}
+           {{!-- {{#if loggedIn}}
           <a href="/categories">Categories</a>
-           {{/if}}
+           {{/if}} --}}
       {{{ body }}}
     </main>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>MyRegistry</strong>
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer> 
-  {{#if loggedIn}}
+
+  {{#if logged}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>
