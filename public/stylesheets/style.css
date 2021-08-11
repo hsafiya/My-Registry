@@ -11,22 +11,21 @@ header {
 }
 
 nav {
-  width: 1170px;
   margin: auto;
-  padding-top: 1rem;
-  height: 60px;
+  padding: 0.7rem;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
+  background-color: rgb(188, 143, 143, 0.5);
 }
 
 .logo{
     width: 20%;
     float: left;
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Style Script', cursive;
 }
 
@@ -52,7 +51,8 @@ padding: 15px;
 }
 
 #login,
-#signup {
+#signup,
+#logout {
   display: inline-block;
   color: #fff;
   background-color: crimson;
