@@ -3,11 +3,13 @@
         <p>
             {{title}}
     </p>
+    {{!-- <p>
+        {{user.username}}
+    </p> --}}
     <p>
-        {{username}}
-    </p>
-    <p>
-        {{category_name}}
+        {{#each categories}}
+        {{categories.category_name}}
+        {{/each}}
     </p>
     </div>
     <div></div>

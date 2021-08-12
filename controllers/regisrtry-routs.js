@@ -8,15 +8,15 @@ router.get('/', (req,res) => {
             model:User,
             attributes:['id','username']
         },
-        {model:Category,
-        attributes:['category_name'],
-        through: {
-            attributes:[]
-        }
+        {model:Category
+        },
+        {
+            model: Item
         }
     ]
     })
-    .then(dbRegistryData => {const registries = dbRegistryData.map(post =>post.get({plain:true})) 
+    .then(dbRegistryData => {
+        const registries = dbRegistryData.map(post =>post.get({plain:true})) 
 res.render('registries',{registries})
 })
 .catch(err=>{console.log(err);
