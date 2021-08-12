@@ -18,7 +18,6 @@ async function loginFormHandler(event) {
             alert(response.statusText);
         }
     }
-    document.location.reload
 };
 
 document.querySelector('#login').addEventListener('click', loginFormHandler);
