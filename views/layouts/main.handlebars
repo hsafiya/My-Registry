@@ -26,18 +26,16 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
-           <!-- 
-           <li class="banner-btn"><a href="#">Login</a> </li>
-            <li class="banner-btn"><a href="#">Sign Up</a> </li> 
-          -->
+          
+  
            {{#if logged}}
            <li>
   <button id="logout" type="submit">Logout</button>
   </li>
   {{else}}
 
-    <li><button id="login" type="submit">Login</button></li>
-      <li><button id="signup" type="submit">Sign up</button></li>
+    <li><button id="login-redirect">Login</button></li>
+      <li><button id="signup-redirect" type="submit">Sign up</button></li>
        {{/if}}
         </ul>
     </div>

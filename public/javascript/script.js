@@ -8,12 +8,12 @@ $('.banner-area').slick({
   fade: true
 });
 
-document.getElementById('login').onclick = function (event) {
+document.getElementById('login-redirect').onclick = function (event) {
   event.preventDefault();
   document.location.replace('/login/')
 };
 
-document.getElementById('signup').onclick = function (event) {
+document.getElementById('signup-redirect').onclick = function (event) {
   event.preventDefault();
   document.location.replace('/signup/')
 };

@@ -9,6 +9,8 @@ router.get('/', (req,res) => {
         return;
     };
     res.render('homepage')
+
+    console.log(req.session.logged)
 });
 
 // render login
