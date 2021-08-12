@@ -20,4 +20,13 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// render signup
+router.get('/signup', (req, res) => {
+    if (req.session.logged) {
+        res.redirect('/');
+        return;
+    };
+    res.render('signup');
+});
+
 module.exports = router;
