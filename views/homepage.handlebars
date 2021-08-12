@@ -1,4 +1,8 @@
-  {{>main-navigation}}
+{{#if logged}}
+{{>nav-logout}}
+{{else}}
+{{>nav-login}}
+{{/if}}
 
 <!--hero-->
   <header>
@@ -45,6 +49,12 @@
         </div>
     </div>
 </header>
+
+ {{#if logged}}
+  <script src="/javascript/logout.js"></script>
+  {{else}}
+  <script src="/javascript/redirect.js"></script>
+  {{/if}}
 
 
     
