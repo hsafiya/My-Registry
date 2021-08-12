@@ -7,8 +7,19 @@ router.get('/', (req,res) => {
         include:[{
             model:User,
             attributes:['id','username']
-        }]
+        },
+        {model:Category,
+        attributes:['category_name'],
+        through: {
+            attributes:[]
+        }
+        }
+    ]
     })
+    .then(dbRegistryData => {const registries = dbRegistryData.map(post =>post.get({plain:true})) 
+res.render('registries',{registries})
+})
+
 })
 
 module.exports = router;
