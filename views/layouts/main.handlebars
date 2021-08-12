@@ -30,13 +30,15 @@
            <li class="banner-btn"><a href="#">Login</a> </li>
             <li class="banner-btn"><a href="#">Sign Up</a> </li> 
           -->
-          <li> {{#if logged}}
+           {{#if logged}}
+           <li>
   <button id="logout" type="submit">Logout</button>
+  </li>
   {{else}}
-      <a href="/login"><button id="login" type="submit">Login</button></a>
-      <a href="/signup"><button id="signup" type="submit">Sign up</button></a>
+
+    <li><button id="login" type="submit">Login</button></li>
+      <li><button id="signup" type="submit">Sign up</button></li>
        {{/if}}
-       </li>
         </ul>
     </div>
 </nav>
