@@ -19,7 +19,11 @@ router.get('/', (req,res) => {
     .then(dbRegistryData => {const registries = dbRegistryData.map(post =>post.get({plain:true})) 
 res.render('registries',{registries})
 })
+.catch(err=>{console.log(err);
+res.status(500).json(err);
+})
 
 })
+
 
 module.exports = router;
