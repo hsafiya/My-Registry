@@ -1,0 +1,26 @@
+<nav>
+  <div class="logo">
+    <h2>MyRegistry</h2>
+  </div>
+  <div class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      {{#if logged}}
+        <li><a href="/categories">Categories</a></li>
+      {{/if}}
+
+      {{#if logged}}
+        <li>
+          <button id="logout" type="submit">Logout</button>
+        </li>
+
+      {{/if}}
+      {{#unless logged}}
+        <li><button id="login-redirect">Login</button></li>
+        <li><button id="signup-redirect" type="submit">Sign up</button></li>
+      {{/unless}}
+    </ul>
+  </div>
+</nav>

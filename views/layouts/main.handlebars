@@ -17,33 +17,9 @@
 </head>
  
 <body>
-<nav>
-    <div class="logo">
-        <h2>MyRegistry</h2>
-    </div>
-    <div class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          
-  
-           {{#if logged}}
-           <li>
-  <button id="logout" type="submit">Logout</button>
-  </li>
-  {{else}}
-
-    <li><button id="login-redirect">Login</button></li>
-      <li><button id="signup-redirect" type="submit">Sign up</button></li>
-       {{/if}}
-        </ul>
-    </div>
-</nav>
+{{>main-navigation}}
       <main>
-           {{#if logged}}
-          <a href="/categories">Categories</a>
-           {{/if}}
+
       {{{ body }}}
     </main>
   <footer class="footer">
