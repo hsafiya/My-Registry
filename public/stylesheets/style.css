@@ -28,7 +28,9 @@ nav {
 .form {
   padding: 5rem 35rem;
   }
-
+.form2 {
+    padding: 5rem 25rem;  
+}
   #form-text {
     padding: 1rem;
 }
@@ -154,5 +156,11 @@ padding: 15px;
 .slick-dots li.slick-active button{
     color: #fff;
     opacity: .75;
+}
+
+#cardschoice {
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
 }
   
