@@ -30,7 +30,12 @@
            <li class="banner-btn"><a href="#">Login</a> </li>
             <li class="banner-btn"><a href="#">Sign Up</a> </li> 
           -->
-          <li><button id="login" type="submit">Login</button></li>
+          <li> {{#if logged}}
+  <button id="logout" type="submit">Logout</button>
+  {{else}}
+      <a href="/login"><button id="login" type="submit">Login</button></a>
+       {{/if}}
+       </li>
           <li><button id="signup" type="submit">Sign Up</button></li>
         </ul>
     </div>
@@ -56,7 +61,7 @@
 <script src="https://kit.fontawesome.com/542d56e2f0.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/javascript/slick.js"></script>
-  <script src="../public/javascript/script.js"></script>
+  <script src="/javascript/script.js"></script>
 
 </body>
 
