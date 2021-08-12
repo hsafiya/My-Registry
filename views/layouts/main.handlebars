@@ -3,25 +3,38 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyRegistry</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <title>My Registry</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Style+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/slick.css">
+
 </head>
  
 <body>
-<nav class="navbar">
-    <div class="logo navbar-start">
+<nav>
+    <div class="logo">
         <h2>MyRegistry</h2>
     </div>
- <div class="navbar-end">
-        <div class="navbar-item">
-            {{#if logged}}
-  <button id="logout" class="btn-no-style">Logout</button>
-  {{else}}
-      <a href="/login">Login</a>
-       {{/if}}
- </nav>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+           <!-- 
+           <li class="banner-btn"><a href="#">Login</a> </li>
+            <li class="banner-btn"><a href="#">Sign Up</a> </li> 
+          -->
+          <li><button id="login" type="submit">Login</button></li>
+          <li><button id="signup" type="submit">Sign Up</button></li>
+        </ul>
+    </div>
+</nav>
       <main>
            {{#if logged}}
           <a href="/categories">Categories</a>
@@ -39,5 +52,13 @@
   {{#if logged}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
+
+<script src="https://kit.fontawesome.com/542d56e2f0.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/javascript/slick.js"></script>
+  <script src="../public/javascript/script.js"></script>
+
+</body>
+
 </body>
 </html>
