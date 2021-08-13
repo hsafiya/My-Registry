@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 // render homepage
 router.get('/', (req,res) => {
+    // console.log(JSON.stringify(req.session));
     if (req.session.logged) {
         res.render('homepage', {
             logged: req.session.logged
@@ -10,7 +11,6 @@ router.get('/', (req,res) => {
     };
     res.render('homepage')
 
-    console.log(req.session.logged)
 });
 
 // render login
