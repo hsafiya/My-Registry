@@ -25,12 +25,10 @@ router.get('/', (req, res) => {
                 model: Item
             }
         ]
-    })
-        .then(dbRegistryData => res.json(dbRegistryData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => res.json(dbRegistryData)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
@@ -57,18 +55,16 @@ router.get('/:id', (req, res) => {
                 model: Item
             }
         ]
-    })
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // add a registry
@@ -84,8 +80,7 @@ router.post('/', withAuth, (req, res) => {
         title: req.body.title,
         address: req.body.address,
         user_id: req.body.user_id,
-    })
-        .then(dbRegistryData => res.json(dbRegistryData))
+    }).then(dbRegistryData => res.json(dbRegistryData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -104,18 +99,16 @@ router.put('/:id', withAuth, (req, res) => {
                 id: req.params.id
             }
         }
-    )
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    ).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // delete a registry
@@ -124,18 +117,16 @@ router.delete('/:id', withAuth, (req, res) => {
         where: {
             id: req.params.id
         }
-    })
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router;

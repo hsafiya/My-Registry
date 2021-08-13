@@ -16,16 +16,14 @@ router.get('/', (req, res) => {
 
 // get one category by id
 router.get('/:id', (req, res) => {
-    Category.findOne({       
+    Category.findOne({
         where: {
             id: req.params.id
         }
-    })
-        .then(data => res.json(data))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(data => res.json(data)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // add new category
@@ -34,11 +32,10 @@ router.post('/', (req, res) => {
     // create a new category
     Category.create({
         category_name: req.body.category_name
-    }).then(dbData => res.json(dbData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbData => res.json(dbData)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // update a category by its `id` value
@@ -52,18 +49,16 @@ router.put('/:id', (req, res) => {
                 id: req.params.id
             }
         }
-    )
-        .then(dbData => {
-            if (!dbData) {
-                res.status(404).json({ message: 'No category found with this id' });
-                return;
-            }
-            res.json(dbData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    ).then(dbData => {
+        if (!dbData) {
+            res.status(404).json({ message: 'No category found with this id' });
+            return;
+        }
+        res.json(dbData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // delete a category by its `id` value
@@ -72,18 +67,16 @@ router.delete('/:id', (req, res) => {
         where: {
             id: req.params.id
         }
-    })
-        .then(dbData => {
-            if (!dbData) {
-                res.status(404).json({ message: 'No category found with this id' });
-                return;
-            }
-            res.json(dbData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbData => {
+        if (!dbData) {
+            res.status(404).json({ message: 'No category found with this id' });
+            return;
+        }
+        res.json(dbData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
