@@ -7,3 +7,4 @@ $('.banner-area').slick({
   dots: true,
   fade: true
 });
+
