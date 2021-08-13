@@ -1,16 +1,13 @@
 <article>
     <div>
+
+        <p> {{this.title}} </p>
+        <p> {{this.user.username}} </p>
         <p>
-            {{title}}
-    </p>
-    {{!-- <p>
-        {{user.username}}
-    </p> --}}
-    <p>
-        {{#each categories}}
-        {{categories.category_name}}
-        {{/each}}
-    </p>
+            {{#each this.categories}}
+            {{category_name}}
+            {{/each}}
+        </p>
     </div>
-    <div></div>
+
 </article>
