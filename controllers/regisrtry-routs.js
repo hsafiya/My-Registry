@@ -23,6 +23,33 @@ res.render('registries',{registries})
 res.status(500).json(err);
 })
 
+// get a registry by title
+router.get('/:title', (req, res) => {
+    Registry.findOne({
+        where: {
+            title: req.params.title
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'username']
+            },
+            {
+                model: Category
+            }
+        ]
+    })
+        .then(dbRegistryData => {
+            const registry = dbRegistryData.get({ plain: true });
+            res.render('registries', { registry });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+});
+
+
 })
 
 
