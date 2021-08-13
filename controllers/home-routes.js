@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 // render homepage
 router.get('/', (req,res) => {
+    
     if (req.session.logged) {
         res.render('homepage', {
             logged: req.session.logged
@@ -9,12 +10,11 @@ router.get('/', (req,res) => {
         return;
     };
     res.render('homepage')
-
-    console.log(req.session.logged)
 });
 
 // render login
 router.get('/login', (req, res) => {
+    
     if (req.session.logged) {
         res.redirect('/');
         return;
