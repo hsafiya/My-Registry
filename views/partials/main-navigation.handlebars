@@ -12,12 +12,12 @@
       <li><a href="/categories">Categories</a></li>
       {{/if}}
 
-      {{#if logged}}
-      <li> <button id="logout" type="submit">Logout</button> </li>
-      {{else}}
-      <li><button id="login-redirect">Login</button></li>
+      {{#unless logged}}
+       <li><button id="login-redirect">Login</button></li>
       <li><button id="signup-redirect" type="submit">Sign up</button></li>
-      {{/if}}
+      {{else}}
+       <li> <button id="logout" type="submit">Logout</button> </li>
+      {{/unless}}
 
     </ul>
   </div>

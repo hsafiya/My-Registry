@@ -8,7 +8,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // find all tags
     Registry.findAll({
-        attributes: ['id', 'title','address'],
+        attributes: ['id', 'title', 'address'],
         include: [
             {
                 model: User,
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'title','address'],
+        attributes: ['id', 'title', 'address'],
         include: [
             {
                 model: User,
@@ -92,7 +92,7 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-    // update a category by its `id` value
+// update a category by its `id` value
 router.put('/:id', withAuth, (req, res) => {
     Registry.update(
         {
@@ -119,7 +119,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // delete a registry
-router.delete('/:id',withAuth, (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Registry.destroy({
         where: {
             id: req.params.id
