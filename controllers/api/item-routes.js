@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/items` endpoint
 
-router.get('/',  (req, res) => {
+router.get('/', (req, res) => {
     // find all tags
     Item.findAll({
         attributes: ['id', 'item_name', 'item_url', 'bought', 'registry_id'],
@@ -14,14 +14,12 @@ router.get('/',  (req, res) => {
                 model: Registry,
                 attributes: ['title']
             },
-           
+
         ]
-    })
-        .then(dbItemData => res.json(dbItemData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbItemData => res.json(dbItemData)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
@@ -38,19 +36,17 @@ router.get('/:id', (req, res) => {
                 attributes: ['title']
             },
         ]
-    })
-        .then(dbItemData => {
-            if (!dbItemData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbItemData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-}); 
+    }).then(dbItemData => {
+        if (!dbItemData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbItemData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // add a item
 router.post('/', withAuth, (req, res) => {
@@ -58,16 +54,14 @@ router.post('/', withAuth, (req, res) => {
     Item.create({
         item_name: req.body.item_name,
         item_url: req.body.item_url,
-    })
-        .then(dbItemData => res.json(dbItemData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbItemData => res.json(dbItemData)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
- // update an item
+// update an item
 router.put('/:id', withAuth, (req, res) => {
     Item.update(
         {
@@ -79,18 +73,16 @@ router.put('/:id', withAuth, (req, res) => {
                 id: req.params.id
             }
         }
-    )
-        .then(dbData => {
-            if (!dbData) {
-                res.status(404).json({ message: 'No category found with this id' });
-                return;
-            }
-            res.json(dbData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    ).then(dbData => {
+        if (!dbData) {
+            res.status(404).json({ message: 'No category found with this id' });
+            return;
+        }
+        res.json(dbData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
@@ -100,18 +92,16 @@ router.delete('/:id', withAuth, (req, res) => {
         where: {
             id: req.params.id
         }
-    })
-        .then(dbItemData => {
-            if (!dbItemData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbItemData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbItemData => {
+        if (!dbItemData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbItemData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
