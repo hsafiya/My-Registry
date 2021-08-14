@@ -1,45 +1,16 @@
 <form class="form2">
-    <p id="cardschoice" class="centered">What would you like to create?</p>
-    <div class="columns">
-        <div class="column">
-    <!--Wedding registry card-->
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="./images/weddingregistrycard.jpg" alt="Wedding bands">
-    </figure>
+  <p id="cardschoice" class="centered">What would you like to create?</p>
+  <div class="columns">
+    {{#each chooseCategory}}
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <a href="/{{category_name}}/new-registry/" class=""><img src="../images/{{category_name}}-card.jpg" alt="Wedding bands"></a>
+          </figure>
+        </div>
+      </div>
+    </div>
+    {{/each}}
   </div>
-</div>
-</div>
-<div class="column">
-   <!--baby shower registry card-->
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="./images/babyshowercard.jpg" alt="Baby stroller">
-    </figure>
-  </div>
-</div>
-</div>
-<div class="column">
-   <!--birthday wishlist card-->
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="./images/birthdaycard.jpg" alt="Birthday cake">
-    </figure>
-  </div>
-</div>
-</div>
-<div class="column">
-   <!--secret santa card-->
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="./images/secretsantacard.jpg" alt="Santa's Hat">
-    </figure>
-  </div>
-</div>
-</div>
-</div>
 </form>

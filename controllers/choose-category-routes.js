@@ -6,7 +6,8 @@ router.get('/', (req, res) => {
     Category.findAll({
 
     }).then(dbCategoryData => {
-        const chooseCategory = dbCategoryData.map(post => post.get({ plain: true })) 
+        const chooseCategory = dbCategoryData.map(post => post.get({ plain: true })) ;
+        // res.json(chooseCategory);
         res.render('choose-category', { chooseCategory })
     }).catch(err => {
         console.log(err);
