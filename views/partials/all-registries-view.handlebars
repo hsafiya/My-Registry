@@ -1,0 +1,13 @@
+{{!-- partial for all registries view --}}
+<article>
+    <div>
+
+        <p> {{title}} </p>
+        <p> Owner: {{user.username}} </p>
+        <p>
+            {{#each categories}}
+            Category: {{category_name}}
+            {{/each}}
+        </p>
+    </div>
+</article>
