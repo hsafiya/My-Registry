@@ -8,20 +8,19 @@
             <span class="icon is-left">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </span>
-            </p>
+        </p>
         <div class="control">
             <button type="submit" class="button is-primary" id="reg-search-btn">Search</button>
         </div>
-    </div>
+         </div>
     <p class="panel-tabs">
-        <a href="/registries/"class="is-active" id="all">All</a>
-        <a href="/registries/wedding-registries" id="wed" >Wedding</a>
-        <a href="/registries/birthday-registries"id="bday">Birthday</a>
-        <a href="/registries/baby-shower-registries"id="bshower">Baby Shower</a>
-        <a href="/registries/xmas-registries"id="xmas">Secret Santa</a>
+        <a href="/registries/" id="all">All</a>
+        <a href="/registries/wedding-registries" id="wed">Wedding</a>
+        <a href="/registries/birthday-registries" class="is-active" id="bday">Birthday</a>
+             <a href="/registries/baby-shower-registries" id="bshower">Baby Shower</a>
+        <a href="/registries/xmas-registries" id="xmas">Secret Santa</a>
     </p>
-    {{#if registries.length}}
-    {{#each registries }}
+    {{#each catName }}
     <a class="panel-block">
         <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
@@ -29,31 +28,12 @@
         {{>all-registries-view}}
     </a>
     {{/each}}
-
-
-    {{else}}
-    <a class="panel-block">
-        <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-        </span>
-        <div>
-            <p> {{registries.title}} </p>
-            <p> Owner: {{registries.user.username}} </p>
-            <p>
-                {{#each registries.categories}}
-                Category: {{category_name}}
-                {{/each}}
-            </p>
-        </div>
-    </a>
-    {{/if}}
     <div class="panel-block">
         <button class="button is-link is-outlined is-fullwidth">
             Reset all filters
         </button>
     </div>
 </div>
-
 {{>footer}}
 
 <script src="/javascript/registries-page.js"></script>

@@ -1,0 +1,53 @@
+<form class="form3">
+<!--registry name input-->
+<div class="field">
+  <label class="label">Enter your Registry Name</label>
+  <div class="control">
+    <input class="input" id="registry-name" type="text" placeholder="Name">
+  </div>
+</div>
+<!--calendar-->
+ <div class="field">
+    <label class="label">Choose your Event Date</label>
+    <div class="calendar">
+        <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                </span>
+                <span id="year">2021</span>
+                <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+            </div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+        </div>
+        
+        <div class="month-list"></div>
+    </div>
+
+ </div>
+
+<!--registry adress input-->
+<div class="field">
+  <label class="label">Where to send your gifts?</label>
+  <div class="control">
+    <input class="input" id="autocomplete" onfocus="initAutocomplete()"  type="text" placeholder="Address">
+  </div>
+</div>
+<div class="buttons is-pulled-right">
+        <button class="button" id="next">Next</button>
+    </div>
+</form>

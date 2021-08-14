@@ -8,7 +8,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // find all tags
     Registry.findAll({
-        attributes: ['id', 'title','address'],
+        attributes: ['id', 'title', 'address'],
         include: [
             {
                 model: User,
@@ -25,12 +25,10 @@ router.get('/', (req, res) => {
                 model: Item
             }
         ]
-    })
-        .then(dbRegistryData => res.json(dbRegistryData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => res.json(dbRegistryData)).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
@@ -40,7 +38,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'title','address'],
+        attributes: ['id', 'title', 'address'],
         include: [
             {
                 model: User,
@@ -57,18 +55,16 @@ router.get('/:id', (req, res) => {
                 model: Item
             }
         ]
-    })
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // add a registry
@@ -84,15 +80,14 @@ router.post('/', withAuth, (req, res) => {
         title: req.body.title,
         address: req.body.address,
         user_id: req.body.user_id,
-    })
-        .then(dbRegistryData => res.json(dbRegistryData))
+    }).then(dbRegistryData => res.json(dbRegistryData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-    // update a category by its `id` value
+// update a category by its `id` value
 router.put('/:id', withAuth, (req, res) => {
     Registry.update(
         {
@@ -104,38 +99,34 @@ router.put('/:id', withAuth, (req, res) => {
                 id: req.params.id
             }
         }
-    )
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    ).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // delete a registry
-router.delete('/:id',withAuth, (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Registry.destroy({
         where: {
             id: req.params.id
         }
-    })
-        .then(dbRegistryData => {
-            if (!dbRegistryData) {
-                res.status(404).json({ message: 'No registry found with this id' });
-                return;
-            }
-            res.json(dbRegistryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    }).then(dbRegistryData => {
+        if (!dbRegistryData) {
+            res.status(404).json({ message: 'No registry found with this id' });
+            return;
+        }
+        res.json(dbRegistryData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router;
