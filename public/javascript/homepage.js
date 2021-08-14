@@ -5,7 +5,7 @@ function viewAllRegistriesHandler(event) {
 
 function createRegistryHandler(event) {
     event.preventDefault();
-    document.location.replace('/choosecategory/')   
+    document.location.replace('/choose-category/')   
 };
 
 
