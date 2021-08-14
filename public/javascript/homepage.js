@@ -13,6 +13,7 @@ document.querySelector('.allregs1').addEventListener('click', viewAllRegistriesH
 document.querySelector('.allregs2').addEventListener('click', viewAllRegistriesHandler);
 document.querySelector('.allregs3').addEventListener('click', viewAllRegistriesHandler);
 document.querySelector('.allregs4').addEventListener('click', viewAllRegistriesHandler);
+ 
 document.querySelector(".createregistry1").addEventListener('click', createRegistryHandler);
 document.querySelector(".createregistry2").addEventListener('click', createRegistryHandler);
 document.querySelector(".createregistry3").addEventListener('click', createRegistryHandler);
