@@ -77,3 +77,29 @@ router.get('/birthday-registries', (req, res) => {
         res.status(500).json(err);
     })
 });
+
+// baby-shower
+router.get('/baby-shower-registries', (req, res) => {
+    Registry.findAll({
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'username']
+            },
+            {
+                model: Category
+            },
+            {
+                model: Item
+            }
+        ]
+    }).then(dbRegistryData => {
+        const registries = dbRegistryData.map(post => post.get({ plain: true }));
+        const catName = registries.filter(cat => cat.categories[0].category_name === 'baby-shower');
+
+        res.render('bshower-regs', { catName })
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
