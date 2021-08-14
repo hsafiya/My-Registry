@@ -13,3 +13,24 @@
             <button type="submit" class="button is-primary" id="reg-search-btn">Search</button>
         </div>
     </div>
+     <p class="panel-tabs">
+        <a href="/registries/" id="all">All</a>
+        <a href="/registries/wedding-registries" id="wed">Wedding</a>
+        <a href="/registries/birthday-registries" id="bday">Birthday</a>
+        <a href="/registries/baby-shower-registries" class="is-active" id="bshower">Baby Shower</a>
+        <a href="/registries/xmas-registries" id="xmas">Secret Santa</a>
+    </p>
+    {{#each catName }}
+    <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        {{>all-registries-view}}
+    </a>
+    {{/each}}
+    <div class="panel-block">
+        <button class="button is-link is-outlined is-fullwidth">
+            Reset all filters
+        </button>
+    </div>
+</div>
