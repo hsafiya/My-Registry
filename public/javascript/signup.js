@@ -25,8 +25,3 @@ async function signupFormHandler(event) {
 };
 
 document.querySelector('#signup').addEventListener('click', signupFormHandler);
-// redirect to login page
-document.getElementById('login').onclick = function (event) {
-    event.preventDefault();
-    document.location.replace('/login/')
-};
