@@ -17,7 +17,10 @@ router.get('/', (req, res) => {
         ]
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }))
-        res.render('registries', { registries })
+        res.render('registries', {
+            logged: req.session.logged,
+            registries
+        })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -40,7 +43,10 @@ router.get('/', (req, res) => {
             ]
         }).then(dbRegistryData => {
             const registry = dbRegistryData.get({ plain: true });
-            res.render('registries', { registry });
+            res.render('registries', {
+                logged: req.session.logged,
+                registry
+            });
         }).catch(err => {
             console.log(err);
             res.status(500).json(err);
