@@ -96,5 +96,7 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
-
-
+let day_picker = calendar.querySelector('#calendar-days')
+day_picker.onclick = () => {
+    console.log(day_picker)
+}
