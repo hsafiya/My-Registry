@@ -12,10 +12,12 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        if (response.ok) {
-            document.location.replace('/');
-        } else {
+        if (!response.ok) {
             alert(response.statusText);
+        } else {
+            document.location.replace('/');
+            response.render('homepage')
+            
         }
     }
 };
