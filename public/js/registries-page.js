@@ -6,3 +6,5 @@ async function regSearchHandler(event){
        document.location.replace(`/registries/${registryName}`)
     }
 };
+
+document.querySelector('#reg-search-btn').addEventListener('click', regSearchHandler);
