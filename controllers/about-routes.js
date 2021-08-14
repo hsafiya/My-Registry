@@ -1,7 +1,10 @@
 const router = require('express').Router();
 
+const { User, Category, Registry, Item, RegistryCategories } = require('../models')
+
 router.get('/', (req, res) => {
-    about.findAll({
+    Category.findAll({
+
         
     }) .then(dbAboutData => {
         const about = dbAboutData.map(post => post.get({ plain: true }))

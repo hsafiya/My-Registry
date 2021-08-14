@@ -8,10 +8,10 @@ function createRegistryHandler(event) {
     document.location.replace('/choosecategory/')   
 };
 
-// function viewAboutHandler(event) {
-//     event.preventDefault();
-//     document.location.replace('/about/')   
-// };
+function viewAboutHandler(event) {
+    event.preventDefault();
+    document.location.replace('/about/')   
+};
 
 
 document.querySelector('.allregs1').addEventListener('click', viewAllRegistriesHandler);
@@ -24,4 +24,4 @@ document.querySelector(".createregistry2").addEventListener('click', createRegis
 document.querySelector(".createregistry3").addEventListener('click', createRegistryHandler);
 document.querySelector(".createregistry4").addEventListener('click', createRegistryHandler);
 
-//document.querySelector("#about").addEventListener('click', viewAboutHandler);
+document.querySelector("#about").addEventListener('click', viewAboutHandler);
