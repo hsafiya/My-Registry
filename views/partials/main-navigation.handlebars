@@ -4,19 +4,19 @@
   </div>
   <div class="menu">
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
 
       {{#if logged}}
-      <li><a href="/categories">Categories</a></li>
+      <li><a href="#">My Profile</a></li>
       {{/if}}
 
       {{#if logged}}
       <li> <button id="logout" type="submit">Logout</button> </li>
       {{else}}
-      <li><button id="login-redirect">Login</button></li>
-      <li><button id="signup-redirect" type="submit">Sign up</button></li>
+      <li><a href="/login" id="login-redirect">Login</a></li>
+      <li><a href="/signup" id="signup-redirect">Sign up</a></li>
       {{/if}}
 
     </ul>
@@ -25,6 +25,4 @@
 
 {{#if logged}}
 <script src="/javascript/logout.js"></script>
-{{else}}
-<script src="/javascript/redirect.js"></script>
 {{/if}}
