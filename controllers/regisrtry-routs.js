@@ -17,7 +17,14 @@ router.get('/', (req, res) => {
             }
         ]
     }).then(dbRegistryData => {
-        const registries = dbRegistryData.map(post => post.get({ plain: true }))
+        const registries = dbRegistryData.map(post => post.get({ plain: true }));
+        if (req.session.logged) {
+            res.render('registries', {
+                logged: req.session.logged,
+                registries
+            })
+            return;
+        };
         res.render('registries', { registries })
     }).catch(err => {
         console.log(err);
@@ -44,7 +51,13 @@ router.get('/wedding-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'wedding');
-
+        if (req.session.logged) {
+            res.render('wed-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('wed-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -70,6 +83,13 @@ router.get('/birthday-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'birthday');
+        if (req.session.logged) {
+            res.render('bday-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
 
         res.render('bday-regs', { catName })
     }).catch(err => {
@@ -96,7 +116,13 @@ router.get('/baby-shower-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'baby-shower');
-
+        if (req.session.logged) {
+            res.render('bshower-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('bshower-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -122,7 +148,13 @@ router.get('/xmas-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'xmas');
-
+        if (req.session.logged) {
+            res.render('xmas-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('xmas-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -132,7 +164,7 @@ router.get('/xmas-registries', (req, res) => {
 
 // get a registry by title
 router.get('/:title', (req, res) => {
-    Registry.findOne({
+    Registry.findAll({
         where: {
             title: req.params.title
         },
@@ -146,7 +178,14 @@ router.get('/:title', (req, res) => {
             }
         ]
     }).then(dbRegistryData => {
-        const registries = dbRegistryData.get({ plain: true });
+        const registries = dbRegistryData.map(post => post.get({ plain: true }));
+        if (req.session.logged) {
+            res.render('registries', {
+                logged: req.session.logged,
+                registries
+            })
+            return;
+        };
         res.render('registries', { registries });
     }).catch(err => {
         console.log(err);
