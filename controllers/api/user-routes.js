@@ -1,6 +1,10 @@
-const router = require('express').Router();
-const { User, Registry, Category, RegistryCategories } = require('../../models');
-
+const router = require("express").Router();
+const {
+  User,
+  Registry,
+  Category,
+  RegistryCategories,
+} = require("../../models");
 
 // the endpoint: `/api/users`
 
@@ -17,34 +21,34 @@ router.get('/', (req, res) => {
 
 // find one user by id and its registries
 router.get('/:id', (req, res) => {
-    User.findOne({
-        attributes: { exclude: ['password'] },
-        where: {
-            id: req.params.id
-        },
-        include: [
-            {
-                model: Registry,
-                attributes: ['title'],
-                include: [{
-                    model: Category,
-                    attributes: ['category_name'],
-                    through: {
-                        attributes: []
-                    }
-                }]
-            }
-        ]
-    }).then(dbUserData => {
-        if (!dbUserData) {
-            res.status(404).json({ message: 'No user found with this id' });
-            return;
-        }
-        res.json(dbUserData);
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+  User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+          id: req.params.id
+      },
+      include: [
+          {
+              model: Registry,
+              attributes: ['title'],
+              include: [{
+                  model: Category,
+                  attributes: ['category_name'],
+                  through: {
+                      attributes: []
+                  }
+              }]
+          }
+      ]
+  }).then(dbUserData => {
+      if (!dbUserData) {
+          res.status(404).json({ message: 'No user found with this id' });
+          return;
+      }
+      res.json(dbUserData);
+  }).catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 // add a user
@@ -93,26 +97,29 @@ router.post('/login', (req, res) => {
             return;
         };
 
-        req.session.save(() => {
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.logged = true;
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.logged = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!', logged: req.session.logged });
-        });
+      res.json({
+        user: dbUserData,
+        message: "You are now logged in!",
+        logged: req.session.logged,
+      });
     });
+  });
 });
 
 // logout route
-router.post('/logout', (req, res) => {
-    if (req.session.logged) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    }
-    else {
-        res.status(404).end();
-    }
+router.post("/logout", (req, res) => {
+  if (req.session.logged) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 // edit user info
