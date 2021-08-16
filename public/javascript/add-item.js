@@ -1,8 +1,8 @@
 async function newItemHandler(event) {
     event.preventDefault();
 
-    const item_name = document.querySelector('#item-name').value;
-    const item_url = document.querySelector('#item-url').value;
+    const item_name = document.querySelector('input[name="item-name"]').value;
+    const item_url = document.querySelector('input[name="item-url"]').value;
 
     const response = await fetch(`/api/items`, {
         method: 'POST',
@@ -22,4 +22,4 @@ async function newItemHandler(event) {
     }
 }
 
-document.querySelector('#add-item').addEventListener('click', newItemtHandler);
+document.querySelector('#add-item').addEventListener('click', newItemHandler);

@@ -74,7 +74,8 @@ padding: 15px;
 #logout,
 #next,
 #login-redirect,
-#signup-redirect {
+#signup-redirect,
+.btn {
   display: inline-block;
   color: #fff;
   background-color: crimson;
