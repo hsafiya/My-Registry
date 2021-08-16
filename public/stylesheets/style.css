@@ -376,4 +376,6 @@ padding: 15px;
     position: absolute;
     top: 8px;
     left: 16px;
+    font-size: 1.5vw;
+    max-width: 42%;
 }
