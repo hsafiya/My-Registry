@@ -11,6 +11,7 @@ registryDate.addEventListener('focus', function () {
     datepicker('#registry-date', {
         formatter: (input, date, instance) => {
             const value = date.toLocaleDateString();
+            console.log(value);
             input.value = value;
         },
         position: 'c'
