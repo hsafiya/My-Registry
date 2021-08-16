@@ -1,8 +1,8 @@
 async function newItemHandler(event) {
     event.preventDefault();
 
-    const itemName = document.querySelector('#item-name').value;
-    const itemUrl = document.querySelector('#item-url').value;
+    const item_name = document.querySelector('#item-name').value;
+    const item_url = document.querySelector('#item-url').value;
 
     const response = await fetch(`/api/items`, {
         method: 'POST',
