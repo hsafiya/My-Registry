@@ -12,6 +12,6 @@ router.use('/api', apiRoutes);
 router.use('/registries', registryRouts);
 router.use('/about', aboutRoutes);
 router.use('/choose-category', chooseCategory);
-router.use('/create-registry', createRegistry);
+router.use('/*/create-registry/', createRegistry);
 
 module.exports = router;
