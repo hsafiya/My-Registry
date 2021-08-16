@@ -1,36 +1,39 @@
-<form>
+<form class="form">
      <div class="columns">
-         <div class="column is-one-fifth"></div>
-         <div class="column item-form">
-             <div>
-                 
-             </div>
-    <form class="box">
-      <h1 class="has-text-weight-medium is-size-5">Add new item</h1>
+       <div class="column">
+ <div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add new item</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
         <div class="field">
           <label class="label">Item Name</label>
           <div class="control">
-            <input id="item-name" class="input" type="email" placeholder="e.g. Gift Card">
+            <input name="item-name" class="input"  placeholder="e.g. Gift Card">
           </div>
         </div>
       
         <div class="field">
           <label class="label">Item URL</label>
           <div class="control">
-            <input id="item-url" class="input" type="password" placeholder="http://getgifcard.com">
+            <input name="item-url" class="input"  placeholder="http://getgifcard.com">
           </div>
         </div>
-      
-        <button id="add-item" class="button btn">Add Item</button>
-      </form>
-    </div>
-    <div class="column is-one-fifth"></div>
+    </section>
+    <footer class="modal-card-foot">
+      <button id="add-item" class="button btn">Add item</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
 </div>
-
+       </div>       
+</div>
 <div class="columns">
-  <div class="column is-one-fifth"></div>
   <div class="column">
-    {{#if item.length}}
+    {{#if items.length}}
     <section>
              <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
                 <ol>
@@ -44,7 +47,6 @@
                     </section>
             {{/if}}
   </div>
-  <div class="column is-one-fifth"></div>
 </div>
 </form>
 

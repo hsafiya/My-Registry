@@ -53,7 +53,8 @@ nextBtn.addEventListener('click', async function (event) {
             }
         });
         if (addAssociation.ok) {
-            document.location.replace('/')
+            document.location.replace(`/${registryNameValue}/dashboard`)
+            console.log('it worked');
         } else {
             alert(addAssociation.statusText)
         }
