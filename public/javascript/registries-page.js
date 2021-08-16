@@ -8,3 +8,19 @@ async function regSearchHandler(event) {
 };
 
 document.querySelector('#reg-search-btn').addEventListener('click', regSearchHandler);
+
+// select all elements with this class
+const regItems = document.querySelectorAll('.reg-list-item');
+// the function to be used in the event listeners
+const registry = async function(event) {
+        event.preventDefault();
+// getting the name of registry from all data
+    const registryName = await this.textContent.toString().split('\n')[3].trim().split(' ').pop();
+    // redirects to that registry page
+    document.location.replace(`/${registryName}/dashboard`)
+};
+
+Array.from(regItems).forEach(function (element) {
+    element.addEventListener('click', registry);
+});
+
