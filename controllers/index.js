@@ -7,6 +7,7 @@ const aboutRoutes = require('./about-routes');
 const chooseCategory = require('./choose-category-routes');
 const createRegistry = require('./create-registry-routes');
 const contactRoutes = require('./contact-routes');
+const dashboardRoutes = require('./dashboard-routes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
@@ -15,5 +16,6 @@ router.use('/about', aboutRoutes);
 router.use('/choose-category', chooseCategory);
 router.use('/create-registry', createRegistry);
 router.use('/contact', contactRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;
