@@ -19,7 +19,10 @@ Registry.init(
         },
         address: {
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull: false
+        },
+        event_date: {
+            type: DataTypes.DATEONLY
         },
         user_id: {
             type: DataTypes.INTEGER,

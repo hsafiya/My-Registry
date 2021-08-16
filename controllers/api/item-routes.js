@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Registry, Category, Item, User, RegistryCategories } = require('../../models');
+const { Registry, Item } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 

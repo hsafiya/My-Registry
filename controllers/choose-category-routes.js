@@ -15,7 +15,7 @@ router.get('/',withAuth, (req, res) => {
             })
             return;
         };
-        res.render('homepage')
+        res.render('login')
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
