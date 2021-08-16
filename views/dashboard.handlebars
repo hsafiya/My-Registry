@@ -1,0 +1,51 @@
+<form>
+     <div class="columns">
+         <div class="column is-one-fifth"></div>
+         <div class="column item-form">
+             <div>
+                 
+             </div>
+    <form class="box">
+      <h1 class="has-text-weight-medium is-size-5">Add new item</h1>
+        <div class="field">
+          <label class="label">Item Name</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="e.g. Gift Card">
+          </div>
+        </div>
+      
+        <div class="field">
+          <label class="label">Item URL</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="http://getgifcard.com">
+          </div>
+        </div>
+      
+        <button class="button btn">Add Item</button>
+      </form>
+    </div>
+    <div class="column is-one-fifth"></div>
+</div>
+
+<div class="columns">
+  <div class="column is-one-fifth"></div>
+  <div class="column">
+    {{#if item.length}}
+    <section>
+             <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
+                <ol>
+                  {{#each items as |item|}} 
+                  <li>
+                        {{> item-data item}}
+                        <a  href="/dashboard/edit/{{item.id}}" class="button is-danger"> Edit Item</a>
+                    </li>
+                    {{/each}}
+                    </ol>
+                    </section>
+            {{/if}}
+  </div>
+  <div class="column is-one-fifth"></div>
+</div>
+</form>
+
+<script src="/javascript/add-item.js"></script>
