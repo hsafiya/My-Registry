@@ -366,3 +366,14 @@ padding: 15px;
     cursor: pointer;
 }
 
+.image-container {
+    position: relative;
+    text-align: center;
+    color: darkslategrey;
+  }
+
+.contact-us {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
