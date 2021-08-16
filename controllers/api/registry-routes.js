@@ -8,7 +8,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // find all tags
     Registry.findAll({
-        attributes: ['id', 'title', 'address'],
+        attributes: ['id', 'title', 'address', 'event_date'],
         include: [
             {
                 model: User,
@@ -32,13 +32,13 @@ router.get('/', (req, res) => {
 });
 
 
-// find one registry by id, owner, category and ite items
-router.get('/:id', (req, res) => {
+// find one registry by name, showing owner, category and its items
+router.get('/:title', (req, res) => {
     Registry.findOne({
         where: {
-            id: req.params.id
+            title: req.params.title
         },
-        attributes: ['id', 'title', 'address'],
+        attributes: ['id', 'title', 'address', 'event_date'],
         include: [
             {
                 model: User,
@@ -79,7 +79,8 @@ router.post('/', withAuth, (req, res) => {
     Registry.create({
         title: req.body.title,
         address: req.body.address,
-        user_id: req.body.user_id,
+        event_date: req.body.event_date,
+        user_id: req.session.user_id
     }).then(dbRegistryData => res.json(dbRegistryData))
         .catch(err => {
             console.log(err);
@@ -92,7 +93,8 @@ router.put('/:id', withAuth, (req, res) => {
     Registry.update(
         {
             title: req.body.title,
-            address: req.body.address
+            address: req.body.address,
+            event_date:req.body.event_date
         },
         {
             where: {
