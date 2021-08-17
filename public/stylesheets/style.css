@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Prata', serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Prata', serif;
 }
 
 header {
@@ -11,36 +11,39 @@ header {
 }
 
 nav {
-  margin: auto;
-  padding: 0.7rem;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(188, 143, 143, 0.5);
+    margin: auto;
+    padding: 0.7rem;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(188, 143, 143, 0.5);
 }
 
 .navbar {
-  background-color: rgb(188, 143, 143, 0.9);
+    background-color: rgb(188, 143, 143, 0.9);
 }
 
 .form {
-  padding: 5rem 35rem;
-  }
-.form2 {
-    padding: 5rem 25rem;  
+    padding: 5rem 35rem;
 }
+
+.form2 {
+    padding: 5rem 25rem;
+}
+
 .form3 {
-    padding-top: 10rem;  
+    padding-top: 10rem;
     padding-left: 35rem;
     padding-right: 35rem;
 }
-  #form-text {
+
+#form-text {
     padding: 1rem;
 }
-  
-.logo{
+
+.logo {
     width: 20%;
     float: left;
     color: #fff;
@@ -48,7 +51,7 @@ nav {
     font-family: 'Style Script', cursive;
 }
 
-.menu{
+.menu {
     width: 80%;
     float: right;
 }
@@ -63,34 +66,27 @@ nav {
 }
 
 .menu ul li a {
-display: inline-block;
-text-decoration: none;
-color: #fff;
-padding: 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
 }
 
-#login,
-#signup,
-#logout,
-#next,
-#login-redirect,
-#signup-redirect,
-.btn {
-  display: inline-block;
-  color: #fff;
-  background-color: crimson;
-  padding: 5px 15px;
-  border: none;
-  font-size: 1rem;
+#login, #signup, #logout, #next, #login-redirect, #signup-redirect, #update-profile, #delete-profile, #submit-profile, .btn {
+    display: inline-block;
+    color: #fff;
+    background-color: crimson;
+    padding: 5px 15px;
+    border: none;
+    font-size: 1rem;
 }
-.banner-area,
-.single-banner {
+
+.banner-area, .single-banner {
     height: 100vh;
 }
 
 .single-banner {
     position: relative;
-    
 }
 
 .single-banner .banner-img {
@@ -118,13 +114,13 @@ padding: 15px;
     text-transform: uppercase;
     color: #fff;
     margin: 0;
-    }
+}
 
-.banner-text p{
+.banner-text p {
     color: #fff;
 }
 
-.banner-btn a{
+.banner-btn a {
     text-decoration: none;
     background: crimson;
     color: #fff;
@@ -132,18 +128,18 @@ padding: 15px;
     display: inline-block;
 }
 
-.slick-dots{
-  position: absolute;  
-  bottom: 25px;
-  list-style: none;
-  display: block;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+.slick-dots {
+    position: absolute;
+    bottom: 25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
-.slick-dots li{
+.slick-dots li {
     position: relative;
     display: inline-block;
     margin: 0 5px;
@@ -151,7 +147,7 @@ padding: 15px;
     cursor: pointer;
 }
 
-.slick-dots li button{
+.slick-dots li button {
     position: relative;
     background-color: #fff;
     opacity: .25;
@@ -161,7 +157,7 @@ padding: 15px;
     font-size: 0;
 }
 
-.slick-dots li.slick-active button{
+.slick-dots li.slick-active button {
     color: #fff;
     opacity: .75;
 }
@@ -171,8 +167,22 @@ padding: 15px;
     text-align: center;
     padding: 2rem;
 }
-  
+
+/* profile page */
+.form-profile {
+    margin-left: 10rem;
+    /* display: none; */
+}
+
+#delete-profile {
+    position: absolute;
+    right: 3rem;
+    bottom: 1rem
+}
+/* profile ends */
+
 /*calendar*/
+
 .calendar {
     height: 100%;
     width: 100%;
@@ -225,7 +235,7 @@ padding: 15px;
     position: relative;
     cursor: pointer;
     animation: to-top 1s forwards;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .calendar-days div span {
@@ -236,16 +246,13 @@ padding: 15px;
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 }
 
-.calendar-days div span:nth-child(1),
-.calendar-days div span:nth-child(3) {
+.calendar-days div span:nth-child(1), .calendar-days div span:nth-child(3) {
     width: 2px;
     height: 0;
-   background-color: rgb(216, 142, 142);
-   
+    background-color: rgb(216, 142, 142);
 }
 
-.calendar-days div:hover span:nth-child(1),
-.calendar-days div:hover span:nth-child(3) {
+.calendar-days div:hover span:nth-child(1), .calendar-days div:hover span:nth-child(3) {
     height: 100%;
 }
 
@@ -259,16 +266,13 @@ padding: 15px;
     right: 0;
 }
 
-.calendar-days div span:nth-child(2),
-.calendar-days div span:nth-child(4) {
+.calendar-days div span:nth-child(2), .calendar-days div span:nth-child(4) {
     width: 0;
     height: 2px;
     background-color: rgb(216, 142, 142);
-  
 }
 
-.calendar-days div:hover span:nth-child(2),
-.calendar-days div:hover span:nth-child(4) {
+.calendar-days div:hover span:nth-child(2), .calendar-days div:hover span:nth-child(4) {
     width: 100%;
 }
 
@@ -294,8 +298,7 @@ padding: 15px;
     transition-delay: 0.6s;
 }
 
-.calendar-days div.curr-date,
-.calendar-days div.curr-date:hover {
+.calendar-days div.curr-date, .calendar-days div.curr-date:hover {
     background-color: crimson;
     color: white;
     border-radius: 5%;
@@ -312,7 +315,8 @@ padding: 15px;
 }
 
 .month-picker:hover {
-    background-color: rgb(223, 178, 178);;
+    background-color: rgb(223, 178, 178);
+    ;
 }
 
 .year-picker {
@@ -359,7 +363,7 @@ padding: 15px;
     background-color: rgb(226, 214, 214);
 }
 
-.month-list > div > div {
+.month-list>div>div {
     width: 100%;
     padding: 5px 20px;
     border-radius: 10px;
@@ -371,7 +375,7 @@ padding: 15px;
     position: relative;
     text-align: center;
     color: darkslategrey;
-  }
+}
 
 .contact-us {
     position: absolute;
@@ -382,6 +386,7 @@ padding: 15px;
 }
 
 /* Style inputs */
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -389,47 +394,51 @@ input[type=text], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-  }
-  
-  input[type=submit] {
+}
+
+input[type=submit] {
     background-color: crimson;
     color: white;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
+}
+
+input[type=submit]:hover {
     background-color: crimson;
-  }
-  
-  /* Style the container/contact section */
-  
-  /* Create two columns that float next to eachother */
-  .column {
+}
+
+/* Style the container/contact section */
+
+/* Create two columns that float next to eachother */
+
+.column {
     float: left;
     width: 50%;
     margin-top: 6px;
     padding: 20px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+}
+
+/* Clear floats after the columns */
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  .contuctus-cont {
+}
+
+.contuctus-cont {
     box-sizing: border-box;
     border-radius: 5px;
     background-color: #dec7c7;
     padding: 10px;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
     .column, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
+        width: 100%;
+        margin-top: 0;
     }
-  }
+}

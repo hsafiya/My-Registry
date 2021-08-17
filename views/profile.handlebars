@@ -1,40 +1,78 @@
-<div class="box">
+<div class="box" style="margin-top: 100px;">
     <div class="columns">
         {{!-- user overview --}}
-        <div class="column">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        Card header
-                    </p>
-                </header>
+        <div class="column is-5">
+            <div class="card card-profile">
                 <div class="card-content">
                     <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="https://image.flaticon.com/icons/svg/236/236831.svg" alt="Placeholder image">
+                        <div class="media-left ">
+                            <figure class="image is-96x96 is-centered">
+                                <img src="https://image.flaticon.com/icons/png/512/552/552848.png"
+                                    alt="Placeholder image">
                             </figure>
+                            <br>
+                            <button class="button" id="edit-profile-img">Edit Icon</button>
                         </div>
                         <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
+                            <p class="title is-4">{{user.username}}</p>
+                            <p class="subtitle is-6">{{user.email}}</p>
                         </div>
                     </div>
 
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        Phasellus nec iaculis mauris.
                         <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        <br>
+                        <time datetime="2016/1/1">Member since: {{user.created_at}}</time>
+                    </div>
+                    <div class="buttons">
+                        <button class="button " id="delete-profile">DELETE ACCOUNT</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="column">
+
+        <div class="column is-6">
             {{!-- form to update info --}}
-
-        </div>
+            <form class="form-profile">
+                <p id="form-text"> Please enter information to update.</p>
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Username" id="username-update">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email" id="email-update">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" id="password-update">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="buttons is-centered">
+                    <button class="button" id="submit-profile">Update Account Credentials</button>
+                </div>
+            </form>
+         </div>
     </div>
-
 </div>
+
+<script src="/javascript/profile.js"></script>
