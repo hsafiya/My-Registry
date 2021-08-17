@@ -3,7 +3,7 @@ const userId = document.querySelector('#user-id').textContent.trim();
 const updateFormBtn = document.querySelector('#submit-profile');
 const deleteProfile = document.querySelector('#delete-profile');
 
-updateFormBtn.addEventListener('click',async (event) => {
+updateFormBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     const updateUsername = document.querySelector('#username-update').value.trim();
     const updateEmail = document.querySelector('#email-update').value.trim();
@@ -30,6 +30,21 @@ updateFormBtn.addEventListener('click',async (event) => {
 deleteProfile.addEventListener('click', async (event) => {
     event.preventDefault();
 
+    const remove = await fetch(`/api/users/${userId}`, {
+        method: 'DELETE'
+    });
 
-
+    if (remove.ok) {
+        const logout = await fetch('/api/users/logout', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (logout.ok) {
+            document.location.replace('/');
+        } else {
+            alert(logout.statusText);
+        }
+    } else {
+        alert(remove.statusText);
+    }
 })
