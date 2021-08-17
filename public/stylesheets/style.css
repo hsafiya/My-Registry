@@ -213,6 +213,8 @@ nav {
 /* dashboard page */
 .registry-box {
     background-color: rgb(255, 249, 251);
+    margin-top: 4rem;
+    height: 100%;
 }
 
 .btn-dashboard{
