@@ -169,16 +169,17 @@ nav {
 }
 
 /* profile page */
+
 .form-profile {
     margin-left: 10rem;
     /* display: none; */
 }
 
 #delete-profile {
-    position: absolute;
-    right: 3rem;
-    bottom: 1rem
+    float: right;
+    clear: both;
 }
+
 /* profile ends */
 
 /*calendar*/
