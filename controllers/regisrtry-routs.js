@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 
 const { User, Category, Registry, Item, RegistryCategories } = require('../models')
 // get all registries
@@ -166,7 +167,8 @@ router.get('/xmas-registries', (req, res) => {
 router.get('/:title', (req, res) => {
     Registry.findAll({
         where: {
-            title: req.params.title
+            title:
+                sequelize.where(sequelize.fn('LOWER', sequelize.col('title')), 'LIKE', '%' + req.params.title + '%')
         },
         include: [
             {
