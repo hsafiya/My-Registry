@@ -6,6 +6,7 @@ const catName = window.location.toString().split('/')[
     window.location.toString().split('/').length - 3
 ].toLowerCase();
 
+
 registryDate.addEventListener('focus', function () {
     console.log('focused on date');
     datepicker('#registry-date', {
@@ -22,7 +23,7 @@ registryDate.addEventListener('focus', function () {
 nextBtn.addEventListener('click', async function (event) {
     event.preventDefault();
 
-    let registryNameValue = registryName.value.trim();
+    let registryNameValue = (registryName.value.trim().toLowerCase().split(' ')).join('-');
     let registryDateValue = registryDate.value.trim();
     let registryAddressValue = registryAddress.value.trim();
 
