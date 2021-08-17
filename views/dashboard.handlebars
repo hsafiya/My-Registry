@@ -1,53 +1,87 @@
 <form class="form">
-     <div class="columns">
-       <div class="column">
- <div class="modal is-active">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Add new item</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-        <div class="field">
-          <label class="label">Item Name</label>
-          <div class="control">
-            <input name="item-name" class="input"  placeholder="e.g. Gift Card">
+  <div class="box registry-box">
+    <div class="columns">
+      <div class="column">
+        <h1 class="is-size-2 has-text-centered"> Alex and Iryna
+          <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
+          <br> <span>Registry</span>
+        </h1>
+        <div class="has-text-centered">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-calendar-day"></i>
+          </span>
+          <span>09/18/2021 <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date --></span>
+        </span>
+        <span class="icon-text">
+          <span class="icon">
+      <i class="fa-solid fa-gift"></i>
+          </span>
+          <span>13355 US Hwy-183, Austin, TX 78750 <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address --></span>
+        </span>
+        </div>
+        <div class="buttons has-text-centered">
+          <button class="button navbar-start btn add-item">Add item</button>
+          <div class="navbar-end">
+          <button class="button btn-dashboard">Edit Registry</button>
+          <button class="button btn-dashboard">Delete Registry</button>
           </div>
         </div>
-      
-        <div class="field">
-          <label class="label">Item URL</label>
-          <div class="control">
-            <input name="item-url" class="input"  placeholder="http://getgifcard.com">
-          </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal-->
+  <div class="columns">
+    <div class="column">
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Add new item</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <label class="label">Item Name</label>
+              <div class="control">
+                <input name="item-name" class="input" placeholder="e.g. Gift Card">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Item URL</label>
+              <div class="control">
+                <input name="item-url" class="input" placeholder="http://getgifcard.com">
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="add-item" class="button btn">Add item</button>
+            <button class="button">Cancel</button>
+          </footer>
         </div>
-    </section>
-    <footer class="modal-card-foot">
-      <button id="add-item" class="button btn">Add item</button>
-      <button class="button">Cancel</button>
-    </footer>
+      </div>
+    </div>
   </div>
-</div>
-       </div>       
-</div>
-<div class="columns">
-  <div class="column">
-    {{#if items.length}}
-    <section>
-             <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
-                <ol>
-                  {{#each items as |item|}} 
-                  <li>
-                        {{> item-data item}}
-                        <a  href="/dashboard/edit/{{item.id}}" class="button is-danger"> Edit Item</a>
-                    </li>
-                    {{/each}}
-                    </ol>
-                    </section>
-            {{/if}}
+  <div class="columns">
+    <div class="column">
+      {{#if items.length}}
+      <section>
+        <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
+        <ol>
+          {{#each items as |item|}}
+          <li>
+            {{> item-data item}}
+            <a href="/dashboard/edit/{{item.id}}" class="button is-danger"> Edit Item</a>
+          </li>
+          {{/each}}
+        </ol>
+      </section>
+      {{/if}}
+    </div>
   </div>
-</div>
 </form>
 
+<script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
