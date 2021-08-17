@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
         if (req.session.logged) {
             res.render('profile', {
                 user,
-                logged: req.session.logged
+                logged: req.session.logged,
+                user_id: req.session.user_id
             })
             return;
         };
