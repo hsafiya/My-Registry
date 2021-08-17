@@ -8,9 +8,13 @@ header {
     width: 100vw;
     background: black;
     overflow: hidden;
+    
 }
 
 nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
   margin: auto;
   padding: 0.7rem;
   position: fixed;
@@ -19,10 +23,12 @@ nav {
   left: 0;
   right: 0;
   background-color: rgb(188, 143, 143, 0.5);
+  
 }
 
 .navbar {
   background-color: rgb(188, 143, 143, 0.9);
+  
 }
 
 .form {
@@ -46,6 +52,7 @@ nav {
     color: #fff;
     font-size: 2.5rem;
     font-family: 'Style Script', cursive;
+
 }
 
 .menu{
@@ -170,6 +177,7 @@ padding: 15px;
     font-size: 3rem;
     text-align: center;
     padding: 2rem;
+    padding-top: 100px;
 }
   
 /*calendar*/
@@ -432,4 +440,34 @@ input[type=text], select, textarea {
       width: 100%;
       margin-top: 0;
     }
+  }
+
+  @media only screen and (min-width: 319px) {
+
+#login,
+#signup,
+#logout,
+#next,
+#login-redirect,
+#signup-redirect,
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  color: #fff;
+  background-color: crimson;
+  padding: 5px 15px;
+  border: none;
+  font-size: 1rem;
+}
+.logo h2 {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#cardschoice {
+    padding-top: 200px;
+}
+
   }
