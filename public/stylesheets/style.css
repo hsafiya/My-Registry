@@ -323,9 +323,40 @@ nav {
 .item-list-panel-block {
 height:4rem;
 }
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    .banner-area,
+    .single-banner {
+      height: auto;
+      width:auto;
+    }
+    .banner-img img {
+        width: auto;
+        height: 100hv;
+        opacity: 0.6;
+      }
 
-@media screen and (max-width: 600px) {
+
+
+}
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    .banner-area,
+    .single-banner {
+      height: auto;
+      width:auto;
+    }
+    .banner-img img {
+        width: auto;
+        height: 100vh;
+        opacity: 0.6;
+      }
+}
+
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
+@media screen and (max-width: 575px) {
   .column,
   input[type="submit"] {
     width: 100%;
