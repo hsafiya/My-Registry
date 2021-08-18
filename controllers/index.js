@@ -10,7 +10,6 @@ const contactRoutes = require('./contact-routes');
 const dashboardRoutes = require('./dashboard-routes');
 const profileRoutes = require('./profile-routes');
 const ideasRoute = require('./ideas-route');
-const guestDashboardRoutes = require('./guest-dashboard-routes');
 
 
 router.use('/', homeRoutes);
@@ -23,7 +22,6 @@ router.use('/contact', contactRoutes);
 router.use('/*/create-registry/', createRegistry);
 router.use('/*/dashboard', dashboardRoutes);
 router.use('/ideas', ideasRoute);
-router.use('/*/view', guestDashboardRoutes);
 
 
 module.exports = router;
