@@ -56,13 +56,12 @@ nextBtn.addEventListener('click', async function (event) {
             }
         });
         if (addAssociation.ok) {
-            document.location.replace(`/${registryNameValue}/dashboard`)
-            console.log('it worked');
+            document.location.replace(`/registries/${registryNameValue}/dashboard`)
         } else {
             alert(addAssociation.statusText)
         }
     } else {
-        alert("Please make sure all fields are complited")
+        alert("Please make sure all fields are completed")
     }
 });
 

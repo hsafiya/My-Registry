@@ -18,7 +18,7 @@ const registry = async function(event) {
     const registryName = await this.textContent.toString().split('\n')[3].trim().split(' ').pop();
     
     // redirects to that registry page
-    document.location.replace(`/${registryName}/dashboard`)
+    document.location.replace(`/registries/${registryName}/dashboard`)
 };
 
 Array.from(regItems).forEach(function (element) {

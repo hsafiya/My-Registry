@@ -1,6 +1,7 @@
 const registryName = window.location.toString().split('/')[
     window.location.toString().split('/').length - 2
 ].toLowerCase();
+console.log(registryName);
 
 async function newItemHandler(event) {
     event.preventDefault();
@@ -24,7 +25,7 @@ async function newItemHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/${registryName}/dashboard`);
+        document.location.replace(`/registries/${registryName}/dashboard`);
     } else {
         alert(response.statusText);
     }

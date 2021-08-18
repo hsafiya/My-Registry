@@ -24,7 +24,7 @@ const buyItem = async function(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/${registryName}/view`);
+        document.location.replace(`/registries/${registryName}/dashboard`);
     } else {
         alert(response.statusText);
     }

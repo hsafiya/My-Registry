@@ -32,7 +32,7 @@ async function editItemHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace(`/${registryName}/dashboard`);
+            document.location.replace(`/registries/${registryName}/dashboard`);
         } else {
             alert(response.statusText);
         }
@@ -48,7 +48,7 @@ async function editItemHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace(`/${registryName}/dashboard`);
+            document.location.replace(`/registries/${registryName}/dashboard`);
         } else {
             alert(response.statusText);
         }
@@ -64,12 +64,12 @@ async function editItemHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace(`/${registryName}/dashboard`);
+            document.location.replace(`/registries/${registryName}/dashboard`);
         } else {
             alert(response.statusText);
         }
     } else {
-        document.location.replace(`/${registryName}/dashboard`);
+        document.location.replace(`/registries/${registryName}/dashboard`);
     }
 }
 // delete item
@@ -86,7 +86,7 @@ async function deleteItemHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/${registryName}/dashboard`);
+        document.location.replace(`/registries/${registryName}/dashboard`);
     } else {
         alert(response.statusText);
     }

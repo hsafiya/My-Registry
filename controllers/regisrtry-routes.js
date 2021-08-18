@@ -195,4 +195,52 @@ router.get('/:title', (req, res) => {
     })
 });
 
+
+router.get('/:name/dashboard', (req, res) => {
+    Registry.findOne({
+        where: {
+            title: req.params.name
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'username']
+            },
+            {
+                model: Category
+            },
+            {
+                model: Item
+            }
+        ]
+    }).then(dbItemData => {
+        const data = dbItemData.get({ plain: true });
+        const ownerId = data.user_id
+        // res.json(data);
+        console.log(ownerId + '--' + req.session.user_id);
+        if (req.session.logged && req.session.user_id === ownerId) {
+            res.render('dashboard', {
+                logged: req.session.logged,
+                data
+            });
+            return
+        } else if (req.session.logged && req.session.user_id !== ownerId) {
+            res.render('guest-dashboard', {
+                logged: req.session.logged,
+                data
+            });
+            return
+        } else {
+            res.render('login');
+            return
+        }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+
+module.exports = router;
+
 module.exports = router;
