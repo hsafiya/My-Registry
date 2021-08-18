@@ -73,7 +73,7 @@
               <a href="{{item_url}}" target="blank">{{item_name}}</a>
             </div>
             <div class="column is-1">
-              <a href="" class="button is-warning"> <i class="far fa-edit"></i></a>
+              <a href="" class="button is-warning item-edit"> <i class="far fa-edit"></i></a>
             </div>
             <div class="column is-1">
               <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
@@ -128,7 +128,42 @@
       </div>
     </div>
   </div>
+
+  {{!-- edit item modal --}}
+    <div class="columns">
+      <div class="column">
+        <div class="modal modal-edit">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Update item information</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="field">
+                <label class="label">Item Name</label>
+                <div class="control">
+                  <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                </div>
+              </div>
+    
+              <div class="field">
+                <label class="label">Item URL</label>
+                <div class="control">
+                  <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button id="edit-item" class="button btn">Submit</button>
+              <button class="button">Cancel</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 <script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
+<script src="/javascript/item-list.js"></script>
