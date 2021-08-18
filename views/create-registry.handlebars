@@ -1,3 +1,10 @@
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"> <button id="ok-click" class="btn">OK</button></div>
+  </div>
+</div>
 <form class="form3">
 <!--registry name input-->
 <div class="field">
@@ -19,7 +26,7 @@
 <div class="field">
   <label class="label">Where to send your gifts?</label>
   <div class="control">
-    <input class="input" id="autocomplete" {{!onfocus="initAutocomplete()"}} type="text" placeholder="Address">
+    <input class="input registry-address" id="autocomplete" {{!onfocus="initAutocomplete()"}} type="text" placeholder="Address">
   </div>
 </div>
 <div class="buttons is-pulled-right">

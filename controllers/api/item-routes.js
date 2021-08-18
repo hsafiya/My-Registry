@@ -54,6 +54,7 @@ router.post('/', withAuth, (req, res) => {
     Item.create({
         item_name: req.body.item_name,
         item_url: req.body.item_url,
+        registry_id: req.body.registry_id
     }).then(dbItemData => res.json(dbItemData)).catch(err => {
         console.log(err);
         res.status(500).json(err);

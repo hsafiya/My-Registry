@@ -16,7 +16,7 @@ Item.init(
             allowNull: false
         },
         item_url: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 isURL: true
