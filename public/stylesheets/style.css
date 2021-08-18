@@ -242,14 +242,14 @@ nav {
 	display: none;
 	position: fixed;
 	background: #000;
-	border-radius:7px; 
+	border-radius:5px; 
 	width:550px;
 	z-index: 10;
 }
 #dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
-#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
-#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+#dialogbox > div > #dialogboxhead{ background: rgb(188, 143, 143, 0.9); font-size:19px; padding:10px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background: white; padding:20px; color:black; }
+#dialogbox > div > #dialogboxfoot{ background: rgb(188, 143, 143, 0.9); padding:10px; text-align:right; }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
