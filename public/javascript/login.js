@@ -14,6 +14,7 @@ async function loginFormHandler(event) {
         });
         if (!response.ok) {
             alert(response.statusText);
+            // Alert.render;
         } else {
             document.location.replace('/');
             response.render('homepage')
@@ -29,3 +30,5 @@ document.getElementById('signup').onclick = function (event) {
     event.preventDefault();
     document.location.replace('/signup/')
 };
+
+
