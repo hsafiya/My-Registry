@@ -240,6 +240,10 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+
+.add-item {
+    background-color: #f3a6a6;
+}
 /* custom alerts"*/
 #dialogoverlay {
   display: none;
