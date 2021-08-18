@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+.column {
+    text-align: center;
+}
 body {
     margin: 0;
     padding: 0;
