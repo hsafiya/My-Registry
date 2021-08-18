@@ -1,4 +1,6 @@
-<form class="form">
+<div class="box">
+  <div class="columns">
+    <div class="column is-3">
   <div class="box registry-box">
     <div class="columns">
       <div class="column">
@@ -6,7 +8,7 @@
           <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
           <br> <span>Registry</span>
         </h1>
-        <div class="has-text-centered">
+        <div class="has-text-centered my-2">
         <span class="icon-text">
           <span class="icon">
             <i class="fas fa-calendar-day"></i>
@@ -20,15 +22,22 @@
           <span>13355 US Hwy-183, Austin, TX 78750 <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address --></span>
         </span>
         </div>
-        <div class="buttons has-text-centered">
-          <button class="button navbar-start btn add-item">Add item</button>
+        <div class="buttons my-2">
+          <button class="my-2 button navbar-start btn add-item">Add item</button>
           <div class="navbar-end">
-          <button class="button btn-dashboard">Edit Registry</button>
-          <button class="button btn-dashboard">Delete Registry</button>
+          <button class="my-2 button btn-dashboard">Edit Registry</button>
+          <button class="my-2 button btn-dashboard">Delete Registry</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+    </div>
+<div class="column is-1"></div>
+<div class="column is-8">
+  
+</div>
+
   </div>
 
   <!--modal-->
@@ -81,7 +90,7 @@
       {{/if}}
     </div>
   </div>
-</form>
+</div>
 
 <script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
