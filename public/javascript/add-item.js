@@ -8,11 +8,15 @@ async function newItemHandler(event) {
     const item_name = document.querySelector('input[name="item-name"]').value;
     const item_url = document.querySelector('input[name="item-url"]').value;
 
+    const reg = await (await fetch(`/api/registries/${registryName}`)).json();
+    const registry_id = reg.id;
+    
     const response = await fetch(`/api/items`, {
         method: 'POST',
         body: JSON.stringify({
             item_name,
-            item_url
+            item_url,
+            registry_id
         }),
         headers: {
             'Content-Type': 'application/json'

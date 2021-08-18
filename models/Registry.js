@@ -24,6 +24,10 @@ Registry.init(
         event_date: {
             type: DataTypes.DATEONLY
         },
+        publish: {
+            type:DataTypes.BOOLEAN,
+            defaultValue:false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
