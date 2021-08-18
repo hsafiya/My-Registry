@@ -43,89 +43,92 @@
             </div>
           </div>
         </div>
-        {{!-- separator --}}
-        <div class="column is-1"></div>
-        {{!-- item list --}}
-        <div class="column">
-          <div class="box item-list-box">
-            <article class="panel item-list-panel">
-              <p class="panel-heading "> Registry List </p>
-              <p class="panel-block ">
-              <div class="columns">
-                <div class="column">Item</div>
-                <div class="column is-1">Edit</div>
-                <div class="column is-1">Delete</div>
-                <div class="column is-1">Status</div>
-                <div class="column"></div>
 
-              </div>
-              </p>
-
-              {{#if items.length}}
-
-              {{#each items as |item|}}
-              <p class="panel-block">
-              <div class="columns  item-list-panel-block">
-                <div class="column">
-                  <a href="{{item_url}}" target="blank">{{item_name}}</a>
-                </div>
-                <div class="column is-1">
-                  <a href="" class="button is-warning"> <i class="far fa-edit"></i></a>
-                </div>
-                <div class="column is-1">
-                  <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
-                </div>
-                <div class="column is-1">
-                  {{#if bought}}
-                  <i class="far fa-check-circle"></i>
-                  {{else}}
-                  <i class="	fas fa-spinner fa-pulse"></i>
-                  {{/if}}
-                </div>
-                <div class="column"></div>
-              </div>
-              </p>
-              {{/each}}
-              {{/if}}
-            </article>
-          </div>
-        </div>
       </div>
+    </div>
+    {{!-- separator --}}
+    <div class="column is-1"></div>
+    {{!-- item list --}}
+    <div class="column">
+      <div class="box item-list-box">
+        <article class="panel item-list-panel">
+          <p class="panel-heading "> Registry List </p>
+          <p class="panel-block ">
+          <div class="columns">
+            <div class="column">Item</div>
+            <div class="column is-1">Edit</div>
+            <div class="column is-1">Delete</div>
+            <div class="column is-1">Status</div>
+            <div class="column"></div>
 
-      <!--modal-->
-      <div class="columns">
-        <div class="column">
-          <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Add new item</p>
-                <button class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                <div class="field">
-                  <label class="label">Item Name</label>
-                  <div class="control">
-                    <input name="item-name" class="input" placeholder="e.g. Gift Card">
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label class="label">Item URL</label>
-                  <div class="control">
-                    <input name="item-url" class="input" placeholder="http://getgifcard.com">
-                  </div>
-                </div>
-              </section>
-              <footer class="modal-card-foot">
-                <button id="add-item" class="button btn">Add item</button>
-                <button class="button">Cancel</button>
-              </footer>
-            </div>
           </div>
+          </p>
+
+          {{#if items.length}}
+
+          {{#each items as |item|}}
+          <p class="panel-block">
+          <div class="columns  item-list-panel-block">
+            <div class="column">
+              <a href="{{item_url}}" target="blank">{{item_name}}</a>
+            </div>
+            <div class="column is-1">
+              <a href="" class="button is-warning"> <i class="far fa-edit"></i></a>
+            </div>
+            <div class="column is-1">
+              <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
+            </div>
+            <div class="column is-1">
+              {{#if bought}}
+              <i class="far fa-check-circle"></i>
+              {{else}}
+              <i class="	fas fa-spinner fa-pulse"></i>
+              {{/if}}
+            </div>
+            <div class="column"></div>
+          </div>
+          </p>
+          {{/each}}
+          {{/if}}
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!--modal-->
+  <div class="columns">
+    <div class="column">
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Add new item</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <label class="label">Item Name</label>
+              <div class="control">
+                <input name="item-name" class="input" placeholder="e.g. Gift Card">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Item URL</label>
+              <div class="control">
+                <input name="item-url" class="input" placeholder="http://getgifcard.com">
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="add-item" class="button btn">Add item</button>
+            <button class="button">Cancel</button>
+          </footer>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <script src="/javascript/dashboard.js"></script>
-    <script src="/javascript/add-item.js"></script>
+<script src="/javascript/dashboard.js"></script>
+<script src="/javascript/add-item.js"></script>
