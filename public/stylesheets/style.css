@@ -220,6 +220,14 @@ nav {
 .btn-dashboard{
     background-color: rgb(177, 152, 157);
 }
+
+.gift-icon{
+    border: 1px solid rgb(177, 152, 157);
+    border-radius: 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
 @media screen and (max-width: 600px) {
