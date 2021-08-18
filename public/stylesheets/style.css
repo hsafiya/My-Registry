@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 
-.column {
-    text-align: center;
-}
 body {
     margin: 0;
     padding: 0;
@@ -189,8 +186,6 @@ nav {
 
 /* profile ends */
 
-
-
 /* Style the container/contact section */
 
 /* Create two columns that float next to eachother */
@@ -218,14 +213,29 @@ nav {
 }
 
 /* dashboard page */
+
 .registry-box {
     background-color: rgb(255, 249, 251);
     margin-top: 4rem;
-    height: 100%;
+    height: 95%;
 }
 
-.btn-dashboard{
+.btn-dashboard {
     background-color: rgb(177, 152, 157);
+}
+
+.item-list-box {
+    text-align: center;
+    margin-top: 4rem;
+    height: 95%;
+}
+
+.item-list-panel {
+    background-color: rgba(238, 245, 251, 0.671);
+}
+
+.item-list-panel-block {
+height:4rem;
 }
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 

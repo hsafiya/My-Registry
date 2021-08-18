@@ -8,6 +8,7 @@
             <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
               <br> <span>Registry</span>
             </h1>
+            <p>In category: "{{items.0.registry.categories.0.category_name}}"</p>
             <div class="has-text-centered my-2">
               {{!-- event date --}}
               <span class="icon-text">
@@ -40,8 +41,8 @@
     <div class="column is-1"></div>
     {{!-- item list --}}
     <div class="column">
-      <div class="box" style="margin-top: 100px;">
-        <article class="panel is-centered ">
+      <div class="box item-list-box" >
+        <article class="panel item-list-panel">
           <p class="panel-heading "> Registry List </p>
           <p class="panel-block ">
           <div class="columns">
@@ -58,7 +59,7 @@
 
           {{#each items as |item|}}
           <p class="panel-block">
-          <div class="columns">
+          <div class="columns  item-list-panel-block">
             <div class="column">
               <a href="{{item_url}}" target="blank">{{item_name}}</a>
             </div>
@@ -76,15 +77,9 @@
               {{/if}}
             </div>
             <div class="column"></div>
-
           </div>
           </p>
-
-
-
-
           {{/each}}
-
           {{/if}}
         </article>
       </div>
