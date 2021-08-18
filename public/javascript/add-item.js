@@ -27,7 +27,7 @@ async function newItemHandler(event) {
     if (response.ok) {
         document.location.replace(`/registries/${registryName}/dashboard`);
     } else {
-        alert(response.statusText);
+        alert("Make sure all fields are complited");
     }
 }
 
