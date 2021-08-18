@@ -288,7 +288,22 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
- 
+}
+
+.baby-row {
+  background-color: rgb(183, 224, 228);
+}
+
+.wedding-row {
+  background-color: rgb(246, 217, 209);
+}
+
+.birthday-row {
+  background-color: rgb(236, 208, 231);
+}
+.idea-image{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item-list-box {
