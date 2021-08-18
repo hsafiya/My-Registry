@@ -61,7 +61,7 @@ nextBtn.addEventListener('click', async function (event) {
             alert(addAssociation.statusText)
         }
     } else {
-        alert(createReg.statusText)
+        alert("Please make sure all fields are complited")
     }
 });
 
