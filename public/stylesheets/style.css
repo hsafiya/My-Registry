@@ -292,6 +292,10 @@ nav {
 .wedding-row {
   background-color: rgb(246, 217, 209);
 }
+
+.birthday-row {
+  background-color: rgb(236, 208, 231);
+}
 .idea-image{
   margin-left: auto;
   margin-right: auto;
