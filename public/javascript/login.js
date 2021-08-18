@@ -13,10 +13,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (!response.ok) {
-            
             alert("Username and Password didn't match. Please try again.");
-            // alert(response.statusText);
-            // Alert.render;
         } else {
             document.location.replace('/');
             response.render('homepage')
