@@ -24,10 +24,10 @@ router.get('/', (req, res) => {
 
 
 // find one  item
-router.get('/:id', (req, res) => {
+router.get('/:name', (req, res) => {
     Item.findOne({
         where: {
-            id: req.params.id
+            item_name: req.params.name
         },
         attributes: ['id', 'item_name', 'item_url', 'bought', 'registry_id'],
         include: [
@@ -64,11 +64,7 @@ router.post('/', withAuth, (req, res) => {
 
 // update an item
 router.put('/:id', withAuth, (req, res) => {
-    Item.update(
-        {
-            item_name: req.body.item_name,
-            item_url: req.body.item_url,
-        },
+    Item.update(req.body,       
         {
             where: {
                 id: req.params.id

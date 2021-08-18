@@ -7,7 +7,8 @@ const catName = window.location.toString().split('/')[
 ].toLowerCase();
 
 
-registryDate.addEventListener('focus', function () {
+registryDate.addEventListener('focus', function (event) {
+    event.preventDefault();
     console.log('focused on date');
     datepicker('#registry-date', {
         formatter: (input, date, instance) => {
@@ -15,7 +16,7 @@ registryDate.addEventListener('focus', function () {
             console.log(value);
             input.value = value;
         },
-        position: 'c'
+        position: 'br'
     }).calendarContainer.style.setProperty('font-size', '1.2rem');
 
 });
@@ -55,13 +56,12 @@ nextBtn.addEventListener('click', async function (event) {
             }
         });
         if (addAssociation.ok) {
-            document.location.replace(`/${registryNameValue}/dashboard`)
-            console.log('it worked');
+            document.location.replace(`/registries/${registryNameValue}/dashboard`)
         } else {
             alert(addAssociation.statusText)
         }
     } else {
-        alert("Please make sure all fields are complited")
+        alert("Please make sure all fields are completed")
     }
 });
 

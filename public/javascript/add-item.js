@@ -1,12 +1,13 @@
 const registryName = window.location.toString().split('/')[
     window.location.toString().split('/').length - 2
 ].toLowerCase();
+console.log(registryName);
 
 async function newItemHandler(event) {
     event.preventDefault();
 
-    const item_name = document.querySelector('input[name="item-name"]').value;
-    const item_url = document.querySelector('input[name="item-url"]').value;
+    const item_name = document.querySelector('.item-name').value.trim();
+    const item_url = document.querySelector('.item-url').value.trim();
 
     const reg = await (await fetch(`/api/registries/${registryName}`)).json();
     const registry_id = reg.id;
@@ -24,7 +25,7 @@ async function newItemHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/${registryName}/dashboard`);
+        document.location.replace(`/registries/${registryName}/dashboard`);
     } else {
         alert(response.statusText);
     }

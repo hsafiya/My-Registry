@@ -5,19 +5,19 @@
         <div class="columns">
           <div class="column">
             <figure class="image is-128x128 gift-icon is-center">
-              <img class="is-rounded" src="../images/giftsicon.jpg">
+              <img class="is-rounded" src="/images/giftsicon.jpg">
             </figure>
-            <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
+            <h1 class="is-size-2 has-text-centered">{{data.title}}
               <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
               <br> <span>Registry</span>
             </h1>
-            <p>In category: "{{items.0.registry.categories.0.category_name}}"</p>
+            <p>In category: "{{data.categories.0.category_name}}"</p>
             <div class="has-text-centered my-2">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fas fa-calendar-day"></i>
                 </span>
-                <span>{{items.0.registry.event_date}}
+                <span>{{data.event_date}}
                   <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
                 </span>
               </span>
@@ -25,7 +25,7 @@
                 <span class="icon">
                   <i class="fas fa-map-marker-alt"></i>
                 </span>
-                <span>{{items.0.registry.address}}
+                <span>{{data.address}}
                   <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
                 </span>
               </span>
@@ -64,9 +64,9 @@
           </div>
           </p>
 
-          {{#if items.length}}
+          {{#if data.items.length}}
 
-          {{#each items as |item|}}
+          {{#each data.items as |item|}}
           <p class="panel-block">
           <div class="columns  item-list-panel-block">
             <div class="column">
@@ -76,7 +76,7 @@
               <a href="" class="button is-warning item-edit"> <i class="far fa-edit"></i></a>
             </div>
             <div class="column is-1">
-              <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
+              <a href="" class="button is-danger item-delete"><i class="fas fa-minus-circle"></i></a>
             </div>
             <div class="column is-1">
               {{#if bought}}
@@ -109,20 +109,20 @@
             <div class="field">
               <label class="label">Item Name</label>
               <div class="control">
-                <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                <input name="item-name" class="input item-name" placeholder="e.g. Gift Card">
               </div>
             </div>
 
             <div class="field">
               <label class="label">Item URL</label>
               <div class="control">
-                <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                <input name="item-url" class="input item-url" placeholder="http://getgifcard.com">
               </div>
             </div>
           </section>
           <footer class="modal-card-foot">
             <button id="add-item" class="button btn">Add item</button>
-            <button class="button">Cancel</button>
+            <button class="button cancel">Cancel</button>
           </footer>
         </div>
       </div>
@@ -143,20 +143,20 @@
               <div class="field">
                 <label class="label">Item Name</label>
                 <div class="control">
-                  <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                  <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
                 </div>
               </div>
     
               <div class="field">
                 <label class="label">Item URL</label>
                 <div class="control">
-                  <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                  <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
                 </div>
               </div>
             </section>
             <footer class="modal-card-foot">
               <button id="edit-item" class="button btn">Submit</button>
-              <button class="button">Cancel</button>
+              <button class="button cancel">Cancel</button>
             </footer>
           </div>
         </div>
@@ -166,4 +166,4 @@
 
 <script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
-<script src="/javascript/item-list.js"></script>
+<script src="/javascript/edit-item.js"></script>
