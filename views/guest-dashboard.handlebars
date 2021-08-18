@@ -1,0 +1,84 @@
+<div class="box">
+    <div class="columns">
+        <div class="column is-3">
+            <div class="box registry-box">
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image is-128x128 gift-icon is-center">
+                            <img class="is-rounded" src="../images/giftsicon.jpg">
+                        </figure>
+                        <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
+                            <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
+                            <br> <span>Registry</span>
+                        </h1>
+                        <span>In category: "{{items.0.registry.categories.0.category_name}}"</span>
+                        <div class="has-text-centered my-2">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-calendar-day"></i>
+                                </span>
+                                <span>{{items.0.registry.event_date}}
+                                    <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
+                                </span>
+                            </span><br>
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
+                                <span>{{items.0.registry.address}}
+                                    <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
+                                </span>
+                            </span>
+                        </div>                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{!-- separator --}}
+        <div class="column is-1"></div>
+        {{!-- item list --}}
+        <div class="column">
+            <div class="box item-list-box">
+                <article class="panel item-list-panel">
+                    <p class="panel-heading "> Registry List </p>
+                    <p class="panel-block ">
+                    <div class="columns">
+                        <div class="column">Item <span> (Click me)</span></div>
+                        <div class="column ">Choose</div>
+                        <div class="column">Status</div>
+
+                    </div>
+                    </p>
+
+                    {{#if items.length}}
+
+                    {{#each items as |item|}}
+                    <p class="panel-block">
+                    <div class="columns  item-list-panel-block">
+                        <div class="column">
+                            <a href="{{item_url}}" target="blank">{{item_name}}</a>
+                        </div>
+                        <div class="column">
+                            {{#unless bought}}
+                            <a href="" class="button is-warning item-buy"> <i class="far fa-edit"></i></a>
+                            {{/unless}}
+                        </div>
+                        <div class="column">
+                            {{#if bought}}
+                            <i class="far fa-check-circle"></i>
+                            {{else}}
+                            <i class="	fas fa-spinner fa-pulse"></i>
+                            {{/if}}
+                        </div>
+                    </div>
+                    </p>
+                    {{/each}}
+                    {{/if}}
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/guest-dashboard.js"></script>
