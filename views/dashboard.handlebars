@@ -1,43 +1,81 @@
 <div class="box">
   <div class="columns">
     <div class="column is-3">
-  <div class="box registry-box">
-    <div class="columns">
-      <div class="column">
-        <h1 class="is-size-2 has-text-centered"> Alex and Iryna
-          <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
-          <br> <span>Registry</span>
-        </h1>
-        <div class="has-text-centered my-2">
-        <span class="icon-text">
-          <span class="icon">
-            <i class="fas fa-calendar-day"></i>
-          </span>
-          <span>09/18/2021 <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date --></span>
-        </span>
-        <span class="icon-text">
-          <span class="icon">
-      <i class="fa-solid fa-gift"></i>
-          </span>
-          <span>13355 US Hwy-183, Austin, TX 78750 <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address --></span>
-        </span>
-        </div>
-        <div class="buttons my-2">
-          <button class="my-2 button navbar-start btn add-item">Add item</button>
-          <div class="navbar-end">
-          <button class="my-2 button btn-dashboard">Edit Registry</button>
-          <button class="my-2 button btn-dashboard">Delete Registry</button>
+      <div class="box registry-box">
+        <div class="columns">
+          <div class="column">
+            {{!-- registry name --}}
+            <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
+              <br> <span>Registry</span>
+            </h1>
+            <div class="has-text-centered my-2">
+              {{!-- event date --}}
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-calendar-day"></i>
+                </span>
+                <span> {{items.0.registry.event_date}} </span>
+              </span><br>
+              {{!-- event address --}}
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <span> {{items.0.registry.address}} </span>
+              </span>
+            </div>
+            {{!-- footer buttons --}}
+            <div class="buttons my-2">
+              <button class="my-2 button navbar-start btn add-item">Add item</button>
+              <div class="navbar-end">
+                <button class="my-2 button btn-dashboard">Edit Registry</button>
+                <button class="my-2 button btn-dashboard">Delete Registry</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-    </div>
-<div class="column is-1"></div>
-<div class="column is-8">
-  
-</div>
+    {{!-- separator --}}
+    <div class="column is-1"></div>
+    {{!-- item list --}}
+    <div class="column is-8">
+      <div class="box" style="margin-top: 100px;">
+        <p class="panel-heading is-centered "> Registry List </p>
 
+        {{#if items.length}}
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Item Link</th>
+              <th></th>
+              <th></th>
+              <th>Purchase Status</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {{#each items as |item|}}
+            <tr>
+              <td>{{item_name}}</td>
+              <td><a href="{{item_url}}" target="blank">This link will take you to the item</a></td>
+              <td><a href="" class="button is-warning"> <i class="far fa-edit"></i></a> </td>
+              <td><a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a> </td>
+              <td>
+                {{#if bought}}
+                <i class="far fa-check-circle"></i>
+                {{else}}
+                <i class="	fas fa-spinner fa-pulse"></i>
+                {{/if}}
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/if}}
+      </div>
+    </div>
   </div>
 
   <!--modal-->
@@ -71,23 +109,6 @@
           </footer>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column">
-      {{#if items.length}}
-      <section>
-        <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
-        <ol>
-          {{#each items as |item|}}
-          <li>
-            {{> item-data item}}
-            <a href="/dashboard/edit/{{item.id}}" class="button is-danger"> Edit Item</a>
-          </li>
-          {{/each}}
-        </ol>
-      </section>
-      {{/if}}
     </div>
   </div>
 </div>
