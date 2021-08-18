@@ -76,7 +76,7 @@
               <a href="" class="button is-warning item-edit"> <i class="far fa-edit"></i></a>
             </div>
             <div class="column is-1">
-              <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
+              <a href="" class="button is-danger item-delete"><i class="fas fa-minus-circle"></i></a>
             </div>
             <div class="column is-1">
               {{#if bought}}
@@ -109,14 +109,14 @@
             <div class="field">
               <label class="label">Item Name</label>
               <div class="control">
-                <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                <input name="item-name" class="input item-name" placeholder="e.g. Gift Card">
               </div>
             </div>
 
             <div class="field">
               <label class="label">Item URL</label>
               <div class="control">
-                <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                <input name="item-url" class="input item-url" placeholder="http://getgifcard.com">
               </div>
             </div>
           </section>
@@ -143,14 +143,14 @@
               <div class="field">
                 <label class="label">Item Name</label>
                 <div class="control">
-                  <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                  <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
                 </div>
               </div>
     
               <div class="field">
                 <label class="label">Item URL</label>
                 <div class="control">
-                  <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                  <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
                 </div>
               </div>
             </section>
@@ -166,4 +166,5 @@
 
 <script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
-<script src="/javascript/item-list.js"></script>
+{{!-- <script src="/javascript/item-list.js"></script> --}}
+<script src="/javascript/edit-item.js"></script>
