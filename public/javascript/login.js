@@ -13,7 +13,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (!response.ok) {
-            alert(response.statusText);
+            alert("Username and Password didn't match. Please try again.");
         } else {
             document.location.replace('/');
             response.render('homepage')
@@ -29,3 +29,5 @@ document.getElementById('signup').onclick = function (event) {
     event.preventDefault();
     document.location.replace('/signup/')
 };
+
+

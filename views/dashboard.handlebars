@@ -1,38 +1,40 @@
 <div class="box">
   <div class="columns">
     <div class="column is-3">
-      <div class="box registry-box">
-        <div class="columns">
-          <div class="column">
-            {{!-- registry name --}}
-            <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
-              <br> <span>Registry</span>
-            </h1>
-            <div class="has-text-centered my-2">
-              {{!-- event date --}}
-              <span class="icon-text">
-                <span class="icon">
-                  <i class="fas fa-calendar-day"></i>
-                </span>
-                <span> {{items.0.registry.event_date}} </span>
-              </span><br>
-              {{!-- event address --}}
-              <span class="icon-text">
-                <span class="icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </span>
-                <span> {{items.0.registry.address}} </span>
-              </span>
-            </div>
-            {{!-- footer buttons --}}
-            <div class="buttons my-2">
-              <div class="navbar-center">
-                <button class="my-2 button navbar-start btn add-item">Add item</button>
-                <button class="my-2 button btn-dashboard">Edit Registry</button>
-                <button class="my-2 button btn-dashboard">Delete Registry</button>
-              </div>
-            </div>
+  <div class="box registry-box">
+    <div class="columns">
+      <div class="column">
+        <figure class="image is-128x128 gift-icon is-center">
+  <img class="is-rounded" src="../images/giftsicon.jpg">
+</figure>
+        <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
+          <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
+          <br> <span>Registry</span>
+        </h1>
+        <div class="has-text-centered my-2">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-calendar-day"></i>
+          </span>
+          <span>{{items.0.registry.event_date}} <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date --></span>
+        </span>
+        <span class="icon-text">
+          <span class="icon">
+      <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span>{{items.0.registry.address}} <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address --></span>
+        </span>
+        </div>
+        <div class="buttons my-2">
+          <button class="my-2 button navbar-start btn add-item">Add item</button>
+          <div class="navbar-end">
+          <button class="my-2 button btn-dashboard">Edit Registry</button>
+          <button class="my-2 button btn-dashboard">Delete Registry</button>
           </div>
+        </div>
+
+        <div>
+          <h2>Need ideas? <a href="/ideas">Click here</a></h2>
         </div>
       </div>
     </div>
