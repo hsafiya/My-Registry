@@ -1,50 +1,98 @@
 <div class="box">
   <div class="columns">
     <div class="column is-3">
-  <div class="box registry-box">
-    <div class="columns">
-      <div class="column">
-        <figure class="image is-128x128 gift-icon is-center">
-  <img class="is-rounded" src="../images/giftsicon.jpg">
-</figure>
-        <h1 class="is-size-2 has-text-centered"> Alex and Iryna
-          <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
-          <br> <span>Registry</span>
-        </h1>
-        <div class="has-text-centered my-2">
-        <span class="icon-text">
-          <span class="icon">
-            <i class="fas fa-calendar-day"></i>
-          </span>
-          <span>09/18/2021 <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date --></span>
-        </span>
-        <span class="icon-text">
-          <span class="icon">
-      <i class="fas fa-map-marker-alt"></i>
-          </span>
-          <span>13355 US Hwy-183, Austin, TX 78750 <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address --></span>
-        </span>
-        </div>
-        <div class="buttons my-2">
-          <button class="my-2 button navbar-start btn add-item">Add item</button>
-          <div class="navbar-end">
-          <button class="my-2 button btn-dashboard">Edit Registry</button>
-          <button class="my-2 button btn-dashboard">Delete Registry</button>
+      <div class="box registry-box">
+        <div class="columns">
+          <div class="column">
+            <figure class="image is-128x128 gift-icon is-center">
+              <img class="is-rounded" src="../images/giftsicon.jpg">
+            </figure>
+            <h1 class="is-size-2 has-text-centered">{{items.0.registry.title}}
+              <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
+              <br> <span>Registry</span>
+            </h1>
+            <p>In category: "{{items.0.registry.categories.0.category_name}}"</p>
+            <div class="has-text-centered my-2">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-calendar-day"></i>
+                </span>
+                <span>{{items.0.registry.event_date}}
+                  <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
+                </span>
+              </span>
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <span>{{items.0.registry.address}}
+                  <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
+                </span>
+              </span>
+            </div>
+            <div class="buttons my-2">
+              <button class="my-2 button navbar-start btn add-item">Add item</button>
+              <div class="navbar-end">
+                <button class="my-2 button btn-dashboard">Edit Registry</button>
+                <button class="my-2 button btn-dashboard">Delete Registry</button>
+              </div>
+            </div>
+
+            <div>
+              <h2>Need ideas? <a href="/ideas">Click here</a></h2>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h2>Need ideas? <a href="/ideas">Click here</a></h2>
-        </div>
       </div>
     </div>
-  </div>
-    </div>
-<div class="column is-1"></div>
-<div class="column is-8">
-  
-</div>
+    {{!-- separator --}}
+    <div class="column is-1"></div>
+    {{!-- item list --}}
+    <div class="column">
+      <div class="box item-list-box">
+        <article class="panel item-list-panel">
+          <p class="panel-heading "> Registry List </p>
+          <p class="panel-block ">
+          <div class="columns">
+            <div class="column">Item</div>
+            <div class="column is-1">Edit</div>
+            <div class="column is-1">Delete</div>
+            <div class="column is-1">Status</div>
+            <div class="column"></div>
 
+          </div>
+          </p>
+
+          {{#if items.length}}
+
+          {{#each items as |item|}}
+          <p class="panel-block">
+          <div class="columns  item-list-panel-block">
+            <div class="column">
+              <a href="{{item_url}}" target="blank">{{item_name}}</a>
+            </div>
+            <div class="column is-1">
+              <a href="" class="button is-warning item-edit"> <i class="far fa-edit"></i></a>
+            </div>
+            <div class="column is-1">
+              <a href="" class="button is-danger"><i class="fas fa-minus-circle"></i></a>
+            </div>
+            <div class="column is-1">
+              {{#if bought}}
+              <i class="far fa-check-circle"></i>
+              {{else}}
+              <i class="	fas fa-spinner fa-pulse"></i>
+              {{/if}}
+            </div>
+            <div class="column"></div>
+          </div>
+          </p>
+          {{/each}}
+          {{/if}}
+        </article>
+      </div>
+    </div>
   </div>
 
   <!--modal-->
@@ -80,24 +128,42 @@
       </div>
     </div>
   </div>
-  <div class="columns">
-    <div class="column">
-      {{#if items.length}}
-      <section>
-        <h2 class="has-text-weight-medium is-size-5">Registry List</h2>
-        <ol>
-          {{#each items as |item|}}
-          <li>
-            {{> item-data item}}
-            <a href="/dashboard/edit/{{item.id}}" class="button is-danger"> Edit Item</a>
-          </li>
-          {{/each}}
-        </ol>
-      </section>
-      {{/if}}
+
+  {{!-- edit item modal --}}
+    <div class="columns">
+      <div class="column">
+        <div class="modal modal-edit">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Update item information</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="field">
+                <label class="label">Item Name</label>
+                <div class="control">
+                  <input name="item-name" class="input" placeholder="e.g. Gift Card">
+                </div>
+              </div>
+    
+              <div class="field">
+                <label class="label">Item URL</label>
+                <div class="control">
+                  <input name="item-url" class="input" placeholder="http://getgifcard.com">
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button id="edit-item" class="button btn">Submit</button>
+              <button class="button">Cancel</button>
+            </footer>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 
 <script src="/javascript/dashboard.js"></script>
 <script src="/javascript/add-item.js"></script>
+<script src="/javascript/item-list.js"></script>

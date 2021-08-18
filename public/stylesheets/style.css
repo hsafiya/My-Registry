@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -219,6 +223,7 @@ nav {
 }
 
 /* dashboard page */
+
 .registry-box {
   background-color: rgb(255, 249, 251);
   margin-top: 4rem;
@@ -299,6 +304,20 @@ nav {
 .idea-image{
   margin-left: auto;
   margin-right: auto;
+}
+
+.item-list-box {
+    text-align: center;
+    margin-top: 4rem;
+    height: 95%;
+}
+
+.item-list-panel {
+    background-color: rgba(238, 245, 251, 0.671);
+}
+
+.item-list-panel-block {
+height:4rem;
 }
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
