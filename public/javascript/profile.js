@@ -5,6 +5,10 @@ const updateFormBtn = document.querySelector('#submit-profile');
 const deleteProfile = document.querySelector('#delete-profile');
 const cancelBtn = document.querySelectorAll('.cancel');
 const modalImages = document.querySelectorAll('.new-img');
+const confirmDelete = document.querySelector('#confirm-delete');
+const confirmUpdate = document.querySelector('#confirm-update');
+const viewRegistries = document.querySelector('#view-registries');
+
 
 
 updateFormBtn.addEventListener('click', async (event) => {
@@ -28,7 +32,7 @@ updateFormBtn.addEventListener('click', async (event) => {
                     }
                 });
                 if (updateUser.ok) {
-                    document.location.replace('/user/profile');
+                    updateAccModal()
                 } else {
                     alert(updateUser.statusText);
                 }
@@ -44,12 +48,11 @@ updateFormBtn.addEventListener('click', async (event) => {
                 }
             });
             if (updateUser.ok) {
-                document.location.replace('/user/profile');
+                updateAccModal()
             } else {
                 alert(updateUser.statusText);
             }
-        };
-        if (updatePassword){
+        } else if (updatePassword) {
             const updateUser = await fetch(`/api/users/${userId}`, {
                 method: 'PUT',
                 body: JSON.stringify({
@@ -61,29 +64,83 @@ updateFormBtn.addEventListener('click', async (event) => {
                 }
             });
             if (updateUser.ok) {
-                document.location.replace('/user/profile');
+                updateAccModal()
             } else {
                 alert(updateUser.statusText);
             }
-        };
-        const updateUser = await fetch(`/api/users/${userId}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-                username: updateUsername
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        if (updateUser.ok) {
-            document.location.replace('/user/profile');
         } else {
-            alert(updateUser.statusText);
+            const updateUser = await fetch(`/api/users/${userId}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    username: updateUsername
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (updateUser.ok) {
+                updateAccModal()
+            } else {
+                alert(updateUser.statusText);
+            }
+        }
+    } else {
+        if (updateEmail) {
+            if (updatePassword) {
+                const updateUser = await fetch(`/api/users/${userId}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({
+                        email: updateEmail,
+                        password: updatePassword
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (updateUser.ok) {
+                    updateAccModal()
+                } else {
+                    alert(updateUser.statusText);
+                }
+            };
+            const updateUser = await fetch(`/api/users/${userId}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    email: updateEmail
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (updateUser.ok) {
+                updateAccModal()
+            } else {
+                alert(updateUser.statusText);
+            }
+        }
+        else if (updatePassword) {
+            const updateUser = await fetch(`/api/users/${userId}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    password: updatePassword
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (updateUser.ok) {
+                updateAccModal()
+            } else {
+                alert(updateUser.statusText);
+            }
+        }
+        else {
+            return;
         }
     }
 });
-
-deleteProfile.addEventListener('click', async (event) => {
+// delete profile
+const deleteAccHandler = async (event) => {
     event.preventDefault();
 
     const remove = await fetch(`/api/users/${userId}`, {
@@ -103,19 +160,6 @@ deleteProfile.addEventListener('click', async (event) => {
     } else {
         alert(remove.statusText);
     }
-});
-
-// open modal for changing icons
-async function editIconModal(event) {
-    event.preventDefault();
-    let modalEl = document.querySelector(".modal");
-    modalEl.classList.add("is-active");
-}
-// general close modal
-function closeModal(event) {
-    event.preventDefault();
-    let modalEl = document.querySelector(".is-active");
-    modalEl.classList.remove('is-active');
 };
 // edit icon function
 async function editIconHandler(event) {
@@ -135,15 +179,47 @@ async function editIconHandler(event) {
     } else {
         alert(updateUserIcon.statusText);
     }
-}
+};
+// open update info modal
+function updateAccModal() {
+    let modalEl = document.querySelector(".update-acc-modal");
+    modalEl.classList.add("is-active");
+};
+// open delete account modal
+function deleteAccModal(event) {
+    event.preventDefault();
+    let modalEl = document.querySelector(".delete-acc-modal");
+    modalEl.classList.add("is-active");
+};
+// open modal for changing icons
+function editIconModal(event) {
+    event.preventDefault();
+    let modalEl = document.querySelector(".edit-icon-modal");
+    modalEl.classList.add("is-active");
+};
+// general close modal
+function closeModal(event) {
+    event.preventDefault();
+    let modalEl = document.querySelector(".is-active");
+    modalEl.classList.remove('is-active');
+};
+
+
 
 // event listeners
+// redirect to view registries page
+viewRegistries.addEventListener('click', () => document.location.replace('/registries/'))
+// edit icons
 editIcon.addEventListener('click', editIconModal);
-
-Array.from(cancelBtn).forEach((elemnt) => {
-    elemnt.addEventListener('click', closeModal)
-});
-
 Array.from(modalImages).forEach((elemnt) => {
     elemnt.addEventListener('click', editIconHandler)
+});
+// delete
+deleteProfile.addEventListener('click', deleteAccModal);
+confirmDelete.addEventListener('click', deleteAccHandler);
+// update
+confirmUpdate.addEventListener('click', () => document.location.replace('/user/profile'));
+// cancel
+Array.from(cancelBtn).forEach((elemnt) => {
+    elemnt.addEventListener('click', closeModal)
 });

@@ -1,5 +1,6 @@
 const itemEditBtn = document.querySelectorAll('.item-edit');
 const itemDeleteBtn = document.querySelectorAll('.item-delete');
+const itemDeleteConfirm = document.querySelector('#confirm-delete-item');
 let itemName;
 // open edit modal
 const editItem = async function (event) {
@@ -72,6 +73,11 @@ async function editItemHandler(event) {
         document.location.replace(`/registries/${registryName}/dashboard`);
     }
 }
+// delete item modal
+function deleteItemModal(e) {
+    let modalEl = document.querySelector(".delete-item-modal");
+    modalEl.classList.add("is-active");
+}
 // delete item
 async function deleteItemHandler(event) {
     event.preventDefault();
@@ -86,7 +92,7 @@ async function deleteItemHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/registries/${registryName}/dashboard`);
+        deleteItemModal()
     } else {
         alert(response.statusText);
     }
@@ -100,6 +106,10 @@ Array.from(itemEditBtn).forEach(function (element) {
 Array.from(itemDeleteBtn).forEach(function (element) {
     element.addEventListener('click', deleteItemHandler)
 });
+itemDeleteConfirm.addEventListener('click', () => document.location.replace(`/registries/${registryName}/dashboard`)
+ );
+
 document.querySelector('#edit-item').addEventListener('click', editItemHandler);
+
 
 

@@ -5,10 +5,13 @@
 const addItem = document.querySelector(".add-item");
 const cancelBtn = document.querySelectorAll('.cancel');
 const publishBtn = document.querySelector('#publish');
+const deleteRegBtn = document.querySelector('#delete-reg');
+const confirmDelete = document.querySelector('#confirm-delete-reg');
 
-function openModal(event) {
+
+function addItemModal(event) {
   event.preventDefault();
-  let modalEl = document.querySelector(".modal");
+  let modalEl = document.querySelector(".add-item-modal");
   modalEl.classList.add("is-active");
 };
 
@@ -45,10 +48,37 @@ const publishHandler = async function (event) {
   }
 };
 
-addItem.addEventListener('click', openModal);
+// open delete reg modal
+function deleteRegModal(event) {
+  event.preventDefault();
+  let modalEl = document.querySelector(".delete-reg-modal");
+  modalEl.classList.add("is-active");
+};
+// delete registry
+async function deleteRegHandler(event) {
+  event.preventDefault();
+  const reg = await (await fetch(`/api/registries/${registryName}`)).json();
+  const registry_id = reg.id;
 
+  const remove = await fetch(`/api/registries/${registry_id}`, {
+    method: 'DELETE'
+  });
+  if (remove.ok) {
+    document.location.replace('/')
+  } else {
+    alert(remove.statusText)
+  }
+};
+
+// delete
+deleteRegBtn.addEventListener('click', deleteRegModal);
+confirmDelete.addEventListener('click', deleteRegHandler);
+// add item
+addItem.addEventListener('click', addItemModal);
+// cancel modal
 Array.from(cancelBtn).forEach((elemnt) => {
   elemnt.addEventListener('click', closeModal)
 });
-
-publishBtn.addEventListener('click', publishHandler);
+// publish
+if(publishBtn) {
+publishBtn.addEventListener('click', publishHandler)};
