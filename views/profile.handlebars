@@ -7,8 +7,7 @@
                     <div class="media">
                         <div class="media-left ">
                             <figure class="image is-96x96 is-centered">
-                                <img src="{{user.profile_img}}"
-                                    alt="Placeholder image" id="main-profile-img">
+                                <img src="{{user.profile_img}}" alt="Placeholder image" id="main-profile-img">
                             </figure>
                             <br>
                             <button class="button" id="edit-profile-img">Edit Icon</button>
@@ -26,6 +25,7 @@
                     </div>
                     <div class="buttons">
                         <button class="button " id="delete-profile">DELETE ACCOUNT</button>
+                        <button class="button " id="view-registries">View Registries</button>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
     <!--edit icon modal-->
     <div class="columns">
         <div class="column">
-            <div class="modal">
+            <div class="modal edit-icon-modal">
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
@@ -138,6 +138,48 @@
         </div>
     </div>
 
+    {{!-- delete account modal --}}
+    <div class="columns">
+        <div class="column">
+            <div class="modal delete-acc-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Delete Account</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <p class="modal-text"> Are you sure? This action is irreversible!</p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button" id="confirm-delete">Confirm</button>
+                        <button class="button btn cancel">Close</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- update account modal --}}
+    <div class="columns">
+        <div class="column">
+            <div class="modal update-acc-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Information Updated</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <p class="modal-text"> The information has been updated!</p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button" id="confirm-update">Confirm</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="/javascript/profile.js"></script>

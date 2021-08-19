@@ -2,6 +2,10 @@ const registryName = window.location.toString().split('/')[
     window.location.toString().split('/').length - 2
 ].toLowerCase();
 const buyItemBtn = document.querySelectorAll('.item-buy');
+const itemBuyConfirm = document.querySelector('#confirm-buy-item');
+const cancelBtn = document.querySelectorAll('.cancel');
+
+
 let itemName;
 
 const buyItem = async function(event) {
@@ -11,7 +15,6 @@ const buyItem = async function(event) {
     const item_id = item.id;
     let bought = item.bought;
     bought = true;
-    console.log(bought);
 
     const response = await fetch(`/api/items/${item_id}`, {
         method: 'PUT',
@@ -24,14 +27,28 @@ const buyItem = async function(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/registries/${registryName}/dashboard`);
+        buyItemModal();
     } else {
         alert(response.statusText);
     }
 }
 
+// buy item modal
+function buyItemModal(e) {
+    let modalEl = document.querySelector(".buy-item-modal");
+    modalEl.classList.add("is-active");
+};
+// close modal
+function closeModal(event) {
+    event.preventDefault();
+    let modalEl = document.querySelector(".is-active");
+    modalEl.classList.remove('is-active');
+};
 
 // event listeners for buy buttons
 Array.from(buyItemBtn).forEach(function (element) {
     element.addEventListener('click', buyItem)
 });
+
+itemBuyConfirm.addEventListener('click', () => document.location.replace(`/registries/${registryName}/dashboard`)
+);

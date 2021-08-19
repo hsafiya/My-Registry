@@ -10,7 +10,6 @@ const {
 
 // get all users
 router.get('/', (req, res) => {
-    res.redirect('/items/');
     User.findAll({
         // will uncomment this for deployed app
         attributes: { exclude: ['password'] }

@@ -1,9 +1,12 @@
+
  {{>alert}}
+
   <div class="columns">
     <div class="column is-3">
       <div class="box registry-box">
             <figure class="image is-128x128 gift-icon is-center">
-              <img class="is-rounded" src="/images/giftsicon.jpg"><!-- inside quotes, instead of link add {{data.registry_icon}}-->
+              <img class="is-rounded" src="/images/giftsicon.jpg">
+              <!-- inside quotes, instead of link add {{data.registry_icon}}-->
             </figure>
             <h1 class="is-size-2 is-size-4-mobile has-text-centered">{{data.title}}
               <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
@@ -31,23 +34,30 @@
             <div class="buttons my-2">
               <button class="my-2 button navbar-start btn add-item">Add item</button>
               <div class="navbar-end">
-                <button class="my-2 button btn-dashboard ">Edit Registry</button>
-                <button class="my-2 button btn-dashboard">Delete Registry</button>
+
+                <button class="my-2 button btn-dashboard">Edit Registry</button>
+                <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
+
               </div>
             </div>
             <div>
               <h2>Need ideas? <a href="/ideas">Click here</a></h2>
             </div>
-          {{#if data.items.length}}
+            {{#if data.items.length}}
             {{#unless data.publish}}
             <div class="buttons my-2 publish">
-                <button class="my-2 button btn is-fullwidth" id= "publish">Publish My Registry</button>
-             </div>
-             {{/unless}}
-             {{/if}}
+              <button class="my-2 button btn is-fullwidth" id="publish">Publish My Registry</button>
+            </div>
+            {{/unless}}
+            {{/if}}
           </div>
         </div>
-   
+
+
+      </div>
+  
+
+
     {{!-- item list --}}
     <div class="column is-9">
       <div class="item-list-box">
@@ -93,10 +103,10 @@
     </div>
   </div>
 
-  <!--modal-->
+  <!--add item modal-->
   <div class="columns">
     <div class="column">
-      <div class="modal">
+      <div class="modal add-item-modal">
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -128,38 +138,86 @@
   </div>
 
   {{!-- edit item modal --}}
-    <div class="columns is-gapless">
-      <div class="column">
-        <div class="modal modal-edit">
-          <div class="modal-background"></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Update item information</p>
-              <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-              <div class="field">
-                <label class="label">Item Name</label>
-                <div class="control">
-                  <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
-                </div>
+
+  <div class="columns">
+    <div class="column">
+      <div class="modal modal-edit">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Update item information</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <label class="label">Item Name</label>
+              <div class="control">
+                <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
+
               </div>
-    
-              <div class="field">
-                <label class="label">Item URL</label>
-                <div class="control">
-                  <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
-                </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Item URL</label>
+              <div class="control">
+                <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
               </div>
-            </section>
-            <footer class="modal-card-foot">
-              <button id="edit-item" class="button btn">Submit</button>
-              <button class="button cancel">Cancel</button>
-            </footer>
-          </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="edit-item" class="button btn">Submit</button>
+            <button class="button cancel">Cancel</button>
+          </footer>
         </div>
       </div>
     </div>
+  </div>
+
+  {{!-- delete item modal --}}
+  <div class="columns">
+    <div class="column">
+      <div class="modal delete-item-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Delete Item</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <p class="modal-text"> Item removed from the registry!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" id="confirm-delete-item">OK</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {{!-- delete registry modal --}}
+  <div class="columns">
+    <div class="column">
+      <div class="modal delete-reg-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Delete Registry</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <p class="modal-text"> Are you sure? This action is irreversible!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" id="confirm-delete-reg">Confirm</button>
+            <button class="button btn cancel">Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
 {{!-- connecting front-end --}}
