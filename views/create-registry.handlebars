@@ -1,33 +1,40 @@
- {{>alert}}
-<form class="box input-form">
-<!--registry name input-->
-<div class="field">
-  <label class="label">Enter your Registry Name</label>
-  <div class="control">
-    <input class="input" id="registry-name" type="text" placeholder="Name">
-  </div>
-</div>
-<!--calendar-->
- <div class="field">
-    <label class="label">Choose your Event Date</label>
-  <div class="control">
-    <input class="input" id="registry-date" type="text" placeholder="Date">
-  </div>
+{{>alert}}
 
- </div>
+  <div class="columns is-mobile is-centered">
+    <div class="column is-one-third-widescreen is-half-desktop is-three-quarters-tablet is-three-quarters-mobile">
+      <form class="input-form">
+        <!--registry name input-->
+        <div class="field">
+          <label class="label">Enter your Registry Name</label>
+          <div class="control">
+            <input class="input" id="registry-name" type="text" placeholder="Name">
+          </div>
+        </div>
+        <!--calendar-->
+        <div class="field">
+          <label class="label">Choose your Event Date</label>
+          <div class="control">
+            <input class="input" id="registry-date" type="text" placeholder="Date">
+          </div>
+        </div>
 
-<!--registry adress input-->
-<div class="field">
-  <label class="label">Where to send your gifts?</label>
-  <div class="control">
-    <input class="input registry-address" id="autocomplete" {{!onfocus="initAutocomplete()"}} type="text" placeholder="Address">
-  </div>
-</div>
-<div class="buttons is-pulled-right">
-        <p class="banner-btn"><a href="" id="next">Next</a></p>
+        <!--registry adress input-->
+        <div class="field">
+          <label class="label">Where to send your gifts?</label>
+          <div class="control">
+            <input class="input registry-address" id="autocomplete" {{!onfocus="initAutocomplete()" }} type="text"
+              placeholder="Address">
+          </div>
+        </div>
+
+        <div class="buttons is-pulled-right">
+          <p class="banner-btn"><a href="" id="next">Next</a></p>
+        </div>
+      </form>
     </div>
-</div>
-</form>
+  </div>
+
+
 
 {{!-- connecting front-end --}}
 <script src="/javascript/alert.js"></script>
