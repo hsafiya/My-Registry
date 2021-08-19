@@ -15,6 +15,7 @@ header {
 }
 
 nav {
+  display: flex;
   margin: auto;
   padding: 0.7rem;
   position: fixed;
@@ -23,10 +24,6 @@ nav {
   left: 0;
   right: 0;
   background-color: rgb(188, 143, 143, 0.5);
-}
-
-.navbar {
-  background-color: rgb(188, 143, 143, 0.9);
 }
 
 .form {
@@ -46,8 +43,11 @@ nav {
 #form-text {
   padding: 1rem;
 }
+.navbar {
+  background-color: rgb(188, 143, 143, 0.9);
+}
 
-.logo {
+.logo1 {
   width: 20%;
   float: left;
   color: #fff;
@@ -367,4 +367,8 @@ height:4rem;
     width: 100%;
     margin-top: 0;
   }
+  /* .menu {
+    width: 80%;
+    display:flex;
+  } */
 }
