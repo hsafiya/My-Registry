@@ -47,6 +47,10 @@ nav {
   background-color: rgb(188, 143, 143, 0.9);
 }
 
+.navbar-item, 
+.navbar-link {
+color: white;
+}
 .logo1 {
   width: 20%;
   float: left;
@@ -55,7 +59,8 @@ nav {
   font-family: "Style Script", cursive;
 }
 
-.menu {
+
+/* .menu {
   width: 80%;
   float: right;
 }
@@ -74,7 +79,7 @@ nav {
   text-decoration: none;
   color: #fff;
   padding: 15px;
-}
+} */
 
 #login,
 #signup,
