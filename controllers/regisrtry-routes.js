@@ -5,6 +5,9 @@ const { User, Category, Registry, Item, RegistryCategories } = require('../model
 // get all registries
 router.get('/', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -37,6 +40,9 @@ router.get('/', (req, res) => {
 // wedding
 router.get('/wedding-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -69,6 +75,9 @@ router.get('/wedding-registries', (req, res) => {
 // birthday
 router.get('/birthday-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -102,6 +111,9 @@ router.get('/birthday-registries', (req, res) => {
 // baby-shower
 router.get('/baby-shower-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -134,6 +146,9 @@ router.get('/baby-shower-registries', (req, res) => {
 // xmas
 router.get('/xmas-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -166,7 +181,8 @@ router.get('/xmas-registries', (req, res) => {
 // get a registry by title
 router.get('/:title', (req, res) => {
     Registry.findAll({
-        where: {
+        where: {        
+                publish: true,           
             title:
                 sequelize.where(sequelize.fn('LOWER', sequelize.col('title')), 'LIKE', '%' + req.params.title + '%')
         },
@@ -217,7 +233,6 @@ router.get('/:name/dashboard', (req, res) => {
         const data = dbItemData.get({ plain: true });
         const ownerId = data.user_id
         // res.json(data);
-        console.log(ownerId + '--' + req.session.user_id);
         if (req.session.logged && req.session.user_id === ownerId) {
             res.render('dashboard', {
                 logged: req.session.logged,

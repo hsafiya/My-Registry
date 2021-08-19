@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
         }
     }).then(dbUserData => {
         const user = dbUserData.get({plain:true});
+        // res.json(user);
         if (req.session.logged) {
             res.render('profile', {
                 user,

@@ -24,7 +24,7 @@ registryDate.addEventListener('focus', function (event) {
 nextBtn.addEventListener('click', async function (event) {
     event.preventDefault();
 
-    let registryNameValue = (registryName.value.trim().toLowerCase().split(' ')).join('-');
+    let registryNameValue = registryName.value.trim();
     let registryDateValue = registryDate.value.trim();
     let registryAddressValue = registryAddress.value.trim();
 

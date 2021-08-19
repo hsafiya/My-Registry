@@ -28,6 +28,10 @@ Registry.init(
             type:DataTypes.BOOLEAN,
             defaultValue:false
         },
+        registry_icon: {
+            type:DataTypes.STRING,
+            defaultValue:'https://image.flaticon.com/icons/png/512/3835/3835818.png'
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

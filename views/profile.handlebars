@@ -7,8 +7,8 @@
                     <div class="media">
                         <div class="media-left ">
                             <figure class="image is-96x96 is-centered">
-                                <img src="https://image.flaticon.com/icons/png/512/552/552848.png"
-                                    alt="Placeholder image">
+                                <img src="{{user.profile_img}}"
+                                    alt="Placeholder image" id="main-profile-img">
                             </figure>
                             <br>
                             <button class="button" id="edit-profile-img">Edit Icon</button>
@@ -21,12 +21,8 @@
                     </div>
 
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
-                        <br>
-                        <br>
                         <time datetime="2016/1/1">Member since: <br>
-                        <span>{{user.createdAt}}</span></time>
+                            <span>{{format_date user.createdAt}}</span></time>
                     </div>
                     <div class="buttons">
                         <button class="button " id="delete-profile">DELETE ACCOUNT</button>
@@ -73,8 +69,75 @@
                     <button class="button" id="submit-profile">Update Account Credentials</button>
                 </div>
             </form>
-         </div>
+        </div>
     </div>
+
+    <!--edit icon modal-->
+    <div class="columns">
+        <div class="column">
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Choose New Icon</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="columns">
+                            {{!-- girl bw --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/5332/5332123.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                            {{!-- girl --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/4305/4305696.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                            {{!-- woman --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/201/201634.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            {{!-- boy bw --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/5331/5331645.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                            {{!-- boy purple --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/1458/1458201.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                            {{!-- man --}}
+                            <div class="column">
+                                <figure class="image is-96x96 is-centered">
+                                    <img src="https://image.flaticon.com/icons/png/512/236/236831.png"
+                                        alt="Placeholder image" class="new-img">
+                                </figure>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button btn cancel">Close</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script src="/javascript/profile.js"></script>

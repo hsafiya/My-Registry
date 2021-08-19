@@ -15,8 +15,7 @@ const regItems = document.querySelectorAll('.reg-list-item');
 const registry = async function(event) {
         event.preventDefault();
 // getting the name of registry from all data
-    const registryName = await this.textContent.toString().split('\n')[3].trim().split(' ').pop();
-    
+    const registryName = await this.textContent.toString().split('\n')[3].trim().split(':')[1].trim();
     // redirects to that registry page
     document.location.replace(`/registries/${registryName}/dashboard`)
 };

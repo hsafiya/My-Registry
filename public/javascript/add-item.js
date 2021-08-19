@@ -1,7 +1,6 @@
 const registryName = window.location.toString().split('/')[
     window.location.toString().split('/').length - 2
 ].toLowerCase();
-console.log(registryName);
 
 async function newItemHandler(event) {
     event.preventDefault();
