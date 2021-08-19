@@ -8,7 +8,6 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // find all tags
     Registry.findAll({
-        attributes: ['id', 'title', 'address', 'event_date'],
         include: [
             {
                 model: User,
