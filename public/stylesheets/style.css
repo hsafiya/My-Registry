@@ -139,11 +139,17 @@ nav {
   color: #fff;
   opacity: 0.75;
 }
-/*choose category*/
+/*choose category page*/
 #cardschoice {
   font-size: 3rem;
   text-align: center;
   padding: 2rem;
+}
+/*create registry page*/
+.input-form {
+  margin-top: 4rem;
+  margin-left: 35rem;
+  margin-right: 35rem;
 }
 
 
@@ -317,6 +323,15 @@ nav {
   height: 4rem;
 }
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1024px) {
+  .input-form {
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   .banner-area,
   .single-banner {
@@ -327,6 +342,10 @@ nav {
     width: auto;
     height: 100hv;
     opacity: 0.6;
+  }
+  .input-form {
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
@@ -385,6 +404,11 @@ nav {
   color: #fff;
   font-size: 1.5rem;
 }
+
+.input-form {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
@@ -437,7 +461,5 @@ nav {
 .banner-text p {
   font-size: 1rem;
 }
-/* .choice {
 
-} */
 }
