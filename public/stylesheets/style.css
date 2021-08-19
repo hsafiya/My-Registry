@@ -225,8 +225,7 @@ nav {
 
 .registry-box {
   background-color: rgb(255, 249, 251);
-  margin-top: 4rem;
-  height: 100%;
+  height: auto;
 }
 
 .btn-dashboard {
@@ -292,7 +291,9 @@ nav {
   transform: translate(-50%, -50%);
   color: #fff;
 }
-
+.ideas-text{
+  margin-top: 3rem;
+}
 .baby-row {
   background-color: rgb(183, 224, 228);
 }
@@ -315,7 +316,6 @@ nav {
 
 .item-list-box {
   text-align: center;
-  margin-top: 4rem;
   height: 95%;
 }
 
@@ -527,5 +527,22 @@ input[type=submit]:hover {
 .banner-text p {
   font-size: 1rem;
 }
-
+.dashboard-p {
+  display: none;
+}
+.add-item{
+  width: 100%;
+}
+.btn-dashboard {
+width: 47.8%;
+}
+.ideas-text{
+margin-top:1rem;
+}
+#hide{
+  display: none;
+}
+.dashboard-item{
+  font-size: 10px;
+}
 }
