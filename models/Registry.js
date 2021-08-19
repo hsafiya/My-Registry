@@ -30,7 +30,7 @@ Registry.init(
         },
         registry_icon: {
             type:DataTypes.STRING,
-            defaultValue:'https://image.flaticon.com/icons/png/512/3835/3835818.png'
+            defaultValue:'/images/giftsicon.jpg'
         },
         user_id: {
             type: DataTypes.INTEGER,

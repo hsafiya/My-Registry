@@ -184,10 +184,10 @@ nav {
 
 /* profile page */
 
-.form-profile {
-  /* margin-left: 10rem; */
-  /* display: none; */
-}
+/* .form-profile {
+  margin-left: 10rem;
+  display: none;
+} */
 
 #delete-profile {
   float: right;
@@ -492,7 +492,6 @@ input[type=submit]:hover {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 
 @media screen and (max-width: 575px) {
-  .all-registries {}
   .column, input[type="submit"] {
     width: 100%;
     margin-top: 0;
