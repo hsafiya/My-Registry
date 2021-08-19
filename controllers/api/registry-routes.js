@@ -38,7 +38,6 @@ router.get('/:title', (req, res) => {
         where: {
             title: req.params.title
         },
-        attributes: ['id', 'title', 'address', 'event_date'],
         include: [
             {
                 model: User,
@@ -88,14 +87,9 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-// update a category by its `id` value
+// update a registry by its `id` value
 router.put('/:id', withAuth, (req, res) => {
-    Registry.update(
-        {
-            title: req.body.title,
-            address: req.body.address,
-            event_date:req.body.event_date
-        },
+    Registry.update(req.body,         
         {
             where: {
                 id: req.params.id

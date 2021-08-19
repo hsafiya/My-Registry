@@ -217,7 +217,6 @@ router.get('/:name/dashboard', (req, res) => {
         const data = dbItemData.get({ plain: true });
         const ownerId = data.user_id
         // res.json(data);
-        console.log(ownerId + '--' + req.session.user_id);
         if (req.session.logged && req.session.user_id === ownerId) {
             res.render('dashboard', {
                 logged: req.session.logged,
