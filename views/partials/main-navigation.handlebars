@@ -1,28 +1,51 @@
-<nav>
-  <div class="logo1">
-    <h2>MyRegistry</h2>
-  </div>
-  <div class="menu">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-
-      {{#if logged}}
-      <li><a href="/user/profile">My Profile</a></li>
-      {{/if}}
-
-      {{#if logged}}
-      <li> <button id="logout" type="submit">Logout</button> </li>
-      {{else}}
-      <li><a href="/login" id="login-redirect">Login</a></li>
-      <li><a href="/signup" id="signup-redirect">Sign up</a></li>
-      {{/if}}
-
-    </ul>
-  </div>
-  </div>
-</nav>
+ <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <div class="navbar-item logo1">
+        <div>MyRegistry</div>
+      </div>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a href="/" class="navbar-item">
+          Home
+        </a>
+        <a href="/about" class="navbar-item">
+              About
+            </a>
+            <a href="/contact" class="navbar-item">
+              Contact
+            </a>
+        {{#if logged}}
+        <a href="/user/profile" class="navbar-item">
+          My Profile
+        </a>
+        {{/if}}
+      </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            {{#if logged}}
+            <a class="button btn" id="logout">
+              Logout
+            </a>
+            {{else}}
+            <a href="/login" class="button btn" id="login-redirect">
+              Log in
+            </a>
+            <a href="/signup" class="button btn" id="signup-redirect">
+              Sign up
+            </a>
+            {{/if}}
+          </div>
+      </div>
+    </div>
+  </nav>
 
 {{#if logged}}
 <script src="/javascript/logout.js"></script>

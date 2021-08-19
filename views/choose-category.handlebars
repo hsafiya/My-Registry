@@ -1,11 +1,10 @@
-<form class="form2">
-  <p id="cardschoice">What would you like to create?</p>
-  <div class="columns">
+  <div class="has-text-centered is-size-1 my-6 choice is-size-4-mobile">What would you like to create?</div>
+  <div class="columns mx-6">
     {{#each chooseCategory}}
     <div class="column">
       <div class="card">
         <div class="card-image">
-          <figure class="image is-4by3">
+          <figure class="image is-3by2">
             <a href="/{{category_name}}/create-registry/" class=""><img src="../images/{{category_name}}-card.jpg" alt="{{category_name}} representation"></a>
           </figure>
         </div>
@@ -13,4 +12,4 @@
     </div>
     {{/each}}
   </div>
-</form>
+ 
