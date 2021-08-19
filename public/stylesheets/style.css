@@ -183,6 +183,10 @@ nav {
   padding: 2rem;
 }
 
+#cardschoice p {
+  margin-top: 100px;
+}
+
 /* profile page */
 
 .form-profile {
