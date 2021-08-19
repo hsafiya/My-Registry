@@ -51,4 +51,5 @@ Array.from(cancelBtn).forEach((elemnt) => {
   elemnt.addEventListener('click', closeModal)
 });
 
-publishBtn.addEventListener('click', publishHandler);
+if(publishBtn) {
+  publishBtn.addEventListener('click', publishHandler)};
