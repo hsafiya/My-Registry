@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -7,81 +7,44 @@ body {
   padding: 0;
   font-family: "Prata", serif;
 }
-
+/*navbar*/
 header {
   width: 100vw;
   background: black;
   overflow: hidden;
 }
-
 nav {
+  display: flex;
   margin: auto;
   padding: 0.7rem;
-  position: fixed;
+  position: sticky;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgb(188, 143, 143, 0.5);
+  background-color: rgb(188, 143, 143, 0.4);
+  opacity: 0.9;
 }
-
+.navbar {
+  position: sticky;
+}
 .navbar {
   background-color: rgb(188, 143, 143, 0.9);
 }
 
-.form {
-  padding: 5rem 35rem;
+.navbar-item,
+.navbar-link {
+  color: white;
+  text-decoration: none;
 }
 
-.form2 {
-  padding: 5rem 25rem;
-}
-
-.form3 {
-  padding-top: 10rem;
-  padding-left: 35rem;
-  padding-right: 35rem;
-}
-
-#form-text {
-  padding: 1rem;
-}
-
-.logo {
-  width: 20%;
-  float: left;
+.logo1 {
   color: #fff;
   font-size: 2.5rem;
   font-family: "Style Script", cursive;
 }
-
-.menu {
-  width: 80%;
-  float: right;
-}
-
-.menu ul {
-  float: right;
-  list-style: none;
-}
-
-.menu ul li {
-  display: inline-block;
-}
-
-.menu ul li a {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  padding: 15px;
-}
-
-#login,
-#signup,
-#logout,
+/*hero-image-slider*/
 #next,
-#login-redirect,
-#signup-redirect,
 #update-profile,
 #delete-profile,
 #submit-profile,
@@ -176,11 +139,46 @@ nav {
   color: #fff;
   opacity: 0.75;
 }
-
+/*choose category page*/
 #cardschoice {
   font-size: 3rem;
   text-align: center;
   padding: 2rem;
+}
+/*create registry page*/
+.input-form {
+  margin-top: 4rem;
+  margin-left: 35rem;
+  margin-right: 35rem;
+}
+
+
+
+
+
+.form {
+  padding: 5rem 35rem;
+}
+
+.form2 {
+  padding: 5rem 25rem;
+}
+
+.form3 {
+  padding-top: 10rem;
+  padding-left: 35rem;
+  padding-right: 35rem;
+}
+
+#form-text {
+  padding: 1rem;
+}
+
+
+
+
+#cardschoice p {
+  margin-top: 100px;
 }
 
 /* profile page */
@@ -243,7 +241,7 @@ nav {
 }
 
 .add-item {
-    background-color: #f3a6a6;
+  background-color: #f3a6a6;
 }
 /* custom alerts"*/
 #dialogoverlay {
@@ -284,8 +282,8 @@ nav {
 
 /*ideas page*/
 .ideas-hero {
-    background: black;
-    opacity: 1;
+  background: black;
+  opacity: 1;
 }
 .centered {
   position: absolute;
@@ -310,55 +308,174 @@ nav {
 .christmas-row {
   background-color: rgb(254, 247, 156);
 }
-.idea-image{
+.idea-image {
   margin-left: auto;
   margin-right: auto;
 }
 
 .item-list-box {
-    text-align: center;
-    margin-top: 4rem;
-    height: 95%;
+  text-align: center;
+  margin-top: 4rem;
+  height: 95%;
 }
 
 .item-list-panel {
-    background-color: rgba(238, 245, 251, 0.671);
+  background-color: rgba(238, 245, 251, 0.671);
 }
 
 .item-list-panel-block {
-height:4rem;
+  height: 4rem;
 }
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: darkslategrey;
+}
+
+.contact-us {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 1.5vw;
+  max-width: 42%;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: crimson;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: crimson;
+}
+
+/* Style the container/contact section */
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.contuctus-cont {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #dec7c7;
+  padding: 10px;
+}
+
+
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1024px) {
+  .input-form {
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
-    .banner-area,
-    .single-banner {
-      height: auto;
-      width:auto;
-    }
-    .banner-img img {
-        width: auto;
-        height: 100hv;
-        opacity: 0.6;
-      }
-
-
-
+  .banner-area,
+  .single-banner {
+    height: auto;
+    width: auto;
+  }
+  .banner-img img {
+    width: auto;
+    height: 100hv;
+    opacity: 0.6;
+  }
+  .input-form {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
-    .banner-area,
-    .single-banner {
-      height: auto;
-      width:auto;
-    }
-    .banner-img img {
-        width: auto;
-        height: 100vh;
-        opacity: 0.6;
-      }
+  header {
+    width: 100vw;
+   background-image: url(../images/background.jpg);
+    overflow: hidden;
+  }
+  .logo1 {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .banner-area,
+.single-banner {
+  height: 100vh;
+}
+.single-banner .banner-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.banner-img img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
 }
 
+.banner-btn a {
+  text-decoration: none;
+  background: crimson;
+  color: #fff;
+  padding: 15px 25px;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.banner-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
 
+.banner-text h2 {
+  font-size: 55px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 3rem;
+}
+
+.banner-text p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.input-form {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+}
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 @media screen and (max-width: 575px) {
@@ -367,4 +484,48 @@ height:4rem;
     width: 100%;
     margin-top: 0;
   }
+  header {
+    width: 100vw;
+   background-image: url(../images/background.jpg);
+    overflow: hidden;
+  }
+  .logo1 {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .banner-area,
+.single-banner {
+  height: 100vh;
+}
+.single-banner .banner-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.banner-img img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
+.banner-btn a {
+  text-decoration: none;
+  background: crimson;
+  color: #fff;
+  padding: 15px 25px;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.banner-text {
+  top: 50%;
+  left: 50%;
+}
+.banner-text h2 {
+  margin-bottom: 0;
+}
+
+.banner-text p {
+  font-size: 1rem;
+}
+
 }
