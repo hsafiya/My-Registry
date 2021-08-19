@@ -7,6 +7,7 @@ const cancelBtn = document.querySelectorAll('.cancel');
 const modalImages = document.querySelectorAll('.new-img');
 const confirmDelete = document.querySelector('#confirm-delete');
 const confirmUpdate = document.querySelector('#confirm-update');
+const viewRegistries = document.querySelector('#view-registries');
 
 
 
@@ -202,10 +203,12 @@ function closeModal(event) {
     let modalEl = document.querySelector(".is-active");
     modalEl.classList.remove('is-active');
 };
-;
+
 
 
 // event listeners
+// redirect to view registries page
+viewRegistries.addEventListener('click', () => document.location.replace('/registries/'))
 // edit icons
 editIcon.addEventListener('click', editIconModal);
 Array.from(modalImages).forEach((elemnt) => {
