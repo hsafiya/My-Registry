@@ -1,18 +1,15 @@
  {{>alert}}
- <div class="box">
   <div class="columns">
     <div class="column is-3">
       <div class="box registry-box">
-        <div class="columns">
-          <div class="column">
             <figure class="image is-128x128 gift-icon is-center">
               <img class="is-rounded" src="/images/giftsicon.jpg"><!-- inside quotes, instead of link add {{data.registry_icon}}-->
             </figure>
-            <h1 class="is-size-2 has-text-centered">{{data.title}}
+            <h1 class="is-size-2 is-size-4-mobile has-text-centered">{{data.title}}
               <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
               <br> <span>Registry</span>
             </h1>
-            <p>In category: "{{data.categories.0.category_name}}"</p>
+            <p class="dashboard-p">In category: "{{data.categories.0.category_name}}"</p>
             <div class="has-text-centered my-2">
               <span class="icon-text">
                 <span class="icon">
@@ -34,7 +31,7 @@
             <div class="buttons my-2">
               <button class="my-2 button navbar-start btn add-item">Add item</button>
               <div class="navbar-end">
-                <button class="my-2 button btn-dashboard">Edit Registry</button>
+                <button class="my-2 button btn-dashboard ">Edit Registry</button>
                 <button class="my-2 button btn-dashboard">Delete Registry</button>
               </div>
             </div>
@@ -50,22 +47,18 @@
              {{/if}}
           </div>
         </div>
-
-      </div>
-    </div>
    
     {{!-- item list --}}
-    <div class="column">
-      <div class="box item-list-box">
+    <div class="column is-9">
+      <div class="item-list-box">
         <article class="panel item-list-panel">
           <p class="panel-heading "> Registry List </p>
           <p class="panel-block ">
-          <div class="columns">
-            <div class="column">Item</div>
-            <div class="column is-1">Edit</div>
-            <div class="column is-1">Delete</div>
-            <div class="column is-1">Status</div>
-            <div class="column"></div>
+          <div class="columns is-mobile">
+            <div class="column dashboard-item">Item</div>
+            <div class="column dashboard-item is-2">Edit</div>
+            <div class="column dashboard-item is-2">Delete</div>
+            <div class="column dashboard-item is-2">Status</div>
 
           </div>
           </p>
@@ -74,24 +67,23 @@
 
           {{#each data.items as |item|}}
           <p class="panel-block">
-          <div class="columns  item-list-panel-block">
-            <div class="column">
+          <div class="columns  item-list-panel-block is-mobile">
+            <div class="column dashboard-item">
               <a href="{{item_url}}" target="blank">{{item_name}}</a>
             </div>
-            <div class="column is-1">
-              <a href="" class="button is-warning item-edit"> <i class="far fa-edit"></i></a>
+            <div class="column dashboard-item is-2">
+              <a href="" class="button is-warning item-edit dashboard-item"> <i class="far fa-edit"></i></a>
             </div>
-            <div class="column is-1">
-              <a href="" class="button is-danger item-delete"><i class="fas fa-minus-circle"></i></a>
+            <div class="column dashboard-item is-2">
+              <a href="" class="button is-danger item-delete dashboard-item"><i class="fas fa-minus-circle"></i></a>
             </div>
-            <div class="column is-1">
+            <div class="column dashboard-item is-2">
               {{#if bought}}
               <i class="far fa-check-circle"></i>
               {{else}}
               <i class="	fas fa-spinner fa-pulse"></i>
               {{/if}}
             </div>
-            <div class="column"></div>
           </div>
           </p>
           {{/each}}
@@ -136,7 +128,7 @@
   </div>
 
   {{!-- edit item modal --}}
-    <div class="columns">
+    <div class="columns is-gapless">
       <div class="column">
         <div class="modal modal-edit">
           <div class="modal-background"></div>
@@ -168,8 +160,8 @@
         </div>
       </div>
     </div>
-</div>
 
+</div>
 {{!-- connecting front-end --}}
 <script src="/javascript/alert.js"></script>
 <script src="/javascript/dashboard.js"></script>
