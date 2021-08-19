@@ -177,6 +177,10 @@ nav {
 
 
 
+#cardschoice p {
+  margin-top: 100px;
+}
+
 /* profile page */
 
 .form-profile {
@@ -322,6 +326,68 @@ nav {
 .item-list-panel-block {
   height: 4rem;
 }
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: darkslategrey;
+}
+
+.contact-us {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 1.5vw;
+  max-width: 42%;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: crimson;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: crimson;
+}
+
+/* Style the container/contact section */
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.contuctus-cont {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #dec7c7;
+  padding: 10px;
+}
+
+
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 1024px) {
   .input-form {
