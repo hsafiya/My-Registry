@@ -329,6 +329,12 @@ nav {
 height:4rem;
 }
 
+.image-container {
+  position: relative;
+  text-align: center;
+  color: darkslategrey;
+}
+
 .contact-us {
   position: absolute;
   top: 8px;
