@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Registry, Category, Item, User, RegistryCategories } = require('../../models');
+const { Registry, Item } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -24,10 +24,10 @@ router.get('/', (req, res) => {
 
 
 // find one  item
-router.get('/:id', (req, res) => {
+router.get('/:name', (req, res) => {
     Item.findOne({
         where: {
-            id: req.params.id
+            item_name: req.params.name
         },
         attributes: ['id', 'item_name', 'item_url', 'bought', 'registry_id'],
         include: [
@@ -54,6 +54,7 @@ router.post('/', withAuth, (req, res) => {
     Item.create({
         item_name: req.body.item_name,
         item_url: req.body.item_url,
+        registry_id: req.body.registry_id
     }).then(dbItemData => res.json(dbItemData)).catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -63,11 +64,7 @@ router.post('/', withAuth, (req, res) => {
 
 // update an item
 router.put('/:id', withAuth, (req, res) => {
-    Item.update(
-        {
-            item_name: req.body.item_name,
-            item_url: req.body.item_url,
-        },
+    Item.update(req.body,       
         {
             where: {
                 id: req.params.id

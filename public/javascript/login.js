@@ -12,10 +12,12 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        if (response.ok) {
-            document.location.replace('/');
+        if (!response.ok) {
+            alert("Username and Password didn't match. Please try again.");
         } else {
-            alert(response.statusText);
+            document.location.replace('/');
+            response.render('homepage')
+            
         }
     }
 };
@@ -27,3 +29,5 @@ document.getElementById('signup').onclick = function (event) {
     event.preventDefault();
     document.location.replace('/signup/')
 };
+
+

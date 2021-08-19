@@ -1,0 +1,47 @@
+<div class="panel">
+    <p class="panel-heading">
+        All registries
+    </p>
+    <div class="panel-block has-addons is-centered">
+        <p class="control has-icons-left is-expanded">
+            <input class="input" id="reg-search" type="text" placeholder="Search">
+            <span class="icon is-left">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+        </p>
+        <div class="control">
+            <button type="submit" class="button is-danger" id="reg-search-btn">Search</button>
+        </div>
+    </div>
+    <p class="panel-tabs ">
+        <a href="/registries/" id="all">All</a>
+        <a href="/registries/wedding-registries" class="is-active " id="wed">Wedding</a>
+        <a href="/registries/birthday-registries" id="bday">Birthday</a>
+        <a href="/registries/baby-shower-registries" id="bshower">Baby Shower</a>
+        <a href="/registries/xmas-registries" id="xmas">Secret Santa</a>
+    </p>
+    {{#if catName.length}}
+    {{#each catName }}
+    <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        {{>all-registries-view}}
+    </a>
+    {{/each}}
+    {{else}}
+    <a class="panel-block">
+        <span class="panel-icon">
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+        </span>
+        No Registries found.
+        <span class="panel-icon">
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+        </span>
+    </a>
+    {{/if}}
+</div>
+
+{{>footer}}
+
+<script src="/javascript/registries-page.js"></script>

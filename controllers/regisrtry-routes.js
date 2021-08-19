@@ -1,9 +1,13 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 
 const { User, Category, Registry, Item, RegistryCategories } = require('../models')
 // get all registries
 router.get('/', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -17,7 +21,14 @@ router.get('/', (req, res) => {
             }
         ]
     }).then(dbRegistryData => {
-        const registries = dbRegistryData.map(post => post.get({ plain: true }))
+        const registries = dbRegistryData.map(post => post.get({ plain: true }));
+        if (req.session.logged) {
+            res.render('registries', {
+                logged: req.session.logged,
+                registries
+            })
+            return;
+        };
         res.render('registries', { registries })
     }).catch(err => {
         console.log(err);
@@ -29,6 +40,9 @@ router.get('/', (req, res) => {
 // wedding
 router.get('/wedding-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -44,7 +58,13 @@ router.get('/wedding-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'wedding');
-
+        if (req.session.logged) {
+            res.render('wed-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('wed-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -55,6 +75,9 @@ router.get('/wedding-registries', (req, res) => {
 // birthday
 router.get('/birthday-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -70,6 +93,13 @@ router.get('/birthday-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'birthday');
+        if (req.session.logged) {
+            res.render('bday-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
 
         res.render('bday-regs', { catName })
     }).catch(err => {
@@ -81,6 +111,9 @@ router.get('/birthday-registries', (req, res) => {
 // baby-shower
 router.get('/baby-shower-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -96,7 +129,13 @@ router.get('/baby-shower-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'baby-shower');
-
+        if (req.session.logged) {
+            res.render('bshower-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('bshower-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -107,6 +146,9 @@ router.get('/baby-shower-registries', (req, res) => {
 // xmas
 router.get('/xmas-registries', (req, res) => {
     Registry.findAll({
+        where: {
+            publish: true
+        },
         include: [
             {
                 model: User,
@@ -122,7 +164,13 @@ router.get('/xmas-registries', (req, res) => {
     }).then(dbRegistryData => {
         const registries = dbRegistryData.map(post => post.get({ plain: true }));
         const catName = registries.filter(cat => cat.categories[0].category_name === 'xmas');
-
+        if (req.session.logged) {
+            res.render('xmas-regs', {
+                logged: req.session.logged,
+                catName
+            })
+            return;
+        };
         res.render('xmas-regs', { catName })
     }).catch(err => {
         console.log(err);
@@ -132,9 +180,11 @@ router.get('/xmas-registries', (req, res) => {
 
 // get a registry by title
 router.get('/:title', (req, res) => {
-    Registry.findOne({
-        where: {
-            title: req.params.title
+    Registry.findAll({
+        where: {        
+                publish: true,           
+            title:
+                sequelize.where(sequelize.fn('LOWER', sequelize.col('title')), 'LIKE', '%' + req.params.title + '%')
         },
         include: [
             {
@@ -146,12 +196,66 @@ router.get('/:title', (req, res) => {
             }
         ]
     }).then(dbRegistryData => {
-        const registries = dbRegistryData.get({ plain: true });
+        const registries = dbRegistryData.map(post => post.get({ plain: true }));
+        if (req.session.logged) {
+            res.render('registries', {
+                logged: req.session.logged,
+                registries
+            })
+            return;
+        };
         res.render('registries', { registries });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
 });
+
+
+router.get('/:name/dashboard', (req, res) => {
+    Registry.findOne({
+        where: {
+            title: req.params.name
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'username']
+            },
+            {
+                model: Category
+            },
+            {
+                model: Item
+            }
+        ]
+    }).then(dbItemData => {
+        const data = dbItemData.get({ plain: true });
+        const ownerId = data.user_id
+        // res.json(data);
+        if (req.session.logged && req.session.user_id === ownerId) {
+            res.render('dashboard', {
+                logged: req.session.logged,
+                data
+            });
+            return
+        } else if (req.session.logged && req.session.user_id !== ownerId) {
+            res.render('guest-dashboard', {
+                logged: req.session.logged,
+                data
+            });
+            return
+        } else {
+            res.render('login');
+            return
+        }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+
+module.exports = router;
 
 module.exports = router;

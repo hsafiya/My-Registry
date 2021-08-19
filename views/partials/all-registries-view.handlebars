@@ -1,13 +1,19 @@
 {{!-- partial for all registries view --}}
-<article>
+<article class="reg-list-item">
     <div>
 
-        <p> {{title}} </p>
-        <p> Owner: {{user.username}} </p>
-        <p>
+        <p class= "reg-title"> Registry name: {{title}} </p>
+        <p class= "username"> Owner: {{user.username}} </p>
+        <p class= "category">
             {{#each categories}}
             Category: {{category_name}}
             {{/each}}
         </p>
+        {{#if event_date}}
+        <p class= "event-date">Event Date: {{event_date}}</p>
+        {{else}}
+        <p>This event does not have a specific date</p>
+        {{/if}}
+        
     </div>
 </article>

@@ -3,23 +3,27 @@ const { Registry } = require('../models');
 
 const regdata = [
     {
-        title: '1st',
-        address: '123 add str, city st',    
+        title: 'victor and co',
+        address: '123 add str, city st', 
+        publish:1,
         user_id: 1
     },
     {
         title: '2nd',
         address: '123 add str, city st',
+        publish: 1,
         user_id: 2
     },
     {
         title: '3rd',
         address: '123 add str, city st',
+        publish: 1,
         user_id: 1
     },
     {
         title: '4th',
         address: '123 add str, city st',
+        publish: 1,
         user_id: 2
     }
 ];

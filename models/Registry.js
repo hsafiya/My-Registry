@@ -19,7 +19,18 @@ Registry.init(
         },
         address: {
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull: false
+        },
+        event_date: {
+            type: DataTypes.DATEONLY
+        },
+        publish: {
+            type:DataTypes.BOOLEAN,
+            defaultValue:false
+        },
+        registry_icon: {
+            type:DataTypes.STRING,
+            defaultValue:'/images/giftsicon.jpg'
         },
         user_id: {
             type: DataTypes.INTEGER,

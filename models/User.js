@@ -39,6 +39,10 @@ User.init(
             validate: {
                 len: [6]
             }
+        },
+        profile_img: {
+            type: DataTypes.STRING,
+            defaultValue: "https://image.flaticon.com/icons/png/512/552/552848.png"
         }
     },
     {
@@ -55,7 +59,7 @@ User.init(
             }
         },
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'user'

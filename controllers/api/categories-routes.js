@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
         });
 });
 
-// get one category by id
-router.get('/:id', (req, res) => {
+// get one category by name
+router.get('/:name', (req, res) => {
     Category.findOne({
         where: {
-            id: req.params.id
+            category_name: req.params.name
         }
     }).then(data => res.json(data)).catch(err => {
         console.log(err);
