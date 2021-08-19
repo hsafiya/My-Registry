@@ -3,7 +3,7 @@ const { RegistryCategories } = require('../models');
 
 const regcatdata = [
     {
-        category_id: 1,
+        category_id: 4,
         registry_id: 1
     },
     {

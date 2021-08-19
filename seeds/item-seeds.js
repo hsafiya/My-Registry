@@ -16,7 +16,7 @@ const itemData = [
     {
         item_name: 'Music',
         item_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
-        bought: 0,
+        bought: 1,
         registry_id: 2
        },
     {
@@ -28,7 +28,7 @@ const itemData = [
     {
         item_name: 'Shoes',
         item_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
-        bought: 0,
+        bought: 1,
         registry_id: 1
         }
 ];
