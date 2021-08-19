@@ -1,221 +1,218 @@
+{{>alert}}
 
- {{>alert}}
+<div class="columns is-desktop ">
+  <div class="column is-4">
+    <div class="registry-box is-centered">
+      <figure class="image is-128x128 gift-icon is-center">
+        <img class="is-rounded" src="/images/giftsicon.jpg">
+        <!-- inside quotes, instead of link add {{data.registry_icon}}-->
+      </figure>
+      <h1 class="is-size-2 is-size-4-mobile has-text-centered">{{data.title}}
+        <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
+        <br> <span>Registry</span>
+      </h1>
+      <p class="dashboard-p">In category: "{{data.categories.0.category_name}}"</p>
+      <div class="has-text-centered my-2">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-calendar-day"></i>
+          </span>
+          <span>{{data.event_date}}
+            <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
+          </span>
+        </span><br>
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span>{{data.address}}
+            <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
+          </span>
+        </span>
+      </div>
+      <div class="">
+        <button class="my-2 button btn add-item">Add item</button>
+        <div class="field is-grouped is-grouped-centered mx-3 reg-btn">
+          <p class="control">
+          <button class="my-2 button btn-dashboard">Edit Registry</button>
+          </p>
+          <p class="control">
+          <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>Need ideas? <a href="/ideas">Click here</a></h2>
+      </div>
+      {{#if data.items.length}}
+      {{#unless data.publish}}
+      <div class="buttons my-2 publish">
+        <button class="my-2 button btn is-fullwidth" id="publish">Publish My Registry</button>
+      </div>
+      {{/unless}}
+      {{/if}}
+    </div>
+  </div>
 
-  <div class="columns">
-    <div class="column is-3">
-      <div class="box registry-box">
-            <figure class="image is-128x128 gift-icon is-center">
-              <img class="is-rounded" src="/images/giftsicon.jpg">
-              <!-- inside quotes, instead of link add {{data.registry_icon}}-->
-            </figure>
-            <h1 class="is-size-2 is-size-4-mobile has-text-centered">{{data.title}}
-              <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
-              <br> <span>Registry</span>
-            </h1>
-            <p class="dashboard-p">In category: "{{data.categories.0.category_name}}"</p>
-            <div class="has-text-centered my-2">
-              <span class="icon-text">
-                <span class="icon">
-                  <i class="fas fa-calendar-day"></i>
-                </span>
-                <span>{{data.event_date}}
-                  <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
-                </span>
-              </span><br>
-              <span class="icon-text">
-                <span class="icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </span>
-                <span>{{data.address}}
-                  <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
-                </span>
-              </span>
-            </div>
-            <div class="buttons my-2">
-              <button class="my-2 button navbar-start btn add-item">Add item</button>
-              <div class="navbar-end">
+  {{!-- item list --}}
+  <div class="column">
+    <div class="item-list-box">
+      <article class="panel item-list-panel">
+        <p class="panel-heading "> Registry List </p>
+        <p class="panel-block ">
+        <div class="columns is-mobile">
+          <div class="column dashboard-item">Item</div>
+          <div class="column dashboard-item is-2">Edit</div>
+          <div class="column dashboard-item is-2">Delete</div>
+          <div class="column dashboard-item is-2">Status</div>
+        </div>
+        </p>
 
-                <button class="my-2 button btn-dashboard">Edit Registry</button>
-                <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
+        {{#if data.items.length}}
 
-              </div>
-            </div>
-            <div>
-              <h2>Need ideas? <a href="/ideas">Click here</a></h2>
-            </div>
-            {{#if data.items.length}}
-            {{#unless data.publish}}
-            <div class="buttons my-2 publish">
-              <button class="my-2 button btn is-fullwidth" id="publish">Publish My Registry</button>
-            </div>
-            {{/unless}}
+        {{#each data.items as |item|}}
+        <p class="panel-block">
+        <div class="columns  item-list-panel-block is-mobile">
+          <div class="column dashboard-item">
+            <a href="{{item_url}}" target="blank">{{item_name}}</a>
+          </div>
+          <div class="column dashboard-item is-2">
+            <a href="" class="button is-warning item-edit dashboard-item"> <i class="far fa-edit"></i></a>
+          </div>
+          <div class="column dashboard-item is-2">
+            <a href="" class="button is-danger item-delete dashboard-item"><i class="fas fa-minus-circle"></i></a>
+          </div>
+          <div class="column dashboard-item is-2">
+            {{#if bought}}
+            <i class="far fa-check-circle"></i>
+            {{else}}
+            <i class="	fas fa-spinner fa-pulse"></i>
             {{/if}}
           </div>
         </div>
+        </p>
+        {{/each}}
+        {{/if}}
+      </article>
+    </div>
+  </div>
+</div>
 
 
-      </div>
-  
 
-
-    {{!-- item list --}}
-    <div class="column is-9">
-      <div class="item-list-box">
-        <article class="panel item-list-panel">
-          <p class="panel-heading "> Registry List </p>
-          <p class="panel-block ">
-          <div class="columns is-mobile">
-            <div class="column dashboard-item">Item</div>
-            <div class="column dashboard-item is-2">Edit</div>
-            <div class="column dashboard-item is-2">Delete</div>
-            <div class="column dashboard-item is-2">Status</div>
-
-          </div>
-          </p>
-
-          {{#if data.items.length}}
-
-          {{#each data.items as |item|}}
-          <p class="panel-block">
-          <div class="columns  item-list-panel-block is-mobile">
-            <div class="column dashboard-item">
-              <a href="{{item_url}}" target="blank">{{item_name}}</a>
-            </div>
-            <div class="column dashboard-item is-2">
-              <a href="" class="button is-warning item-edit dashboard-item"> <i class="far fa-edit"></i></a>
-            </div>
-            <div class="column dashboard-item is-2">
-              <a href="" class="button is-danger item-delete dashboard-item"><i class="fas fa-minus-circle"></i></a>
-            </div>
-            <div class="column dashboard-item is-2">
-              {{#if bought}}
-              <i class="far fa-check-circle"></i>
-              {{else}}
-              <i class="	fas fa-spinner fa-pulse"></i>
-              {{/if}}
+<!--add item modal-->
+<div class="columns">
+  <div class="column">
+    <div class="modal add-item-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Add new item</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Item Name</label>
+            <div class="control">
+              <input name="item-name" class="input item-name" placeholder="e.g. Gift Card">
             </div>
           </div>
-          </p>
-          {{/each}}
-          {{/if}}
-        </article>
-      </div>
-    </div>
-  </div>
 
-  <!--add item modal-->
-  <div class="columns">
-    <div class="column">
-      <div class="modal add-item-modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Add new item</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <div class="field">
-              <label class="label">Item Name</label>
-              <div class="control">
-                <input name="item-name" class="input item-name" placeholder="e.g. Gift Card">
-              </div>
+          <div class="field">
+            <label class="label">Item URL</label>
+            <div class="control">
+              <input name="item-url" class="input item-url" placeholder="http://getgifcard.com">
             </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="add-item" class="button btn">Add item</button>
+          <button class="button cancel">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="field">
-              <label class="label">Item URL</label>
-              <div class="control">
-                <input name="item-url" class="input item-url" placeholder="http://getgifcard.com">
-              </div>
+{{!-- edit item modal --}}
+
+<div class="columns">
+  <div class="column">
+    <div class="modal modal-edit">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Update item information</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Item Name</label>
+            <div class="control">
+              <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
+
             </div>
-          </section>
-          <footer class="modal-card-foot">
-            <button id="add-item" class="button btn">Add item</button>
-            <button class="button cancel">Cancel</button>
-          </footer>
-        </div>
-      </div>
-    </div>
-  </div>
+          </div>
 
-  {{!-- edit item modal --}}
-
-  <div class="columns">
-    <div class="column">
-      <div class="modal modal-edit">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Update item information</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <div class="field">
-              <label class="label">Item Name</label>
-              <div class="control">
-                <input name="item-name" class="input edit-item-name" placeholder="e.g. Gift Card">
-
-              </div>
+          <div class="field">
+            <label class="label">Item URL</label>
+            <div class="control">
+              <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
             </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="edit-item" class="button btn">Submit</button>
+          <button class="button cancel">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="field">
-              <label class="label">Item URL</label>
-              <div class="control">
-                <input name="item-url" class="input edit-item-url" placeholder="http://getgifcard.com">
-              </div>
-            </div>
-          </section>
-          <footer class="modal-card-foot">
-            <button id="edit-item" class="button btn">Submit</button>
-            <button class="button cancel">Cancel</button>
-          </footer>
-        </div>
+{{!-- delete item modal --}}
+<div class="columns">
+  <div class="column">
+    <div class="modal delete-item-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Delete Item</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <p class="modal-text"> Item removed from the registry!</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button" id="confirm-delete-item">OK</button>
+        </footer>
       </div>
     </div>
   </div>
 
-  {{!-- delete item modal --}}
-  <div class="columns">
-    <div class="column">
-      <div class="modal delete-item-modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Delete Item</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <p class="modal-text"> Item removed from the registry!</p>
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button" id="confirm-delete-item">OK</button>
-          </footer>
-        </div>
-      </div>
-    </div>
+</div>
 
-  </div>
-
-  {{!-- delete registry modal --}}
-  <div class="columns">
-    <div class="column">
-      <div class="modal delete-reg-modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Delete Registry</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <p class="modal-text"> Are you sure? This action is irreversible!</p>
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button" id="confirm-delete-reg">Confirm</button>
-            <button class="button btn cancel">Close</button>
-          </footer>
-        </div>
+{{!-- delete registry modal --}}
+<div class="columns">
+  <div class="column">
+    <div class="modal delete-reg-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Delete Registry</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <p class="modal-text"> Are you sure? This action is irreversible!</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button" id="confirm-delete-reg">Confirm</button>
+          <button class="button btn cancel">Close</button>
+        </footer>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
