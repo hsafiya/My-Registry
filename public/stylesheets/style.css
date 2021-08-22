@@ -9,7 +9,7 @@ body {
 }
 
 /*navbar*/
-
+/* 
 header {
   width: 100vw;
   background: black;
@@ -21,7 +21,7 @@ nav {
   margin: auto;
   padding: 0.7rem;
   position: sticky;
-  z-index: 100;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
@@ -49,19 +49,7 @@ nav {
   font-family: "Style Script", cursive;
 }
 
-/*hero-image-slider*/
-
-#next, #update-profile, #delete-profile, #submit-profile, .btn {
-  display: inline-block;
-  color: #fff;
-  background-color: crimson;
-  /* padding: 5px 15px; */
-  border: none;
-  font-size: 1rem;
-  border-radius: 5px;
-}
-
-
+/*hero-image-slider
 
 .banner-area, .single-banner {
   height: 100vh;
@@ -142,7 +130,150 @@ nav {
 .slick-dots li.slick-active button {
   color: #fff;
   opacity: 0.75;
+} */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  z-index : 1000;
 }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  opacity: 0;
+  color: white;
+  text-align: center;
+}
+
+.slide .content h1 {
+    font-size: 55px;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  /* transition: all 0.7s ease-in-out 0.3s; */
+}
+
+.banner-btn a {
+    text-decoration: none;
+    background: crimson;
+    color: #fff;
+    padding: 15px 25px;
+    display: inline-block;
+  }
+
+.buttons-home button#next {
+ display:none;
+}
+
+.buttons-home button#prev {
+    display:none;
+}
+
+.buttons-home button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons-home button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Backgorund Images */
+ 
+.slide:first-child {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/wedding.jpg') no-repeat
+  center top/cover;
+}
+.slide:nth-child(2) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/babyshower.jpg') no-repeat
+    center top/cover;
+}
+.slide:nth-child(3) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/birthday.jpg') no-repeat
+    center top/cover;
+}
+.slide:nth-child(4) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/christmas.png') no-repeat
+    center top/cover;
+}
+
+
+/*navbar*/
+#next, #update-profile, #delete-profile, #submit-profile, .btn {
+  display: inline-block;
+  color: #fff;
+  background-color: crimson;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+header {
+    width: 100vw;
+    background: black;
+    overflow: hidden;
+  }
+  
+  .navbar {
+    background-color: rgb(188, 143, 143, 0.9);
+    background-attachment: fixed;
+    display: flex;
+    margin: auto;
+    padding: 0.7rem;
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+    display: flex;
+  }
+  
+  
+  .navbar-item, .navbar-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: "Style Script", cursive;
+  }
+
+
+
+
+
 
 /*choose category page*/
 
@@ -402,7 +533,7 @@ input[type=submit]:hover {
   padding: 10px;
 }
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
 
 @media screen and (max-width: 1024px) {
   .input-form {
@@ -412,9 +543,9 @@ input[type=submit]:hover {
   }
 }
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/*MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 
-@media screen and (max-width: 980px) {
+ @media screen and (max-width: 980px) {
   .banner-area, .single-banner {
     height: auto;
     width: auto;
@@ -428,12 +559,11 @@ input[type=submit]:hover {
     margin-left: 5rem;
     margin-right: 5rem;
   }
-}
+} 
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
-
-@media screen and (max-width: 768px) {
-  header {
+  @media screen and (max-width: 768px) {
+   header {
     width: 100vw;
     background-image: url(../images/background.jpg);
     overflow: hidden;
@@ -487,7 +617,7 @@ input[type=submit]:hover {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-}
+}  
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 
