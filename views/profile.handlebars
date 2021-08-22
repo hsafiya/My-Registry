@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box categ-reg">
     <div class="columns">
         {{!-- user overview --}}
         <div class="column is-5">
@@ -24,8 +24,8 @@
                             <span>{{format_date user.createdAt}}</span></time>
                     </div>
                     <div class="buttons">
-                        <button class="button " id="delete-profile">DELETE ACCOUNT</button>
-                        <button class="button " id="view-registries">View Registries</button>
+                        <button class="button btn" id="delete-profile">DELETE ACCOUNT</button>
+                        <button class="button btn" id="view-registries">View Registries</button>
                     </div>
                 </div>
             </div>
@@ -181,5 +181,5 @@
         </div>
     </div>
 </div>
-
+{{>footer}}
 <script src="/javascript/profile.js"></script>

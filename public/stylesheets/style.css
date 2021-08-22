@@ -8,131 +8,7 @@ body {
   font-family: "Prata", serif;
 }
 
-/*navbar*/
-
-/* 
-header {
-  width: 100vw;
-  background: black;
-  overflow: hidden;
-}
-
-nav {
-  display: flex;
-  margin: auto;
-  padding: 0.7rem;
-  position: sticky;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(188, 143, 143, 0.4);
-  opacity: 0.9;
-}
-
-.navbar {
-  position: sticky;
-}
-
-.navbar {
-  background-color: rgb(188, 143, 143, 0.9);
-}
-
-
-.navbar-item, .navbar-link {
-  color: white;
-  text-decoration: none;
-}
-
-.logo1 {
-  color: #fff;
-  font-size: 2.5rem;
-  font-family: "Style Script", cursive;
-}
-
-/*hero-image-slider
-
-.banner-area, .single-banner {
-  height: 100vh;
-}
-
-.single-banner {
-  position: relative;
-}
-
-.single-banner .banner-img {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.banner-img img {
-  width: 100%;
-  height: 100vh;
-  opacity: 0.6;
-}
-
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.banner-text h2 {
-  font-size: 55px;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0;
-}
-
-.banner-text p {
-  color: #fff;
-}
-
-.banner-btn a {
-  text-decoration: none;
-  background: crimson;
-  color: #fff;
-  padding: 15px 25px;
-  display: inline-block;
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: 25px;
-  list-style: none;
-  display: block;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.slick-dots li {
-  position: relative;
-  display: inline-block;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer;
-}
-
-.slick-dots li button {
-  position: relative;
-  background-color: #fff;
-  opacity: 0.25;
-  width: 50px;
-  height: 3px;
-  padding: 0;
-  font-size: 0;
-}
-
-.slick-dots li.slick-active button {
-  color: #fff;
-  opacity: 0.75;
-} */
-
+/*hero section slides*/
 .slider {
   position: relative;
   overflow: hidden;
@@ -172,11 +48,6 @@ nav {
   margin: 0;
 }
 
-/* .slide.current .content-home {
-  opacity: 1;
-  transform: translate(-50%, -50%);
-} */
-
 .slides-btn {
   text-decoration: none;
   background: crimson;
@@ -187,7 +58,6 @@ nav {
   font-family: "Prata", serif;
   cursor: pointer;
   z-index: 1001;
-  /* background-color: transparent; */
   border: none;
   border-radius: 5px;
 }
@@ -196,54 +66,42 @@ nav {
   color: #333;
 }
 
-/* .buttons-home {
- padding-bottom: 1.2rem;
-} */
-
-/* .buttons-home button#create-reg {
-  position: absolute;
-  top: 57%;
-  right: 50%;
-}*/
-
-/* #view-reg {
-margin-bottom: 1.2rem;
-} */
-
-/* .buttons-home button {
-  cursor: pointer;
-  z-index: 1001;
-  background-color: transparent;
-  border: none;
-} */
-
 /* Backgorund Images */
 
 .slide:first-child {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/wedding.jpg') no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../images/wedding.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(2) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/babyshower.jpg') no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../images/babyshower.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(3) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/birthday.jpg') no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../images/birthday.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(4) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/christmas.png') no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../images/christmas.png") no-repeat center top/cover;
 }
 
 /*navbar*/
 
-#next, #update-profile, #delete-profile, #submit-profile, .btn {
+#next,
+#update-profile,
+#delete-profile,
+#submit-profile,
+.btn {
   display: inline-block;
   color: #fff;
   background-color: crimson;
   border: none;
   font-size: 1rem;
   border-radius: 5px;
+  font-family: "Prata", serif;
 }
 
 header {
@@ -276,7 +134,8 @@ header {
   margin-right: 2rem;
 }
 
-.navbar-item, .navbar-link {
+.navbar-item,
+.navbar-link {
   color: white;
   text-decoration: none;
 }
@@ -286,7 +145,20 @@ header {
   font-size: 2.5rem;
   font-family: "Style Script", cursive;
 }
+/*footer*/
+.footer-home {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 10%;
+  background-color: rgb(245, 221, 221);
+}
 
+.footer-text {
+  top: 50%;
+  left: 50%;
+}
 /*choose category page*/
 
 #cardschoice {
@@ -294,13 +166,38 @@ header {
   text-align: center;
   padding: 2rem;
 }
+/*view all registries page*/
+.all-registries {
+  margin-top: 100px;
+}
+
+/*categ registries pages*/
+.categ-reg {
+  margin-top: 100px;
+}
+.categ-choice {
+  color: #333;
+}
+
+.categ-choice:hover {
+  color: crimson;
+}
 
 /*create registry page*/
+.banner-btn a {
+  text-decoration: none;
+  background: crimson;
+  color: #fff;
+  padding: 10px 25px;
+  margin-top: 2rem;
+  display: inline-block;
+}
 
+.create-categ {
+  margin-top: 200px;
+}
 .input-form {
   margin-top: 4rem;
-  /* margin-left: 35rem; */
-  /* margin-right: 35rem; */
 }
 
 .form {
@@ -327,42 +224,9 @@ header {
 
 /* profile page */
 
-/* .form-profile {
-  margin-left: 10rem;
-  display: none;
-} */
-
 #delete-profile {
   float: right;
   clear: both;
-}
-
-/* profile ends */
-
-/* Style the container/contact section */
-
-/* Create two columns that float next to eachother */
-
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-
-/* Clear floats after the columns */
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.contuctus-cont {
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #fbeaea;
-  padding: 10px;
 }
 
 /* dashboard page */
@@ -388,45 +252,9 @@ header {
   background-color: #f3a6a6;
   width: 100%;
 }
-
-/* custom alerts"*/
-
-#dialogoverlay {
-  display: none;
-  opacity: 0.8;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: rgb(0, 0, 0);
-  width: 100%;
-  z-index: 10;
+.reg-list {
+  background-color: rgb(177, 152, 157);
 }
-
-#dialogbox {
-  display: none;
-  position: fixed;
-  background: linear-gradient( to bottom 90deg, rgb(255, 249, 250) 0%, rgb(255, 217, 224) 100%);
-  width: 550px;
-  z-index: 10;
-}
-
-#dialogbox>div {
-  background: #fff;
-  margin: 8px;
-}
-
-#dialogbox>div>#dialogboxbody {
-  background: white;
-  padding: 20px;
-  color: black;
-}
-
-#dialogbox>div>#dialogboxfoot {
-  background: rgb(188, 143, 143, 0.9);
-  padding: 10px;
-  text-align: right;
-}
-
 /*ideas page*/
 
 .ideas-hero {
@@ -485,6 +313,26 @@ header {
   text-align: center;
   color: darkslategrey;
 }
+/* Style the container/contact section */
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.contuctus-cont {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fbeaea;
+  padding: 10px;
+}
 
 .contact-us {
   position: absolute;
@@ -496,16 +344,15 @@ header {
 
 /* Style inputs */
 
-input[type=text], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%;
-  /* padding: 12px; */
   border: 1px solid #ccc;
-  /* margin-top: 6px; */
-  /* margin-bottom: 16px; */
   resize: vertical;
 }
 
-input[type=submit] {
+input[type="submit"] {
   background-color: crimson;
   color: white;
   padding: 12px 20px;
@@ -513,7 +360,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: crimson;
 }
 
@@ -558,19 +405,47 @@ input[type=submit]:hover {
   background-color: #dec7c7;
   padding: 10px;
 }
+/* custom alerts"*/
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
+#dialogoverlay {
+  display: none;
+  opacity: 0.8;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  z-index: 10;
+}
 
-/* @media screen and (max-width: 1224px) {
-  .buttons-home button#create-reg {
-    top: 65%;
-    right: 50%;
-  }
-  .buttons-home button#view-reg {
-    top: 65%;
-    right: 50%;
-  }
-} */
+#dialogbox {
+  display: none;
+  position: fixed;
+  background: linear-gradient(
+    to bottom 90deg,
+    rgb(255, 249, 250) 0%,
+    rgb(255, 217, 224) 100%
+  );
+  width: 550px;
+  z-index: 10;
+}
+
+#dialogbox > div {
+  background: #fff;
+  margin: 8px;
+}
+
+#dialogbox > div > #dialogboxbody {
+  background: white;
+  padding: 20px;
+  color: black;
+}
+
+#dialogbox > div > #dialogboxfoot {
+  background: rgb(188, 143, 143, 0.9);
+  padding: 10px;
+  text-align: right;
+}
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
 
@@ -603,47 +478,11 @@ input[type=submit]:hover {
     width: 100%;
     font-size: 1.5rem;
   }
-  .banner-area, .single-banner {
+  .banner-area,
+  .single-banner {
     height: 100vh;
   }
-  .single-banner .banner-img {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  .banner-img img {
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
-  }
-  .banner-btn a {
-    text-decoration: none;
-    background: crimson;
-    color: #fff;
-    padding: 15px 25px;
-    margin-top: 2rem;
-    display: inline-block;
-  }
-  .banner-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  }
-  .banner-text h2 {
-    font-size: 55px;
-    text-transform: uppercase;
-    color: #fff;
-    margin: 0;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    margin-bottom: 3rem;
-  }
-  .banner-text p {
-    color: #fff;
-    font-size: 1.5rem;
-  }
+
   /* just some changes */
   .input-form {
     margin-left: 1rem;
@@ -654,7 +493,8 @@ input[type=submit]:hover {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 
 @media screen and (max-width: 575px) {
-  .column, input[type="submit"] {
+  .column,
+  input[type="submit"] {
     width: 100%;
     margin-top: 0;
   }
@@ -676,5 +516,22 @@ input[type=submit]:hover {
   }
   .dashboard-item {
     font-size: 10px;
+  }
+
+  #cardschoice {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  #cardschoice p {
+    margin-top: 4rem;
+  }
+
+  .all-registries {
+    margin-top: 75px;
+  }
+
+  .categ-reg {
+    margin-top: 75px;
   }
 }
