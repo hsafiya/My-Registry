@@ -1,13 +1,4 @@
-// // hero sectiom images
-// $('.banner-area').slick({
-//   autoplay: true,
-//   speed: 2000,
-//   arrows: false,
-//   dots: true,
-//   fade: true
-// });
-
-
+// hero sectiom images
 const slides = document.querySelectorAll('.slide');
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
@@ -46,23 +37,6 @@ const prevSlide = () => {
   }
   setTimeout(() => current.classList.remove('current'));
 };
-
-// Button events - if next-previous buttons needed
-// next.addEventListener('click', e => {
-//   nextSlide();
-//   if (auto) {
-//     clearInterval(slideInterval);
-//     slideInterval = setInterval(nextSlide, intervalTime);
-//   }
-// });
-
-// prev.addEventListener('click', e => {
-//   prevSlide();
-//   if (auto) {
-//     clearInterval(slideInterval);
-//     slideInterval = setInterval(nextSlide, intervalTime);
-//   }
-// });
 
 // Auto slide
 if (auto) {
