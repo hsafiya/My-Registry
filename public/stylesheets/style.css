@@ -267,6 +267,15 @@ header {
   display: flex;
 }
 
+#navbarMenu {
+  background-color: rgba(188, 143, 143, 0);
+  opacity: 0.9;
+}
+
+.navbar-brand {
+  margin-right: 2rem;
+}
+
 .navbar-item, .navbar-link {
   color: white;
   text-decoration: none;
