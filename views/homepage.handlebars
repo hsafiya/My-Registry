@@ -1,5 +1,5 @@
 <!--hero-->
-<header>
+{{!-- <header>
     <div class="banner-area">
         <div class="single-banner">
             <div class="banner-img">
@@ -42,4 +42,47 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}
+
+<div class="slider">
+      <div class="slide current">
+        <div class="content">
+          <h1>Wedding Registry</h1>
+          <p>
+            Start planing your big day today
+          </p>
+          {{>homepage-btn}}
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <h1>Baby Shower Registry</h1>
+          <p>
+            Get one step closer to meet your baby
+          </p>
+          {{>homepage-btn}}
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <h1>Birthday Wishlist</h1>
+          <p>
+            Let your wishes become true with birthday wishlist
+          </p>
+          {{>homepage-btn}}
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <h1>Secret Santa</h1>
+          <p>
+            Share the holliday spirit with your friends or coworkers
+          </p>
+          {{>homepage-btn}}
+        </div>
+      </div>
+    </div>
+    <div class="buttons-home">
+      <button id="prev"><i class="fas fa-arrow-left"></i></button>
+      <button id="next"><i class="fas fa-arrow-right"></i></button>
+    </div>
