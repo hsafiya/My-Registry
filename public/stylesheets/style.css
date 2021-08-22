@@ -9,6 +9,7 @@ body {
 }
 
 /*navbar*/
+
 /* 
 header {
   width: 100vw;
@@ -137,7 +138,7 @@ nav {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  z-index : 1000;
+  z-index: 1000;
 }
 
 .slide {
@@ -149,85 +150,93 @@ nav {
   opacity: 0;
 }
 
-.slide.current {
+.current {
   opacity: 1;
 }
 
-.slide .content-home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  opacity: 0;
+.content-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
   color: white;
   text-align: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-.slide .content-home h1 {
-    font-size: 55px;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
+.content-home h1 {
+  font-size: 55px;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
 }
 
-.slide.current .content-home {
+/* .slide.current .content-home {
   opacity: 1;
   transform: translate(-50%, -50%);
+} */
+
+.slides-btn {
+  text-decoration: none;
+  background: crimson;
+  color: #fff;
+  padding: 15px 25px;
+  margin: 5px;
+  display: inline-block;
+  font-family: "Prata", serif;
+  cursor: pointer;
+  z-index: 1001;
+  /* background-color: transparent; */
+  border: none;
+  border-radius: 5px;
 }
 
-.slides-btn a {
-    text-decoration: none;
-    background: crimson;
-    color: #fff;
-    padding: 15px 25px;
-    margin:5px;
-    display: inline-block;
-    font-family: "Prata", serif;
-  }
+.slides-btn :hover {
+  color: #333;
+}
 
-  .slides-btn a:hover {
-    color: #333;
-  }
-.buttons-home button#create-reg {
+/* .buttons-home {
+ padding-bottom: 1.2rem;
+} */
+
+/* .buttons-home button#create-reg {
   position: absolute;
   top: 57%;
   right: 50%;
-}
+}*/
 
-.buttons-home button#view-reg {
-  position: absolute;
-  top: 57%;
-  left: 50%;
-}
+/* #view-reg {
+margin-bottom: 1.2rem;
+} */
 
-.buttons-home button {
+/* .buttons-home button {
   cursor: pointer;
   z-index: 1001;
   background-color: transparent;
-border: none;
-}
+  border: none;
+} */
 
 /* Backgorund Images */
- 
+
 .slide:first-child {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/wedding.jpg') no-repeat
-  center top/cover;
-}
-.slide:nth-child(2) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/babyshower.jpg') no-repeat
-    center top/cover;
-}
-.slide:nth-child(3) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/birthday.jpg') no-repeat
-    center top/cover;
-}
-.slide:nth-child(4) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/christmas.png') no-repeat
-    center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/wedding.jpg') no-repeat center top/cover;
 }
 
+.slide:nth-child(2) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/babyshower.jpg') no-repeat center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/birthday.jpg') no-repeat center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/christmas.png') no-repeat center top/cover;
+}
 
 /*navbar*/
+
 #next, #update-profile, #delete-profile, #submit-profile, .btn {
   display: inline-block;
   color: #fff;
@@ -238,42 +247,36 @@ border: none;
 }
 
 header {
-    width: 100vw;
-    background: black;
-    overflow: hidden;
-  }
-  
-  .navbar {
-    background-color: rgb(188, 143, 143, 0.9);
-    background-attachment: fixed;
-    display: flex;
-    margin: auto;
-    padding: 0.7rem;
-    position: absolute;
-    z-index: 1001;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.9;
-    display: flex;
-  }
-  
-  
-  .navbar-item, .navbar-link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .logo1 {
-    color: #fff;
-    font-size: 2.5rem;
-    font-family: "Style Script", cursive;
-  }
+  width: 100vw;
+  background: black;
+  overflow: hidden;
+}
 
+.navbar {
+  background-color: rgb(188, 143, 143, 0.9);
+  background-attachment: fixed;
+  display: flex;
+  margin: auto;
+  padding: 0.7rem;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.9;
+  display: flex;
+}
 
+.navbar-item, .navbar-link {
+  color: white;
+  text-decoration: none;
+}
 
-
-
+.logo1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: "Style Script", cursive;
+}
 
 /*choose category page*/
 
@@ -376,8 +379,6 @@ header {
   background-color: #f3a6a6;
   width: 100%;
 }
-
-
 
 /* custom alerts"*/
 
@@ -509,6 +510,22 @@ input[type=submit]:hover {
 
 /* Style the container/contact section */
 
+#fname {
+  border-radius: 10px;
+}
+
+#lname {
+  border-radius: 10px;
+}
+
+#country {
+  border-radius: 10px;
+}
+
+#subject {
+  border-radius: 10px;
+}
+
 /* Create two columns that float next to eachother */
 
 .column {
@@ -532,8 +549,10 @@ input[type=submit]:hover {
   background-color: #dec7c7;
   padding: 10px;
 }
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
-@media screen and (max-width: 1224px) {
+
+/* @media screen and (max-width: 1224px) {
   .buttons-home button#create-reg {
     top: 65%;
     right: 50%;
@@ -542,8 +561,10 @@ input[type=submit]:hover {
     top: 65%;
     right: 50%;
   }
-}
+} */
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
+
 @media screen and (max-width: 1024px) {
   .input-form {
     margin-top: 2rem;
@@ -551,16 +572,20 @@ input[type=submit]:hover {
     margin-right: 10rem;
   }
 }
+
 /*MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
- @media screen and (max-width: 980px) { 
+
+@media screen and (max-width: 980px) {
   .input-form {
     margin-left: 5rem;
     margin-right: 5rem;
   }
-} 
+}
+
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
-  @media screen and (max-width: 768px) {
-   header {
+
+@media screen and (max-width: 768px) {
+  header {
     width: 100vw;
     background-image: url(../images/background.jpg);
     overflow: hidden;
@@ -569,11 +594,53 @@ input[type=submit]:hover {
     width: 100%;
     font-size: 1.5rem;
   }
+  .banner-area, .single-banner {
+    height: 100vh;
+  }
+  .single-banner .banner-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .banner-img img {
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+  }
+  .banner-btn a {
+    text-decoration: none;
+    background: crimson;
+    color: #fff;
+    padding: 15px 25px;
+    margin-top: 2rem;
+    display: inline-block;
+  }
+  .banner-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+  .banner-text h2 {
+    font-size: 55px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 3rem;
+  }
+  .banner-text p {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  /* just some changes */
   .input-form {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-}  
+}
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 
@@ -592,7 +659,6 @@ input[type=submit]:hover {
   .add-item {
     width: 100%;
   }
- 
   .ideas-text {
     margin-top: 1rem;
   }
