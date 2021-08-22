@@ -9,6 +9,7 @@ body {
 }
 
 /*hero section slides*/
+
 .slider {
   position: relative;
   overflow: hidden;
@@ -69,32 +70,24 @@ body {
 /* Backgorund Images */
 
 .slide:first-child {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-    url("../images/wedding.jpg") no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../images/wedding.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(2) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-    url("../images/babyshower.jpg") no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../images/babyshower.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(3) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-    url("../images/birthday.jpg") no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../images/birthday.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(4) {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-    url("../images/christmas.png") no-repeat center top/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../images/christmas.png") no-repeat center top/cover;
 }
 
 /*navbar*/
 
-#next,
-#update-profile,
-#delete-profile,
-#submit-profile,
-.btn {
+#next, #update-profile, #delete-profile, #submit-profile, .btn {
   display: inline-block;
   color: #fff;
   background-color: crimson;
@@ -134,8 +127,7 @@ header {
   margin-right: 2rem;
 }
 
-.navbar-item,
-.navbar-link {
+.navbar-item, .navbar-link {
   color: white;
   text-decoration: none;
 }
@@ -145,7 +137,9 @@ header {
   font-size: 2.5rem;
   font-family: "Style Script", cursive;
 }
+
 /*footer*/
+
 .footer-home {
   position: fixed;
   width: 100%;
@@ -159,6 +153,7 @@ header {
   top: 50%;
   left: 50%;
 }
+
 /*choose category page*/
 
 #cardschoice {
@@ -166,15 +161,19 @@ header {
   text-align: center;
   padding: 2rem;
 }
+
 /*view all registries page*/
+
 .all-registries {
   margin-top: 100px;
 }
 
 /*categ registries pages*/
+
 .categ-reg {
   margin-top: 100px;
 }
+
 .categ-choice {
   color: #333;
 }
@@ -184,6 +183,7 @@ header {
 }
 
 /*create registry page*/
+
 .banner-btn a {
   text-decoration: none;
   background: crimson;
@@ -196,6 +196,7 @@ header {
 .create-categ {
   margin-top: 200px;
 }
+
 .input-form {
   margin-top: 4rem;
 }
@@ -252,9 +253,11 @@ header {
   background-color: #f3a6a6;
   width: 100%;
 }
+
 .reg-list {
   background-color: rgb(177, 152, 157);
 }
+
 /*ideas page*/
 
 .ideas-hero {
@@ -304,29 +307,32 @@ header {
   background-color: rgba(238, 245, 251, 0.671);
 }
 
-.item-list-panel-block {
-  height: 4rem;
-}
 
 .image-container {
   position: relative;
   text-align: center;
   color: darkslategrey;
 }
+
 /* Style the container/contact section */
+
 /* Create two columns that float next to eachother */
+
 .column {
   float: left;
   width: 50%;
   margin-top: 6px;
   padding: 20px;
 }
+
 /* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
+
 .contuctus-cont {
   box-sizing: border-box;
   border-radius: 5px;
@@ -344,9 +350,7 @@ header {
 
 /* Style inputs */
 
-input[type="text"],
-select,
-textarea {
+input[type="text"], select, textarea {
   width: 100%;
   border: 1px solid #ccc;
   resize: vertical;
@@ -382,29 +386,6 @@ input[type="submit"]:hover {
   border-radius: 10px;
 }
 
-/* Create two columns that float next to eachother */
-
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-
-/* Clear floats after the columns */
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.contuctus-cont {
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #dec7c7;
-  padding: 10px;
-}
 /* custom alerts"*/
 
 #dialogoverlay {
@@ -421,27 +402,23 @@ input[type="submit"]:hover {
 #dialogbox {
   display: none;
   position: fixed;
-  background: linear-gradient(
-    to bottom 90deg,
-    rgb(255, 249, 250) 0%,
-    rgb(255, 217, 224) 100%
-  );
+  background: linear-gradient( to bottom 90deg, rgb(255, 249, 250) 0%, rgb(255, 217, 224) 100%);
   width: 550px;
   z-index: 10;
 }
 
-#dialogbox > div {
+#dialogbox>div {
   background: #fff;
   margin: 8px;
 }
 
-#dialogbox > div > #dialogboxbody {
+#dialogbox>div>#dialogboxbody {
   background: white;
   padding: 20px;
   color: black;
 }
 
-#dialogbox > div > #dialogboxfoot {
+#dialogbox>div>#dialogboxfoot {
   background: rgb(188, 143, 143, 0.9);
   padding: 10px;
   text-align: right;
@@ -478,11 +455,9 @@ input[type="submit"]:hover {
     width: 100%;
     font-size: 1.5rem;
   }
-  .banner-area,
-  .single-banner {
+  .banner-area, .single-banner {
     height: 100vh;
   }
-
   /* just some changes */
   .input-form {
     margin-left: 1rem;
@@ -493,8 +468,7 @@ input[type="submit"]:hover {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 
 @media screen and (max-width: 575px) {
-  .column,
-  input[type="submit"] {
+  .column, input[type="submit"] {
     width: 100%;
     margin-top: 0;
   }
@@ -517,20 +491,16 @@ input[type="submit"]:hover {
   .dashboard-item {
     font-size: 10px;
   }
-
   #cardschoice {
     font-size: 2rem;
     padding: 1rem;
   }
-
   #cardschoice p {
     margin-top: 4rem;
   }
-
   .all-registries {
     margin-top: 75px;
   }
-
   .categ-reg {
     margin-top: 75px;
   }
