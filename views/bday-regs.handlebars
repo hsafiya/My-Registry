@@ -1,6 +1,6 @@
-<div class="panel" >
+<div class="panel categ-reg" >
     <p class="panel-heading">
-        All registries
+        Birthday registries
     </p>
     <div class="panel-block has-addons is-centered">
         <p class="control has-icons-left is-expanded">
@@ -14,11 +14,11 @@
         </div>
          </div>
     <p class="panel-tabs">
-        <a href="/registries/" id="all">All</a>
-        <a href="/registries/wedding-registries" id="wed">Wedding</a>
-        <a href="/registries/birthday-registries" class="is-active" id="bday">Birthday</a>
-             <a href="/registries/baby-shower-registries" id="bshower">Baby Shower</a>
-        <a href="/registries/xmas-registries" id="xmas">Secret Santa</a>
+        <a class="categ-choice" href="/registries/" id="all">All</a>
+        <a class="categ-choice" href="/registries/wedding-registries" id="wed">Wedding</a>
+        <a class="categ-choice" href="/registries/birthday-registries" class="is-active" id="bday">Birthday</a>
+        <a class="categ-choice" href="/registries/baby-shower-registries" id="bshower">Baby Shower</a>
+        <a class="categ-choice" href="/registries/xmas-registries" id="xmas">Secret Santa</a>
     </p>
     {{#if catName.length}}
     {{#each catName }}

@@ -1,14 +1,11 @@
 {{>alert}}
-
-<div class="columns is-desktop ">
+<div class="columns is-desktop categ-reg">
   <div class="column is-4">
     <div class="registry-box is-centered">
       <figure class="image is-128x128 gift-icon is-center">
         <img class="is-rounded" src="/images/giftsicon.jpg">
-        <!-- inside quotes, instead of link add {{data.registry_icon}}-->
       </figure>
       <h1 class="is-size-2 is-size-4-mobile has-text-centered">{{data.title}}
-        <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-name -->
         <br> <span>Registry</span>
       </h1>
       <p class="dashboard-p">In category: "{{data.categories.0.category_name}}"</p>
@@ -18,7 +15,6 @@
             <i class="fas fa-calendar-day"></i>
           </span>
           <span>{{data.event_date}}
-            <!--delete this text and inseart value from input in create-registry.handlebars id  #registry-date -->
           </span>
         </span><br>
         <span class="icon-text">
@@ -26,7 +22,6 @@
             <i class="fas fa-map-marker-alt"></i>
           </span>
           <span>{{data.address}}
-            <!--delete this text and inseart value from input in create-registry.handlebars class .registry-address -->
           </span>
         </span>
       </div>
@@ -34,15 +29,15 @@
         <button class="my-2 button btn add-item">Add item</button>
         <div class="field is-grouped is-grouped-centered mx-3 reg-btn">
           <p class="control">
-          <button class="my-2 button btn-dashboard">Edit Registry</button>
+            <button class="my-2 button btn-dashboard">Edit Registry</button>
           </p>
           <p class="control">
-          <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
+            <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
           </p>
         </div>
       </div>
       <div>
-        <h2>Need ideas? <a href="/ideas">Click here</a></h2>
+        <h2>Need ideas? <a class="is-italic categ-choice" href="/ideas">Click here</a></h2>
       </div>
       {{#if data.items.length}}
       {{#unless data.publish}}
@@ -74,13 +69,15 @@
         <p class="panel-block">
         <div class="columns  item-list-panel-block is-mobile">
           <div class="column dashboard-item">
-            <a href="{{item_url}}" target="blank">{{item_name}}</a>
+            <a class="categ-choice" href="{{item_url}}" target="blank">{{item_name}}</a>
           </div>
           <div class="column dashboard-item is-2">
-            <a href="" class="button is-warning item-edit dashboard-item"> <i class="far fa-edit"></i></a>
+            <a href="" class="button is-warning item-edit dashboard-item"> <i
+                class=" mb-1 icon-is-small far fa-edit"></i></a>
           </div>
           <div class="column dashboard-item is-2">
-            <a href="" class="button is-danger item-delete dashboard-item"><i class="fas fa-minus-circle"></i></a>
+            <a href="" class="button is-danger item-delete dashboard-item"><i
+                class="mb-1 icon-is-small fas fa-minus-circle"></i></a>
           </div>
           <div class="column dashboard-item is-2">
             {{#if bought}}
@@ -101,7 +98,7 @@
 
 
 <!--add item modal-->
-<div class="columns">
+<div class="columns is-desktop">
   <div class="column">
     <div class="modal add-item-modal">
       <div class="modal-background"></div>
@@ -213,10 +210,8 @@
     </div>
   </div>
 </div>
-</div>
 
 
-</div>
 {{!-- connecting front-end --}}
 <script src="/javascript/alert.js"></script>
 <script src="/javascript/dashboard.js"></script>
