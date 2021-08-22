@@ -147,64 +147,64 @@ nav {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
 }
 
 .slide.current {
   opacity: 1;
 }
 
-.slide .content {
+.slide .content-home {
     position: absolute;
     top: 50%;
     left: 50%;
   opacity: 0;
   color: white;
   text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-.slide .content h1 {
+.slide .content-home h1 {
     font-size: 55px;
     text-transform: uppercase;
     color: white;
     margin: 0;
 }
 
-.slide.current .content {
+.slide.current .content-home {
   opacity: 1;
   transform: translate(-50%, -50%);
-  /* transition: all 0.7s ease-in-out 0.3s; */
 }
 
-.banner-btn a {
+.slides-btn a {
     text-decoration: none;
     background: crimson;
     color: #fff;
     padding: 15px 25px;
+    margin:5px;
     display: inline-block;
+    font-family: "Prata", serif;
   }
 
-.buttons-home button#next {
- display:none;
+  .slides-btn a:hover {
+    color: #333;
+  }
+.buttons-home button#create-reg {
+  position: absolute;
+  top: 57%;
+  right: 50%;
 }
 
-.buttons-home button#prev {
-    display:none;
+.buttons-home button#view-reg {
+  position: absolute;
+  top: 57%;
+  left: 50%;
 }
 
 .buttons-home button {
-  border: 2px solid #fff;
-  background-color: transparent;
-  color: #fff;
   cursor: pointer;
-  padding: 13px 15px;
-  border-radius: 50%;
-  outline: none;
-}
-
-.buttons-home button:hover {
-  background-color: #fff;
-  color: #333;
+  z-index: 1001;
+  background-color: transparent;
+border: none;
 }
 
 /* Backgorund Images */
@@ -532,9 +532,18 @@ input[type=submit]:hover {
   background-color: #dec7c7;
   padding: 10px;
 }
-
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
-
+@media screen and (max-width: 1224px) {
+  .buttons-home button#create-reg {
+    top: 65%;
+    right: 50%;
+  }
+  .buttons-home button#view-reg {
+    top: 65%;
+    right: 50%;
+  }
+}
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
 @media screen and (max-width: 1024px) {
   .input-form {
     margin-top: 2rem;
@@ -542,25 +551,13 @@ input[type=submit]:hover {
     margin-right: 10rem;
   }
 }
-
 /*MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
-
- @media screen and (max-width: 980px) {
-  .banner-area, .single-banner {
-    height: auto;
-    width: auto;
-  }
-  .banner-img img {
-    width: auto;
-    height: 100hv;
-    opacity: 0.6;
-  }
+ @media screen and (max-width: 980px) { 
   .input-form {
     margin-left: 5rem;
     margin-right: 5rem;
   }
 } 
-
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
   @media screen and (max-width: 768px) {
    header {
@@ -627,45 +624,9 @@ input[type=submit]:hover {
     width: 100%;
     margin-top: 0;
   }
-  header {
-    width: 100vw;
-    background-image: url(../images/background.jpg);
-    overflow: hidden;
-  }
   .logo1 {
     width: 100%;
     font-size: 1.5rem;
-  }
-  .banner-area, .single-banner {
-    height: 100vh;
-  }
-  .single-banner .banner-img {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  .banner-img img {
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
-  }
-  .banner-btn a {
-    text-decoration: none;
-    background: crimson;
-    color: #fff;
-    padding: 15px 25px;
-    margin-top: 2rem;
-    display: inline-block;
-  }
-  .banner-text {
-    top: 50%;
-    left: 50%;
-  }
-  .banner-text h2 {
-    margin-bottom: 0;
-  }
-  .banner-text p {
-    font-size: 1rem;
   }
   .dashboard-p {
     display: none;

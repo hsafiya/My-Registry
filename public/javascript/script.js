@@ -47,22 +47,22 @@ const prevSlide = () => {
   setTimeout(() => current.classList.remove('current'));
 };
 
-// Button events
-next.addEventListener('click', e => {
-  nextSlide();
-  if (auto) {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, intervalTime);
-  }
-});
+// Button events - if next-previous buttons needed
+// next.addEventListener('click', e => {
+//   nextSlide();
+//   if (auto) {
+//     clearInterval(slideInterval);
+//     slideInterval = setInterval(nextSlide, intervalTime);
+//   }
+// });
 
-prev.addEventListener('click', e => {
-  prevSlide();
-  if (auto) {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, intervalTime);
-  }
-});
+// prev.addEventListener('click', e => {
+//   prevSlide();
+//   if (auto) {
+//     clearInterval(slideInterval);
+//     slideInterval = setInterval(nextSlide, intervalTime);
+//   }
+// });
 
 // Auto slide
 if (auto) {
