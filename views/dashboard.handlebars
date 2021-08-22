@@ -29,10 +29,10 @@
         <button class="my-2 button btn add-item">Add item</button>
         <div class="field is-grouped is-grouped-centered mx-3 reg-btn">
           <p class="control">
-          <button class="my-2 button btn-dashboard">Edit Registry</button>
+            <button class="my-2 button btn-dashboard">Edit Registry</button>
           </p>
           <p class="control">
-          <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
+            <button class="my-2 button btn-dashboard" id="delete-reg">Delete Registry</button>
           </p>
         </div>
       </div>
@@ -72,10 +72,12 @@
             <a class="categ-choice" href="{{item_url}}" target="blank">{{item_name}}</a>
           </div>
           <div class="column dashboard-item is-2">
-            <a href="" class="button is-warning item-edit dashboard-item"> <i class=" mb-1 icon-is-small far fa-edit"></i></a>
+            <a href="" class="button is-warning item-edit dashboard-item"> <i
+                class=" mb-1 icon-is-small far fa-edit"></i></a>
           </div>
           <div class="column dashboard-item is-2">
-            <a href="" class="button is-danger item-delete dashboard-item"><i class="mb-1 icon-is-small fas fa-minus-circle"></i></a>
+            <a href="" class="button is-danger item-delete dashboard-item"><i
+                class="mb-1 icon-is-small fas fa-minus-circle"></i></a>
           </div>
           <div class="column dashboard-item is-2">
             {{#if bought}}
@@ -96,7 +98,7 @@
 
 
 <!--add item modal-->
-<div class="columns">
+<div class="columns is-desktop">
   <div class="column">
     <div class="modal add-item-modal">
       <div class="modal-background"></div>
@@ -208,10 +210,8 @@
     </div>
   </div>
 </div>
-</div>
 
 
-</div>
 {{!-- connecting front-end --}}
 <script src="/javascript/alert.js"></script>
 <script src="/javascript/dashboard.js"></script>
